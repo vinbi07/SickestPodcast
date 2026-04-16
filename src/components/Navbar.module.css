@@ -1,0 +1,107 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 64px;
+  border-bottom: 1px solid var(--bd);
+  background: rgba(247, 243, 238, 0.88);
+  backdrop-filter: blur(12px);
+  transition: background 0.24s ease, border-color 0.24s ease;
+}
+
+.scrolled {
+  background: rgba(247, 243, 238, 0.97);
+  border-color: var(--bd2);
+}
+
+.inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.06rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+.links {
+  list-style: none;
+  display: none;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink3);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 10px 16px;
+  transition: transform 0.18s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btnOutline {
+  border: 1px solid var(--bd2);
+  background: transparent;
+  color: var(--ink2);
+}
+
+.btnOutline:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btnFill {
+  background: var(--red);
+  color: #fff;
+}
+
+.btnFill:hover {
+  background: var(--red2);
+}
+
+@media (min-width: 768px) {
+  .links {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .btnOutline {
+    display: none;
+  }
+}

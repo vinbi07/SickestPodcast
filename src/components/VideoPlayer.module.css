@@ -1,0 +1,30 @@
+.frameWrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--bd);
+  background: #000;
+}
+
+.frameWrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.empty {
+  color: var(--ink3);
+}
+
+.linkOut {
+  display: inline-block;
+  border: 1px solid var(--bd2);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}

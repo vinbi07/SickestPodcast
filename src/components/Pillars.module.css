@@ -1,0 +1,42 @@
+.list {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  border-bottom: 1px solid var(--bd);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--rsoft);
+  color: var(--red);
+  font-family: 'Bebas Neue', sans-serif;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.item h3 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+  font-size: 1.2rem;
+}
+
+.item p {
+  margin: 4px 0 0;
+  color: var(--ink3);
+  font-size: 0.84rem;
+}

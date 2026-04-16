@@ -1,0 +1,147 @@
+.featured {
+  background: var(--w);
+  border-bottom: 1px solid var(--bd);
+}
+
+.visualWrap {
+  position: relative;
+  height: 280px;
+  display: grid;
+  place-items: center;
+  background: var(--p2);
+  border-bottom: 1px solid var(--bd);
+}
+
+.visualBg {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(6rem, 20vw, 10rem);
+  color: rgba(19, 16, 9, 0.06);
+}
+
+.badge {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 0.56rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  background: var(--red);
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+
+.play {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--red);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 26px rgba(192, 16, 42, 0.32);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.play svg {
+  width: 22px;
+  fill: #fff;
+  margin-left: 4px;
+}
+
+.play:hover {
+  transform: scale(1.05);
+  background: var(--red2);
+}
+
+.body {
+  padding: 34px 24px 40px;
+}
+
+.overline {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--red);
+}
+
+.ep {
+  margin-top: 6px;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  color: var(--ink3);
+}
+
+.title {
+  margin: 10px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 0.95;
+  font-size: clamp(2.5rem, 9vw, 4rem);
+}
+
+.role {
+  margin-top: 8px;
+  color: var(--gold);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.desc {
+  margin-top: 14px;
+  max-width: 700px;
+  font-size: 1rem;
+  color: var(--ink2);
+  font-family: 'Instrument Serif', serif;
+}
+
+.row {
+  margin-top: 24px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.listen,
+.link {
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.66rem;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
+.listen {
+  border: 0;
+  background: var(--red);
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.listen:hover {
+  background: var(--red2);
+}
+
+.link {
+  border: 1px solid var(--bd2);
+  color: var(--ink2);
+}
+
+@media (min-width: 768px) {
+  .featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .visualWrap {
+    height: auto;
+    border-bottom: none;
+    border-right: 1px solid var(--bd);
+  }
+
+  .body {
+    padding: 52px;
+  }
+}

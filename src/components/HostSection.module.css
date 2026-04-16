@@ -1,0 +1,134 @@
+.section {
+  background: var(--dk);
+  color: #fff;
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.overline {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  font-size: 0.58rem;
+}
+
+.section h2 {
+  margin: 10px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.2rem, 10vw, 5.5rem);
+  line-height: 0.9;
+}
+
+.section h2 span {
+  display: block;
+  color: var(--red);
+}
+
+.section p {
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 640px;
+}
+
+.section ul {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions button,
+.advisory button {
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.62rem;
+  padding: 11px 16px;
+}
+
+.actions button:first-child,
+.advisory button {
+  border: 0;
+  background: #fff;
+  color: var(--ink);
+}
+
+.actions button:last-child {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+}
+
+.section blockquote {
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 24px;
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.section blockquote footer {
+  margin-top: 10px;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.advisory {
+  margin-top: 12px;
+  border: 1px solid rgba(192, 16, 42, 0.35);
+  border-radius: 14px;
+  padding: 20px;
+  background: rgba(192, 16, 42, 0.1);
+}
+
+.advisory div {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.56rem;
+  font-weight: 600;
+}
+
+.advisory h3 {
+  margin: 8px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+  font-size: 1.7rem;
+}
+
+.advisory p {
+  margin-top: 8px;
+}
+
+@media (min-width: 1100px) {
+  .section {
+    padding: 96px 0;
+  }
+
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+}

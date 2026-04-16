@@ -1,0 +1,65 @@
+.card {
+  background: var(--p);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background: var(--w);
+}
+
+.meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink4);
+}
+
+.title {
+  margin: 8px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.05;
+}
+
+.guest {
+  margin-top: 4px;
+  color: var(--gold);
+  font-size: 0.78rem;
+}
+
+.desc {
+  margin-top: 10px;
+  color: var(--ink2);
+  font-size: 0.87rem;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.play,
+.details {
+  border: 1px solid var(--bd2);
+  border-radius: 999px;
+  padding: 9px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.64rem;
+  font-weight: 600;
+}
+
+.play {
+  border-color: var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
+.details {
+  color: var(--ink2);
+}

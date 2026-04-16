@@ -1,0 +1,58 @@
+export const guests = [
+  {
+    id: 1,
+    name: "Crystal Hayslett",
+    role: "Actress, producer, investor",
+    category: "Entertainment",
+    episode: 1,
+  },
+  {
+    id: 2,
+    name: "Nicole Lynn",
+    role: "President Football Ops, Klutch Sports",
+    category: "Sports Business",
+    episode: 2,
+  },
+  {
+    id: 3,
+    name: "Arike Ogunbowale",
+    role: "Guard, Dallas Wings",
+    category: "WNBA",
+    episode: 3,
+  },
+  {
+    id: 4,
+    name: "Donovan Reta",
+    role: "SVP Business Ops, Dallas Wings",
+    category: "Executive",
+    episode: 4,
+  },
+  {
+    id: 5,
+    name: "Rob Matwick",
+    role: "SVP, Texas Rangers",
+    category: "MLB",
+    episode: 5,
+  },
+  {
+    id: 6,
+    name: "Dother Sykes",
+    role: "Actor and stunt performer",
+    category: "Entertainment",
+    episode: 6,
+  },
+  {
+    id: 7,
+    name: "Sydney Colson",
+    role: "2x WNBA champion and speaker",
+    category: "WNBA",
+    episode: 7,
+  },
+  {
+    id: 8,
+    name: "Khalia Collier",
+    role: "VP Chief of Staff, Dallas Mavericks",
+    category: "NBA",
+    episode: 8,
+  },
+];

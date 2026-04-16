@@ -1,0 +1,39 @@
+.ticker {
+  height: 36px;
+  background: var(--red);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker 26s linear infinite;
+}
+
+.item {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: 28px;
+}
+
+.item::after {
+  content: '·';
+  margin-left: 28px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
