@@ -1,7 +1,5 @@
 .page {
   min-height: calc(100vh - 64px);
-  display: grid;
-  place-items: center;
   padding: 46px 0;
   background: radial-gradient(circle at 70% 10%, #f4edd8 0%, #f7f3ee 45%, #eee8df 100%);
 }
@@ -12,6 +10,8 @@
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(4px);
   padding: 34px;
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 .overline {
@@ -33,14 +33,97 @@
   margin-top: 14px;
   color: var(--ink2);
   font-size: 1rem;
-  max-width: 700px;
+  max-width: 740px;
+}
+
+.form {
+  margin-top: 22px;
+  display: grid;
+  gap: 14px;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field > span {
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid var(--bd2);
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 12px;
+  padding: 12px 13px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.93rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(196, 63, 42, 0.15);
+}
+
+.helper {
+  color: var(--ink2);
+  font-size: 0.78rem;
+}
+
+.error {
+  color: #b5311c;
+  font-size: 0.78rem;
+}
+
+.notice {
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 0.88rem;
+}
+
+.noticeSuccess {
+  background: #e8f6ec;
+  color: #1f6b3b;
+  border: 1px solid #afd6bb;
+}
+
+.noticeError {
+  background: #fdeceb;
+  color: #8c2a1d;
+  border: 1px solid #f0c2bc;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .actions {
-  margin-top: 20px;
+  margin-top: 6px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .actions button,
@@ -51,10 +134,37 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.63rem;
+  cursor: pointer;
 }
 
 .actions button {
   color: #fff;
   background: var(--red);
   border-color: var(--red);
+}
+
+.actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ghost {
+  color: var(--ink) !important;
+  background: transparent !important;
+  border-color: var(--bd) !important;
+}
+
+.meta {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  font-size: 0.82rem;
+  color: var(--ink2);
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

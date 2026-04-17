@@ -14,6 +14,7 @@ import Footer from '../components/Footer';
 import VideoModal from '../components/VideoModal';
 import { episodes } from '../data/podcasts';
 import { guests } from '../data/guests';
+import { BOOKING_TYPES, DEFAULT_BOOKING_TYPE } from '../data/booking';
 import styles from './HomePage.module.css';
 
 const pillars = [
@@ -58,8 +59,8 @@ export default function HomePage() {
     []
   );
 
-  const handleBooking = () => {
-    navigate('/booking');
+  const handleBooking = (type = DEFAULT_BOOKING_TYPE) => {
+    navigate(`/booking?type=${encodeURIComponent(type)}`);
   };
 
   const handleOpenEpisode = (episodeId) => {
@@ -117,7 +118,7 @@ export default function HomePage() {
           body="The Sickest Podcast sits down with athletes, actors, executives, and builders who had to force their way in. Every conversation goes beyond headlines to unpack the decisions, discipline, and trade-offs that built real momentum."
           stats={heroStats}
           pillars={pillars}
-          onBook={handleBooking}
+          onBook={() => handleBooking(BOOKING_TYPES.SPEAKING)}
         />
 
         <HostSection

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import VideoPlayer from '../components/VideoPlayer';
 import { episodes } from '../data/podcasts';
+import { DEFAULT_BOOKING_TYPE } from '../data/booking';
 import styles from './EpisodeDetailPage.module.css';
 
 const footerColumns = [
@@ -17,15 +18,15 @@ export default function EpisodeDetailPage() {
   const { id } = useParams();
   const episode = episodes.find((item) => String(item.id) === id);
 
-  const handleBooking = () => {
-    navigate('/booking');
+  const handleBooking = (type = DEFAULT_BOOKING_TYPE) => {
+    navigate(`/booking?type=${encodeURIComponent(type)}`);
   };
 
   if (!episode) {
     return (
       <div>
         <Navbar
-          brand={{ prefix: 'THE', highlight: 'SICK', suffix: 'EST PODCAST' }}
+          brand={{ prefix: 'THE', highlight: 'SICKEST', suffix: 'PODCAST' }}
           links={[]}
           onBook={handleBooking}
         />
@@ -40,7 +41,7 @@ export default function EpisodeDetailPage() {
   return (
     <div>
       <Navbar
-        brand={{ prefix: 'THE', highlight: 'SICK', suffix: 'EST PODCAST' }}
+        brand={{ prefix: 'THE', highlight: 'SICKEST', suffix: 'PODCAST' }}
         links={[
           { label: 'Episodes', href: '/#episodes' },
           { label: 'Guests', href: '/#guests' },

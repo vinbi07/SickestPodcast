@@ -61,6 +61,13 @@
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
   border: 0;
   border-radius: 999px;
   font-size: 0.64rem;

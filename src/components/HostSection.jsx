@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import styles from './HostSection.module.css';
 import { staggerContainerVariants, staggerItemVariants, scrollTriggerConfig, hoverScaleVariants, TIMING } from '../motion/presets';
+import { BOOKING_TYPES } from '../data/booking';
 
 export default function HostSection({ host, onBook }) {
   return (
@@ -42,7 +43,7 @@ export default function HostSection({ host, onBook }) {
             variants={staggerContainerVariants(0.1, TIMING.STANDARD * 1.8)}
           >
             <motion.button
-              onClick={onBook}
+              onClick={() => onBook?.(BOOKING_TYPES.KEYNOTE)}
               variants={staggerItemVariants}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.95 }}
@@ -51,7 +52,7 @@ export default function HostSection({ host, onBook }) {
               Book a Keynote
             </motion.button>
             <motion.button
-              onClick={onBook}
+              onClick={() => onBook?.(BOOKING_TYPES.ADVISORY)}
               variants={staggerItemVariants}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.95 }}
@@ -88,7 +89,7 @@ export default function HostSection({ host, onBook }) {
               and accountability.
             </p>
             <motion.button
-              onClick={onBook}
+              onClick={() => onBook?.(BOOKING_TYPES.ADVISORY)}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.95 }}
               initial="rest"
