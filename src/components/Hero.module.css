@@ -169,7 +169,7 @@
 }
 
 .link:hover {
-  color: var(--ink);
+  color: var(--red);
 }
 
 .mobileCard {
