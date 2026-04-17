@@ -36,9 +36,30 @@
   gap: 12px;
 }
 
+.loadWrap {
+  margin-top: 18px;
+}
+
+.loadMore {
+  border: 1px solid var(--bd2);
+  background: transparent;
+  border-radius: 999px;
+  padding: 11px 18px;
+  margin: auto;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+  color: var(--ink2);
+}
+
 @media (min-width: 768px) {
   .section {
     padding: 80px 0;
+  }
+
+  .loadWrap {
+    display: none;
   }
 }
 

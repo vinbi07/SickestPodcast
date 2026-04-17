@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import EpisodeCard from './EpisodeCard';
 import styles from './Episodes.module.css';
 
@@ -6,13 +6,35 @@ export default function Episodes({ episodes, onPlay }) {
   const categories = useMemo(() => ['All', ...new Set(episodes.map((ep) => ep.category))], [episodes]);
   const [activeCategory, setActiveCategory] = useState('All');
   const [visibleCount, setVisibleCount] = useState(6);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const filtered = useMemo(() => {
     return activeCategory === 'All' ? episodes : episodes.filter((ep) => ep.category === activeCategory);
   }, [episodes, activeCategory]);
 
-  const shown = filtered.slice(0, visibleCount);
-  const canLoadMore = visibleCount < filtered.length;
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+
+    const updateIsMobile = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateIsMobile();
+    mediaQuery.addEventListener('change', updateIsMobile);
+
+    return () => {
+      mediaQuery.removeEventListener('change', updateIsMobile);
+    };
+  }, []);
+
+  const shown = isMobile
+    ? showAllMobile
+      ? filtered
+      : filtered.slice(0, 3)
+    : filtered.slice(0, visibleCount);
+
+  const canLoadMore = isMobile ? filtered.length > 3 : visibleCount < filtered.length;
 
   return (
     <section className={styles.section}>
@@ -27,6 +49,7 @@ export default function Episodes({ episodes, onPlay }) {
                 onClick={() => {
                   setActiveCategory(category);
                   setVisibleCount(6);
+                  setShowAllMobile(false);
                 }}
               >
                 {category}
@@ -43,8 +66,18 @@ export default function Episodes({ episodes, onPlay }) {
 
         {canLoadMore ? (
           <div className={styles.loadWrap}>
-            <button className={styles.load} onClick={() => setVisibleCount((count) => count + 3)}>
-              Load More Episodes
+            <button
+              className={styles.load}
+              onClick={() => {
+                if (isMobile) {
+                  setShowAllMobile((value) => !value);
+                  return;
+                }
+
+                setVisibleCount((count) => count + 3);
+              }}
+            >
+              {isMobile ? (showAllMobile ? 'Show Less Episodes' : 'Show More Episodes') : 'Load More Episodes'}
             </button>
           </div>
         ) : null}

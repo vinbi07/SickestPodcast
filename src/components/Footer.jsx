@@ -52,7 +52,7 @@ export default function Footer({ columns, tagline }) {
         </div>
 
         <div className={styles.bottom}>
-          <span>© 2026 The Sickest Podcast · Paden Sickles · SickFit</span>
+          <span>© 2026 The Sickest Podcast · Paden Sickles · SickFit®</span>
           <span>Supposed to be here.</span>
         </div>
       </div>
