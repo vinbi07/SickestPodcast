@@ -42,6 +42,7 @@ export default function VideoModal({ episode, onClose }) {
           {episode.title}
         </motion.h3>
         <motion.div
+          className={styles.playerWrap}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: TIMING.STANDARD, delay: 0.15 }}

@@ -2,18 +2,32 @@
   position: fixed;
   inset: 0;
   background: rgba(15, 13, 10, 0.74);
-  display: grid;
-  place-items: center;
   z-index: 100;
   padding: 20px;
 }
 
 .modal {
-  width: min(900px, 100%);
+  position: fixed;
+  inset: 20px;
+  width: min(900px, calc(100vw - 40px));
+  max-height: calc(100vh - 40px);
+  height: fit-content;
+  margin: auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   background: var(--p);
   border: 1px solid var(--bd2);
   border-radius: 14px;
   padding: 18px;
+  z-index: 101;
+}
+
+.playerWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .modal h3 {
