@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 import EpisodeCard from './EpisodeCard';
 import styles from './Episodes.module.css';
+import { staggerContainerVariants, hoverScaleVariants, TIMING } from '../motion/presets';
 
 export default function Episodes({ episodes, onPlay }) {
   const categories = useMemo(() => ['All', ...new Set(episodes.map((ep) => ep.category))], [episodes]);
@@ -41,9 +43,14 @@ export default function Episodes({ episodes, onPlay }) {
       <div className="container">
         <div className={styles.head}>
           <h2>Recent Episodes</h2>
-          <div className={styles.filters}>
+          <motion.div
+            className={styles.filters}
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainerVariants(0.05)}
+          >
             {categories.map((category) => (
-              <button
+              <motion.button
                 key={category}
                 className={activeCategory === category ? styles.active : ''}
                 onClick={() => {
@@ -51,22 +58,45 @@ export default function Episodes({ episodes, onPlay }) {
                   setVisibleCount(6);
                   setShowAllMobile(false);
                 }}
+                whileHover="hover"
+                whileTap={{ scale: 0.98 }}
+                initial="rest"
+                variants={{
+                  hidden: { opacity: 0, y: -10 },
+                  visible: { opacity: 1, y: 0, transition: { duration: TIMING.STANDARD } },
+                  rest: { scale: 1 },
+                  hover: {
+                    scale: 1.05,
+                    transition: { duration: TIMING.FAST },
+                  },
+                }}
               >
                 {category}
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        <div className={styles.grid}>
+        <motion.div
+          className={styles.grid}
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainerVariants(0.08)}
+          key={`grid-${activeCategory}`}
+        >
           {shown.map((episode) => (
             <EpisodeCard key={episode.id} episode={episode} onPlay={onPlay} />
           ))}
-        </div>
+        </motion.div>
 
         {canLoadMore ? (
-          <div className={styles.loadWrap}>
-            <button
+          <motion.div
+            className={styles.loadWrap}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <motion.button
               className={styles.load}
               onClick={() => {
                 if (isMobile) {
@@ -76,10 +106,14 @@ export default function Episodes({ episodes, onPlay }) {
 
                 setVisibleCount((count) => count + 3);
               }}
+              whileHover="hover"
+              whileTap={{ scale: 0.95 }}
+              initial="rest"
+              variants={hoverScaleVariants}
             >
               {isMobile ? (showAllMobile ? 'Show Less Episodes' : 'Show More Episodes') : 'Load More Episodes'}
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         ) : null}
       </div>
     </section>

@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 import GuestCard from './GuestCard';
 import styles from './Guests.module.css';
+import { staggerContainerVariants, hoverScaleVariants, TIMING } from '../motion/presets';
 
 export default function Guests({ guests, onOpenEpisode }) {
   const [query, setQuery] = useState('');
@@ -44,30 +46,58 @@ export default function Guests({ guests, onOpenEpisode }) {
   return (
     <section className={styles.section} id="guests">
       <div className="container">
-        <div className={styles.head}>
+        <motion.div
+          className={styles.head}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: TIMING.STANDARD }}
+        >
           <h2>Season 1 Guests</h2>
-          <input
+          <motion.input
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search guests"
             aria-label="Search guests"
             style={{ fontFamily: 'Poppins' }}
+            whileFocus={{
+              boxShadow: '0 0 0 3px rgba(0, 0, 0, 0.1)',
+              scale: 1.02,
+            }}
+            transition={{ duration: TIMING.FAST }}
           />
-        </div>
+        </motion.div>
 
-        <div className={styles.grid}>
+        <motion.div
+          className={styles.grid}
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainerVariants(0.08)}
+          key={`guest-grid-${query}`}
+        >
           {visibleGuests.map((guest) => (
             <GuestCard key={guest.id} guest={guest} onOpenEpisode={onOpenEpisode} />
           ))}
-        </div>
+        </motion.div>
 
         {canToggleMobile ? (
-          <div className={styles.loadWrap}>
-            <button className={styles.loadMore} onClick={() => setShowAllMobile((value) => !value)}>
+          <motion.div
+            className={styles.loadWrap}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <motion.button
+              className={styles.loadMore}
+              onClick={() => setShowAllMobile((value) => !value)}
+              whileHover="hover"
+              whileTap={{ scale: 0.95 }}
+              initial="rest"
+              variants={hoverScaleVariants}
+            >
               {showAllMobile ? 'Show Less Guests' : 'Show More Guests'}
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         ) : null}
       </div>
     </section>

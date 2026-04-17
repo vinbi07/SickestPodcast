@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Ticker from '../components/Ticker';
@@ -143,7 +144,9 @@ export default function HomePage() {
         tagline="People who were not supposed to win. Exactly how they did it."
       />
 
-      <VideoModal episode={activeEpisode} onClose={() => setActiveEpisode(null)} />
+      <AnimatePresence>
+        {activeEpisode && <VideoModal episode={activeEpisode} onClose={() => setActiveEpisode(null)} />}
+      </AnimatePresence>
     </div>
   );
 }

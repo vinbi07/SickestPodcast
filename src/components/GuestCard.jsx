@@ -1,16 +1,47 @@
+import { motion } from 'framer-motion';
 import styles from './GuestCard.module.css';
+import { staggerItemVariants, TIMING } from '../motion/presets';
 
 export default function GuestCard({ guest, onOpenEpisode }) {
   return (
-    <article className={styles.card} onClick={() => onOpenEpisode(guest.episode)} role="button" tabIndex={0}>
-      <div className={styles.info}>
-        <div className={styles.episode}>Ep {String(guest.episode).padStart(2, '0')}</div>
+    <motion.article
+      className={styles.card}
+      onClick={() => onOpenEpisode(guest.episode)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onOpenEpisode(guest.episode);
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      variants={staggerItemVariants}
+      whileHover="hover"
+      initial="rest"
+    >
+      <motion.div className={styles.info}>
+        <motion.div className={styles.episode}>Ep {String(guest.episode).padStart(2, '0')}</motion.div>
         <h3 className={styles.name}>{guest.name}</h3>
         <p className={styles.role}>{guest.role}</p>
-        <span className={styles.tag}>{guest.category}</span>
-      </div>
+        <motion.span
+          className={styles.tag}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: TIMING.STANDARD, delay: 0.1 }}
+        >
+          {guest.category}
+        </motion.span>
+      </motion.div>
 
-      <img className={styles.avatar} src={guest.photo} alt={guest.name} loading="lazy" />
-    </article>
+      <motion.img
+        className={styles.avatar}
+        src={guest.photo}
+        alt={guest.name}
+        loading="lazy"
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: TIMING.STANDARD }}
+        whileHover={{ scale: 1.08 }}
+      />
+    </motion.article>
   );
 }

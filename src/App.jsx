@@ -1,15 +1,57 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import HomePage from './pages/HomePage';
 import EpisodeDetailPage from './pages/EpisodeDetailPage';
 import BookingPage from './pages/BookingPage';
+import { pageVariants } from './motion/presets';
 
 export default function App() {
+  const location = useLocation();
+
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/episodes/:id" element={<EpisodeDetailPage />} />
-      <Route path="/booking" element={<BookingPage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={pageVariants}
+            >
+              <HomePage />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/episodes/:id"
+          element={
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={pageVariants}
+            >
+              <EpisodeDetailPage />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/booking"
+          element={
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={pageVariants}
+            >
+              <BookingPage />
+            </motion.div>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AnimatePresence>
   );
 }

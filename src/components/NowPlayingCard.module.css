@@ -60,7 +60,8 @@
   background: var(--red);
   display: grid;
   place-items: center;
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 8px 18px rgba(192, 16, 42, 0.24);
+  transition: background 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .play svg {
@@ -70,8 +71,9 @@
 }
 
 .play:hover {
-  transform: scale(1.06);
   background: var(--red2);
+  box-shadow: 0 10px 22px rgba(192, 16, 42, 0.32);
+  filter: brightness(1.03) saturate(1.06);
 }
 
 .row {
