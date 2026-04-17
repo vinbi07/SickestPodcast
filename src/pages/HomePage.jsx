@@ -95,6 +95,13 @@ export default function HomePage() {
             'Actors',
             'Executives',
             'Builders',
+            'The Real Story',
+            'The Sickest Podcast',
+            'Paden Sickles',
+            'Athletes',
+            'Actors',
+            'Executives',
+            'Builders',
             'The Real Story'
           ]}
         />
