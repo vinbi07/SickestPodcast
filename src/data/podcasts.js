@@ -9,7 +9,7 @@ export const episodes = [
     date: "2026-03-06",
     description:
       "Crystal opens up about moving from behind the scenes to center stage, handling pressure in public, and building a career that does not depend on permission.",
-    videoUrl: "https://youtu.be/embed/KAyDcaRFU4Y?si=wYY726FtABIYqdHJ",
+    videoUrl: "https://www.youtube.com/watch?v=KAyDcaRFU4Y",
     thumbnail: "CH",
   },
   {
