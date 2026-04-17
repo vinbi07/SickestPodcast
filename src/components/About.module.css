@@ -19,7 +19,9 @@
 
 .quote {
   margin: 10px 0 0;
-  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  font-family: 'Gilroy', serif;
   font-size: clamp(1.8rem, 4.5vw, 2.4rem);
   line-height: 1.32;
 }
@@ -51,7 +53,7 @@
 }
 
 .stat div {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   color: var(--red);
   font-size: 2rem;
   line-height: 1;

@@ -28,6 +28,7 @@ export default function Guests({ guests, onOpenEpisode }) {
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search guests"
             aria-label="Search guests"
+            style={{ fontFamily: 'Poppins' }}
           />
         </div>
 

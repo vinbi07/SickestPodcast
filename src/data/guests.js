@@ -1,3 +1,12 @@
+import crystalHayslettPhoto from "../assets/guests/crystal-hayslett.svg";
+import nicoleLynnPhoto from "../assets/guests/nicole-lynn.svg";
+import arikeOgunbowalePhoto from "../assets/guests/arike-ogunbowale.svg";
+import donovanRetaPhoto from "../assets/guests/donovan-reta.svg";
+import robMatwickPhoto from "../assets/guests/rob-matwick.svg";
+import dotherSykesPhoto from "../assets/guests/dother-sykes.svg";
+import sydneyColsonPhoto from "../assets/guests/sydney-colson.svg";
+import khaliaCollierPhoto from "../assets/guests/khalia-collier.svg";
+
 export const guests = [
   {
     id: 1,
@@ -5,6 +14,7 @@ export const guests = [
     role: "Actress, producer, investor",
     category: "Entertainment",
     episode: 1,
+    photo: crystalHayslettPhoto,
   },
   {
     id: 2,
@@ -12,6 +22,7 @@ export const guests = [
     role: "President Football Ops, Klutch Sports",
     category: "Sports Business",
     episode: 2,
+    photo: nicoleLynnPhoto,
   },
   {
     id: 3,
@@ -19,6 +30,7 @@ export const guests = [
     role: "Guard, Dallas Wings",
     category: "WNBA",
     episode: 3,
+    photo: arikeOgunbowalePhoto,
   },
   {
     id: 4,
@@ -26,6 +38,7 @@ export const guests = [
     role: "SVP Business Ops, Dallas Wings",
     category: "Executive",
     episode: 4,
+    photo: donovanRetaPhoto,
   },
   {
     id: 5,
@@ -33,6 +46,7 @@ export const guests = [
     role: "SVP, Texas Rangers",
     category: "MLB",
     episode: 5,
+    photo: robMatwickPhoto,
   },
   {
     id: 6,
@@ -40,6 +54,7 @@ export const guests = [
     role: "Actor and stunt performer",
     category: "Entertainment",
     episode: 6,
+    photo: dotherSykesPhoto,
   },
   {
     id: 7,
@@ -47,6 +62,7 @@ export const guests = [
     role: "2x WNBA champion and speaker",
     category: "WNBA",
     episode: 7,
+    photo: sydneyColsonPhoto,
   },
   {
     id: 8,
@@ -54,5 +70,6 @@ export const guests = [
     role: "VP Chief of Staff, Dallas Mavericks",
     category: "NBA",
     episode: 8,
+    photo: khaliaCollierPhoto,
   },
 ];

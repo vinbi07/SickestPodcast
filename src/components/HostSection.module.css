@@ -1,11 +1,20 @@
 .section {
-  background: var(--dk);
+  position: relative;
   color: #fff;
   padding: 64px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+      135deg,
+      rgba(15, 13, 10, 0.88) 0%,
+      rgba(15, 13, 10, 0.72) 50%,
+      rgba(15, 13, 10, 0.88) 100%
+    ),
+    url('https://i.imgur.com/FSOKMic.jpg') center / cover no-repeat;
 }
 
 .layout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
   gap: 28px;
@@ -14,15 +23,21 @@
 .overline {
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--gold);
-  font-size: 0.58rem;
+  font-family: 'Gilroy', sans-serif;
+  color: #e72027;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(0.8rem, 2vw, 0.8rem);
 }
 
 .section h2 {
   margin: 10px 0 0;
-  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-family: 'Gilroy', sans-serif;
   font-size: clamp(3.2rem, 10vw, 5.5rem);
   line-height: 0.9;
+  font-weight: 400;
 }
 
 .section h2 span {
@@ -81,7 +96,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 24px;
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Poppins', serif;
   font-size: clamp(1.2rem, 4vw, 1.5rem);
   line-height: 1.4;
   background: rgba(255, 255, 255, 0.04);

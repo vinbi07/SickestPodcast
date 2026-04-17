@@ -1,9 +1,36 @@
 .hero {
-  background: var(--p);
+  position: relative;
+  overflow: hidden;
+  background: #090909;
   border-bottom: 1px solid var(--bd);
 }
 
+.videoBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.videoBg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(192, 16, 42, 0.26), transparent 44%),
+    linear-gradient(95deg, rgba(0, 0, 0, 0.78) 14%, rgba(0, 0, 0, 0.42) 52%, rgba(0, 0, 0, 0.72) 100%);
+}
+
 .left {
+  position: relative;
+  z-index: 2;
   padding: 50px 0 0;
 }
 
@@ -32,10 +59,12 @@
 }
 
 .title span {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4.1rem, 16vw, 9.8rem);
+  font-family: 'Gilroy', sans-serif;
+  font-size: clamp(4.1rem, 16vw, 9rem);
   line-height: 0.88;
-  letter-spacing: 0.01em;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: -0.05em;
 }
 
 .title span:nth-child(2) {
@@ -45,8 +74,8 @@
 .subtitle {
   margin: 18px 0 0;
   max-width: 500px;
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(1.1rem, 3.3vw, 1.6rem);
+  font-family: 'Poppins', serif;
+  font-size: clamp(1.1rem, 3.3vw, 1.3rem);
   font-style: italic;
   color: var(--ink3);
 }
@@ -57,6 +86,55 @@
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+.socialRow {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.socialLabel {
+  display: none;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.socialLink span {
+  display: none;
+}
+
+.socialLink:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .play {
@@ -84,7 +162,7 @@
 .link {
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--ink2);
+  color: #fff;
   font-size: 0.7rem;
   font-weight: 600;
   transition: color 0.2s ease;
@@ -95,10 +173,14 @@
 }
 
 .mobileCard {
+  position: relative;
+  z-index: 2;
   margin-top: 34px;
 }
 
 .mobileStats {
+  position: relative;
+  z-index: 2;
   margin-top: 2px;
 }
 
@@ -127,11 +209,26 @@
     margin-top: 46px;
   }
 
+  .socialRow {
+    max-width: 560px;
+  }
+
+  .socialLabel {
+    display: inline;
+  }
+
+  .socialLink span {
+    display: inline;
+  }
+
   .right {
     display: flex;
+    position: relative;
+    z-index: 2;
     flex-direction: column;
     justify-content: flex-end;
-    background: var(--dk);
+    background: rgba(8, 8, 8, 0.72);
+    backdrop-filter: blur(1.5px);
     padding: 44px 32px;
     border-left: 1px solid rgba(255, 255, 255, 0.07);
     gap: 16px;
@@ -150,7 +247,7 @@
 
   .rightTitle {
     margin-top: 5px;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-size: 1.8rem;
     line-height: 1;
   }

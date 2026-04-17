@@ -68,7 +68,7 @@ export default function HomePage() {
   return (
     <div className={styles.page}>
       <Navbar
-        brand={{ prefix: 'THE', highlight: 'SICK', suffix: 'EST PODCAST' }}
+        brand={{ prefix: 'THE', highlight: 'SICKEST', suffix: 'PODCAST' }}
         links={[
           { label: 'Episodes', href: '#episodes' },
           { label: 'Guests', href: '#guests' },
@@ -80,7 +80,7 @@ export default function HomePage() {
 
       <main>
         <Hero
-          titleLines={['THE', 'SICK', 'EST', 'PODCAST']}
+          titleLines={['THE', 'SICKEST', 'PODCAST']}
           subtitle="People who were not supposed to win. Exactly how they did it."
           currentEpisode={featuredEpisode}
           stats={heroStats}

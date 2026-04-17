@@ -7,6 +7,7 @@
 .head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 28px;
@@ -14,7 +15,7 @@
 
 .head h2 {
   margin: 0;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-size: clamp(2.2rem, 6vw, 3.2rem);
 }
 
@@ -29,6 +30,7 @@
   background: transparent;
   color: var(--ink2);
   border-radius: 999px;
+  height: fit-content;
   padding: 9px 14px;
   text-transform: uppercase;
   letter-spacing: 0.12em;

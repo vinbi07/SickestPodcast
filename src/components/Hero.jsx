@@ -1,11 +1,27 @@
 import { Link } from 'react-router-dom';
 import HeroStats from './HeroStats';
 import NowPlayingCard from './NowPlayingCard';
+import { InstagramIcon, LinkedInIcon, TikTokIcon, YoutubeIcon } from './icons/SocialIcons';
 import styles from './Hero.module.css';
+import heroVideo from '../assets/HeroVideoBg.mp4';
+
+const socialLinks = [
+  { label: 'Instagram', href: 'https://instagram.com', Icon: InstagramIcon },
+  { label: 'TikTok', href: 'https://tiktok.com', Icon: TikTokIcon },
+  { label: 'LinkedIn', href: 'https://linkedin.com', Icon: LinkedInIcon },
+  { label: 'YouTube', href: 'https://youtube.com', Icon: YoutubeIcon }
+];
 
 export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPlay }) {
   return (
     <section className={styles.hero}>
+      <div className={styles.videoBg} aria-hidden="true">
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      </div>
+      <div className={styles.overlay} aria-hidden="true" />
+
       <div className={styles.left}>
         <div className="container">
           <div className={styles.tag}><span /> New Episodes Weekly</div>
@@ -23,6 +39,18 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
             <a href="#guests" className={styles.link}>
               Meet the Guests
             </a>
+          </div>
+
+          <div className={styles.socialRow}>
+            <span className={styles.socialLabel}>Follow Us</span>
+            <div className={styles.socialLinks}>
+              {socialLinks.map(({ label, href, Icon }) => (
+                <a key={label} className={styles.socialLink} href={href} target="_blank" rel="noreferrer" aria-label={label}>
+                  <Icon size={18} />
+                  <span>{label}</span>
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className={styles.desktopStats}>

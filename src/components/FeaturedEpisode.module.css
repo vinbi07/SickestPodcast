@@ -13,7 +13,7 @@
 }
 
 .visualBg {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-size: clamp(6rem, 20vw, 10rem);
   color: rgba(19, 16, 9, 0.06);
 }
@@ -76,7 +76,7 @@
 
 .title {
   margin: 10px 0 0;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   line-height: 0.95;
   font-size: clamp(2.5rem, 9vw, 4rem);
 }
@@ -89,11 +89,12 @@
 }
 
 .desc {
+  font-family: Poppins, sans-serif;
   margin-top: 14px;
   max-width: 700px;
   font-size: 1rem;
   color: var(--ink2);
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Poppins', serif;
 }
 
 .row {
