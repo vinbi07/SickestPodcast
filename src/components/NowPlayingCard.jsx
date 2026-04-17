@@ -17,18 +17,8 @@ export default function NowPlayingCard({ episode, onPlay }) {
         <div className={styles.row}>
           <div>
             <div className={styles.epNum}>Episode {String(episode.id).padStart(2, '0')}</div>
-            <div className={styles.name}>{episode.guest}</div>
           </div>
           <div className={styles.duration}>{episode.duration}</div>
-        </div>
-      </div>
-      <div className={styles.bottom}>
-        <div className={styles.track}>
-          <span className={styles.progress} />
-        </div>
-        <div className={styles.times}>
-          <span>18:42</span>
-          <span>{episode.duration}</span>
         </div>
       </div>
     </article>

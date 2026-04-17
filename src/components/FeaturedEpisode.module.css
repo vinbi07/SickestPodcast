@@ -78,7 +78,7 @@
   margin: 10px 0 0;
   font-family: 'Gilroy', sans-serif;
   line-height: 0.95;
-  font-size: clamp(2.5rem, 9vw, 4rem);
+  font-size: clamp(2.2rem, 9vw, 3rem);
 }
 
 .role {

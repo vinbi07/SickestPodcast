@@ -25,7 +25,7 @@
   letter-spacing: 0.22em;
   font-family: 'Gilroy', sans-serif;
   color: #e72027;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -0.02em;
   font-size: clamp(0.8rem, 2vw, 0.8rem);
 }
@@ -96,10 +96,15 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 24px;
-  font-family: 'Poppins', serif;
-  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 1rem);
   line-height: 1.4;
   background: rgba(255, 255, 255, 0.04);
+}
+
+.section blockquote span,
+.section blockquote footer {
+  font-family: 'Poppins', sans-serif;
 }
 
 .section blockquote footer {
@@ -108,6 +113,13 @@
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: rgba(255, 255, 255, 0.45);
+}
+
+.section blockquote span {
+  display: block;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 .advisory {

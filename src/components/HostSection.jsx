@@ -26,7 +26,7 @@ export default function HostSection({ host, onBook }) {
 
         <div>
           <blockquote>
-            "{host.quote}"
+            <span>"{host.quote}"</span>
             <footer>{host.firstName} {host.lastName} · Founder, SickFit</footer>
           </blockquote>
 

@@ -100,6 +100,7 @@ export default function HomePage() {
         />
 
         <FeaturedEpisode episode={featuredEpisode} onPlay={setActiveEpisode} />
+                <Platforms items={['Spotify', 'Apple Podcasts', 'YouTube', 'Amazon Music', 'RSS']} />
         <Guests guests={guests} onOpenEpisode={handleOpenEpisode} />
         <Episodes episodes={episodes} onPlay={setActiveEpisode} />
 
@@ -128,7 +129,6 @@ export default function HomePage() {
           onBook={handleBooking}
         />
 
-        <Platforms items={['Spotify', 'Apple Podcasts', 'YouTube', 'Amazon Music', 'RSS']} />
       </main>
 
       <Footer

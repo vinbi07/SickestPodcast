@@ -4,6 +4,7 @@
   font-family: 'Gilroy';
   src: url('../assets/fonts/Gilroy-Regular.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -11,6 +12,7 @@
   font-family: 'Gilroy';
   src: url('../assets/fonts/Gilroy-Bold.woff2') format('woff2');
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -26,8 +28,8 @@
   --red: #c0102a;
   --red2: #d9243d;
   --rsoft: rgba(192, 16, 42, 0.08);
-  --gold: #9b7c1f;
-  --goldbg: #f4edd8;
+  --gold: #d9243d;
+  --goldbg: rgba(192, 16, 42, 0.12);
   --bd: #ddd5ca;
   --bd2: #c8bfb3;
   --dk: #0f0d0a;

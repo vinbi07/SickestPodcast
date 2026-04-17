@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import HeroStats from './HeroStats';
 import NowPlayingCard from './NowPlayingCard';
 import { InstagramIcon, LinkedInIcon, TikTokIcon, YoutubeIcon } from './icons/SocialIcons';
+import spotifyIcon from '../assets/icons/spotify-icon.svg';
+import appleMusicIcon from '../assets/icons/Apple_Music_icon.svg';
+import feedIcon from '../assets/icons/Generic_Feed-icon.svg';
+import amazonMusicIcon from '../assets/icons/Amazon_Music_logo.svg';
 import styles from './Hero.module.css';
 import heroVideo from '../assets/HeroVideoBg.mp4';
 
@@ -10,6 +14,14 @@ const socialLinks = [
   { label: 'TikTok', href: 'https://tiktok.com', Icon: TikTokIcon },
   { label: 'LinkedIn', href: 'https://linkedin.com', Icon: LinkedInIcon },
   { label: 'YouTube', href: 'https://youtube.com', Icon: YoutubeIcon }
+];
+
+const rightPlatforms = [
+  { label: 'Spotify', type: 'img', icon: spotifyIcon },
+  { label: 'Apple Podcasts', type: 'img', icon: appleMusicIcon },
+  { label: 'YouTube', type: 'component', icon: YoutubeIcon, color: '#ff0000' },
+  { label: 'Amazon Music', type: 'img', icon: amazonMusicIcon },
+  { label: 'RSS', type: 'img', icon: feedIcon }
 ];
 
 export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPlay }) {
@@ -60,6 +72,26 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
       </div>
 
       <div className={styles.right}>
+          <div className={styles.rightPlatforms}>
+            <div className={styles.platformsLabel}>Listen On</div>
+            <div className={styles.platformsColumn}>
+              {rightPlatforms.map((platform) => {
+                const IconComponent = platform.icon;
+
+                return (
+                  <div key={platform.label} className={styles.platformBox}>
+                    {platform.type === 'component' ? (
+                      <IconComponent size={16} color={platform.color} />
+                    ) : (
+                      <img src={platform.icon} alt="" aria-hidden="true" />
+                    )}
+                    <span>{platform.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
         <NowPlayingCard episode={currentEpisode} onPlay={onPlay} />
         <div className={styles.rightInfo}>
           <div className={styles.rightEp}>Episode {String(currentEpisode.id).padStart(2, '0')}</div>
@@ -69,6 +101,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
             Episode Details
           </Link>
         </div>
+
       </div>
 
       <div className={styles.mobileCard}>

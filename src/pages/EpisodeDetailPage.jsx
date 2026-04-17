@@ -50,7 +50,7 @@ export default function EpisodeDetailPage() {
       />
 
       <main className={styles.page}>
-        <section className={`container ${styles.hero}`}>
+        <section className={`container ${styles.hero}`} style={{ marginBottom: '20px' }}>
           <div className={styles.meta}>Episode {String(episode.id).padStart(2, '0')} · {episode.duration}</div>
           <h1>{episode.title}</h1>
           <p className={styles.role}>{episode.role}</p>
