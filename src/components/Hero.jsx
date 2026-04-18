@@ -23,7 +23,7 @@ import {
 const socialLinks = [
   { label: 'Instagram', href: 'https://www.instagram.com/thesickestpod?utm_source=qr', Icon: InstagramIcon },
   { label: 'TikTok', href: 'https://www.tiktok.com/@sickfitofficial', Icon: TikTokIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/sickfit-/', Icon: LinkedInIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/paden-sickles/', Icon: LinkedInIcon },
   { label: 'YouTube', href: 'https://www.youtube.com/@TheSickestPodcast', Icon: YoutubeIcon }
 ];
 

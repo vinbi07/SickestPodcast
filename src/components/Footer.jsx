@@ -25,7 +25,7 @@ const footerLinks = {
   'sickfitofficial.com': { href: 'https://sickfitofficial.com', external: true },
   Instagram: { href: 'https://www.instagram.com/thesickestpod?utm_source=qr', external: true },
   TikTok: { href: 'https://www.tiktok.com/@sickfitofficial', external: true },
-  LinkedIn: { href: 'https://www.linkedin.com/company/sickfit-/', external: true },
+  LinkedIn: { href: 'https://www.linkedin.com/in/paden-sickles/', external: true },
   YouTube: { href: 'https://www.youtube.com/@TheSickestPodcast', external: true },
   Twitter: { href: 'https://twitter.com', external: true },
   Facebook: { href: 'https://facebook.com', external: true },
