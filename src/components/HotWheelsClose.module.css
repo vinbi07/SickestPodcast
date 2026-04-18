@@ -1,0 +1,154 @@
+.section {
+  background: var(--p2);
+  border-bottom: 1px solid var(--bd);
+  padding: 64px 0;
+}
+
+.layout {
+  display: grid;
+  gap: 24px;
+}
+
+.head {
+  max-width: 860px;
+}
+
+.overline {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--red);
+}
+
+.title {
+  margin: 10px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.description {
+  margin: 14px 0 0;
+  color: var(--ink2);
+  font-size: 0.95rem;
+}
+
+.quote {
+  margin: 0;
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 4.3vw, 2rem);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: var(--red);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.card {
+  border-radius: 12px;
+  outline: none;
+}
+
+.cardInner {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 18px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  min-height: 236px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover .cardInner,
+.card:focus-visible .cardInner {
+  transform: translateY(-2px);
+  border-color: var(--red);
+  background: var(--p);
+}
+
+.packStripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: linear-gradient(90deg, var(--red), var(--red2));
+}
+
+.packBurst {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border-radius: 999px;
+  border: 1px solid var(--bd2);
+  background: var(--p3);
+  color: var(--ink2);
+  padding: 4px 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.52rem;
+  font-weight: 700;
+}
+
+.carGraphic {
+  width: 100%;
+  max-width: 180px;
+  margin-top: 14px;
+  fill: var(--red);
+  opacity: 0.92;
+}
+
+.card h3 {
+  margin: 12px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+.card p {
+  margin: 8px 0 0;
+  color: var(--ink2);
+  font-size: 0.86rem;
+  line-height: 1.52;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cardInner {
+    min-height: 260px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .section {
+    padding: 94px 0;
+  }
+}

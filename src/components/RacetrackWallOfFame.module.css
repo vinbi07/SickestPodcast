@@ -1,0 +1,429 @@
+.section {
+  background: var(--p);
+  border-bottom: 1px solid var(--bd);
+  padding: 64px 0;
+}
+
+.layout {
+  display: grid;
+  gap: 24px;
+}
+
+.head {
+  max-width: 860px;
+}
+
+.overline {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--red);
+}
+
+.title {
+  margin: 10px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.body {
+  margin: 14px 0 0;
+  color: var(--ink2);
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.sceneFrame {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  min-height: 310px;
+}
+
+.sceneFrame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(19, 16, 9, 0.08) 0%, rgba(19, 16, 9, 0) 38%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.roadWorld {
+  position: relative;
+  width: 220%;
+  height: 290px;
+  z-index: 1;
+}
+
+.lane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 86px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.lane::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+.lane::after {
+  content: '';
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  top: 50%;
+  height: 2px;
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0 16px, transparent 16px 30px);
+  transform: translateY(-50%);
+  animation: laneFlow 2.8s linear infinite;
+}
+
+.laneNear {
+  top: 42px;
+  background: linear-gradient(180deg, #4a463e 0%, #2f2b25 100%);
+}
+
+.laneMid {
+  top: 124px;
+  background: linear-gradient(180deg, #403c35 0%, #26221d 100%);
+}
+
+.laneFar {
+  top: 206px;
+  background: linear-gradient(180deg, #37332d 0%, #211d18 100%);
+}
+
+.carsLayer {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.carCard {
+  position: absolute;
+  left: -130px;
+  width: 140px;
+  pointer-events: none;
+}
+
+.carNear {
+  top: 66px;
+}
+
+.carMid {
+  top: 148px;
+}
+
+.carFar {
+  top: 228px;
+}
+
+.carMover {
+  animation: driveLoop var(--drive-duration) linear var(--drive-delay) infinite;
+  will-change: transform;
+}
+
+.isTracked .carMover {
+  animation: none;
+}
+
+.carBob {
+  animation: carBob 1.8s ease-in-out infinite;
+}
+
+.tinyCar {
+  width: 88px;
+  height: 34px;
+  display: block;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.22));
+}
+
+.carFar .tinyCar {
+  width: 76px;
+  height: 30px;
+}
+
+.windshield {
+  fill: rgba(255, 255, 255, 0.34);
+  animation: windshieldGlint 3.8s ease-in-out infinite;
+}
+
+.carButton {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.carShadow {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  width: 62px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.33);
+  transform: translateX(-50%);
+}
+
+.carFar .carShadow {
+  width: 52px;
+  top: 24px;
+}
+
+.isSelected .carButton::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 106px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--car-color) 76%, white 24%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 16px color-mix(in oklab, var(--car-color) 55%, white 45%);
+  animation: selectedPulse 1.8s ease-in-out infinite;
+}
+
+.carLabel {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 170px;
+  border-radius: 9px;
+  border: 1px solid var(--bd2);
+  background: var(--dk2);
+  color: var(--w);
+  padding: 7px 10px;
+  z-index: 2;
+}
+
+.carLabel span {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.carLabel small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.56rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.roster {
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  background: var(--w);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.roster h3 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.38rem;
+  letter-spacing: 0.02em;
+}
+
+.roster ul {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  max-height: clamp(260px, 45vh, 265px);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.roster ul::-webkit-scrollbar {
+  width: 7px;
+}
+
+.roster ul::-webkit-scrollbar-thumb {
+  background: var(--bd2);
+  border-radius: 999px;
+}
+
+.roster ul::-webkit-scrollbar-track {
+  background: var(--p2);
+  border-radius: 999px;
+}
+
+.roster li {
+  margin: 0;
+}
+
+.rosterItemBtn {
+  width: 100%;
+  border: 1px solid var(--bd);
+  border-radius: 9px;
+  padding: 10px;
+  background: var(--p);
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.rosterItemBtn:hover {
+  transform: translateY(-2px);
+  border-color: var(--red);
+  background: var(--w);
+}
+
+.rosterItemActive {
+  border-color: var(--red);
+  background: var(--w);
+}
+
+.rosterItemBtn span {
+  display: block;
+  font-size: 0.56rem;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.rosterItemBtn strong {
+  display: block;
+  margin-top: 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.18rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.rosterItemBtn small {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink3);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.toggleRosterBtn {
+  margin-top: 12px;
+  border: 1px solid var(--bd2);
+  background: transparent;
+  border-radius: 999px;
+  padding: 11px 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+  color: var(--ink2);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.toggleRosterBtn:hover {
+  transform: translateY(-2px);
+  border-color: var(--red);
+  background: var(--p);
+}
+
+@keyframes laneFlow {
+  from {
+    transform: translate(-4%, -50%);
+  }
+  to {
+    transform: translate(-30%, -50%);
+  }
+}
+
+@keyframes driveLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--loop-distance));
+  }
+}
+
+@keyframes carBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes windshieldGlint {
+  0%,
+  80%,
+  100% {
+    opacity: 0.28;
+  }
+  88% {
+    opacity: 0.52;
+  }
+}
+
+@keyframes selectedPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .sceneFrame {
+    padding: 12px;
+    min-height: 330px;
+  }
+
+  .roadWorld {
+    height: 310px;
+  }
+
+  .roster {
+    padding: 18px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .section {
+    padding: 94px 0;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1.75fr) minmax(280px, 1fr);
+    align-items: start;
+  }
+
+  .sceneFrame {
+    min-height: 350px;
+  }
+}

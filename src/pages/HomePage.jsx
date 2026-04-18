@@ -7,8 +7,10 @@ import Ticker from '../components/Ticker';
 import FeaturedEpisode from '../components/FeaturedEpisode';
 import Guests from '../components/Guests';
 import Episodes from '../components/Episodes';
+import HotWheelsClose from '../components/HotWheelsClose';
 import About from '../components/About';
 import HostSection from '../components/HostSection';
+import RacetrackWallOfFame from '../components/RacetrackWallOfFame';
 import Platforms from '../components/Platforms';
 import Footer from '../components/Footer';
 import VideoModal from '../components/VideoModal';
@@ -109,9 +111,10 @@ export default function HomePage() {
         />
 
         <FeaturedEpisode episode={featuredEpisode} onPlay={setActiveEpisode} />
-                <Platforms items={['Spotify', 'Apple Podcasts', 'YouTube', 'Amazon Music', 'RSS']} />
+        <Platforms items={['Spotify', 'Apple Podcasts', 'YouTube', 'Amazon Music', 'RSS']} />
         <Guests guests={guests} onOpenEpisode={handleOpenEpisode} />
         <Episodes episodes={episodes} onPlay={setActiveEpisode} />
+        <HotWheelsClose />
 
         <About
           quote="People who had to earn every room they walked into."
@@ -137,6 +140,8 @@ export default function HomePage() {
           }}
           onBook={handleBooking}
         />
+
+        <RacetrackWallOfFame guests={guests} />
 
       </main>
 
