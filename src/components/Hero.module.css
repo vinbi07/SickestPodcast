@@ -60,7 +60,7 @@
 
 .title span {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4.1rem, 16vw, 9rem);
+  font-size: clamp(6.2rem, 16vw, 9rem);
   line-height: 0.88;
   color: #fff;
   font-weight: 600;
