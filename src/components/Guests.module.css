@@ -36,6 +36,12 @@
   gap: 12px;
 }
 
+@media (max-width: 767px) {
+  .grid {
+    gap: 0;
+  }
+}
+
 .loadWrap {
   margin-top: 18px;
 }

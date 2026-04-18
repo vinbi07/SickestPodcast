@@ -42,6 +42,13 @@ export default function GuestCard({ guest, onOpenEpisode }) {
         transition={{ duration: TIMING.STANDARD }}
         whileHover={{ scale: 1.08 }}
       />
+
+      <div className={styles.mobileMeta}>
+        <span className={styles.mobileCategory}>{guest.category}</span>
+        <span className={styles.mobileArrow} aria-hidden="true">
+          {'>'}
+        </span>
+      </div>
     </motion.article>
   );
 }

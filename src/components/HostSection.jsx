@@ -83,7 +83,7 @@ export default function HostSection({ host, onBook }) {
             transition={{ duration: TIMING.STANDARD, delay: TIMING.STANDARD * 0.5 }}
           >
             <div>VIP Advisory</div>
-            <h3>12 Calls. 12 Months. $12,000.</h3>
+            <h3>12 Calls. 12 Months.</h3>
             <p>
               Monthly one-on-one strategy access with direct operator support, practical frameworks,
               and accountability.
