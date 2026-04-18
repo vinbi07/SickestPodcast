@@ -12,11 +12,11 @@ import {
 import { staggerContainerVariants, staggerItemVariants, scrollTriggerConfig, hoverRotateVariants, TIMING } from '../motion/presets';
 
 const footerLinks = {
-  Episodes: { href: '#episodes' },
-  'Season 1 Guests': { href: '#guests' },
-  'About the Show': { href: '#about' },
+  Episodes: { href: '/#episodes' },
+  'Season 1 Guests': { href: '/#guests' },
+  'About the Show': { href: '/#about' },
   'Watch on YouTube': { href: 'https://www.youtube.com/@TheSickestPodcast', external: true },
-  'About Paden': { href: '#about' },
+  'About Paden': { href: '/#about' },
   'Book a Keynote': { href: '/booking?type=keynote' },
   'VIP Advisory': { href: '/booking?type=advisory' },
   'Speaking Inquiries': { href: '/booking?type=speaking' },
@@ -47,6 +47,7 @@ export default function Footer({ columns, tagline }) {
   const renderItem = (item) => {
     const IconComponent = socialIconMap[item];
     const link = footerLinks[item];
+    const isHashLink = Boolean(link?.href?.includes('#'));
 
     const content = (
       <>
@@ -59,13 +60,13 @@ export default function Footer({ columns, tagline }) {
       </>
     );
 
-    if (link?.external) {
+    if (link?.external || isHashLink) {
       return (
         <motion.a
           className={styles.itemLink}
           href={link.href}
-          target="_blank"
-          rel="noreferrer"
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noreferrer' : undefined}
           whileHover={{ x: 4, color: '#ffffff' }}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: TIMING.FAST }}
