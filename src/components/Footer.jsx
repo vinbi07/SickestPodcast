@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import {
   InstagramIcon,
@@ -40,6 +41,8 @@ const socialIconMap = {
   Facebook: FacebookIcon
 };
 
+const MotionLink = motion(Link);
+
 export default function Footer({ columns, tagline }) {
   const renderItem = (item) => {
     const IconComponent = socialIconMap[item];
@@ -56,19 +59,33 @@ export default function Footer({ columns, tagline }) {
       </>
     );
 
-    if (link) {
+    if (link?.external) {
       return (
         <motion.a
           className={styles.itemLink}
           href={link.href}
-          target={link.external ? '_blank' : undefined}
-          rel={link.external ? 'noreferrer' : undefined}
+          target="_blank"
+          rel="noreferrer"
           whileHover={{ x: 4, color: '#ffffff' }}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: TIMING.FAST }}
         >
           {content}
         </motion.a>
+      );
+    }
+
+    if (link) {
+      return (
+        <MotionLink
+          className={styles.itemLink}
+          to={link.href}
+          whileHover={{ x: 4, color: '#ffffff' }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ duration: TIMING.FAST }}
+        >
+          {content}
+        </MotionLink>
       );
     }
 
