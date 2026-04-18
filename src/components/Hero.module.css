@@ -109,13 +109,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: flex-start;
 }
 
 .socialLink {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 10px 14px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.05);
@@ -125,6 +129,19 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.socialLink > div {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.socialLink > div svg {
+  display: block;
 }
 
 .socialLink span {
@@ -222,6 +239,13 @@
 
   .socialLink span {
     display: inline;
+  }
+
+  .socialLink {
+    width: auto;
+    height: auto;
+    padding: 10px 14px;
+    justify-content: flex-start;
   }
 
   .right {
