@@ -62,7 +62,7 @@ export default function FeaturedEpisode({ episode, onPlay }) {
         variants={staggerContainerVariants(0.08, TIMING.STANDARD * 0.5)}
       >
         <motion.div className={styles.overline} variants={staggerItemVariants}>
-          Featured Episode
+          First Episode (Coming Soon)
         </motion.div>
         <motion.div className={styles.ep} variants={staggerItemVariants}>
           Episode {String(episode.id).padStart(2, '0')}

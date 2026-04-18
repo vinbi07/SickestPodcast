@@ -5,7 +5,7 @@ export default function NowPlayingCard({ episode, onPlay }) {
     <article className={styles.card}>
       <div className={styles.glow} />
       <div className={styles.top}>
-        <div className={styles.label}>Now Playing</div>
+        <div className={styles.label}>Coming Soon</div>
         <div className={styles.visual}>
           <div className={styles.visualBg}>EP {String(episode.id).padStart(2, '0')}</div>
           <button className={styles.play} onClick={() => onPlay(episode)} aria-label="Play episode">

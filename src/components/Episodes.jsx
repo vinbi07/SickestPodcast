@@ -70,7 +70,7 @@ export default function Episodes({ episodes, onPlay }) {
     <section className={styles.section}>
       <div className="container">
         <div className={styles.head}>
-          <h2>Recent Episodes</h2>
+          <h2>Future Episodes</h2>
           <div className={styles.mobileFilter} ref={categoryMenuRef}>
             <motion.button
               className={styles.mobileTrigger}

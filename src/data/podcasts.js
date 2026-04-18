@@ -8,8 +8,8 @@ export const episodes = [
     duration: "52 min",
     date: "2026-03-06",
     description:
-      "Crystal opens up about moving from behind the scenes to center stage, handling pressure in public, and building a career that does not depend on permission.",
-    videoUrl: "https://www.youtube.com/watch?v=KAyDcaRFU4Y",
+      "Crystal will open up about moving from behind the scenes to center stage, handling pressure in public, and building a career that will not depend on permission.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "CH",
   },
   {
@@ -21,8 +21,8 @@ export const episodes = [
     duration: "48 min",
     date: "2026-03-13",
     description:
-      "Nicole breaks down high-stakes contract strategy, what top performers expect from leadership, and why conviction wins when the room is skeptical.",
-    videoUrl: "https://www.youtube.com/embed/9bZkp7q19f0",
+      "Nicole will break down high-stakes contract strategy, what top performers will expect from leadership, and why conviction will win when the room is skeptical.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "NL",
   },
   {
@@ -34,8 +34,8 @@ export const episodes = [
     duration: "55 min",
     date: "2026-03-20",
     description:
-      "Arike shares how she prepares for pressure moments, turns criticism into fuel, and creates consistency across long seasons and short windows.",
-    videoUrl: "https://www.youtube.com/embed/3JZ_D3ELwOQ",
+      "Arike will share how she prepares for pressure moments, turns criticism into fuel, and creates consistency across long seasons and short windows.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "AO",
   },
   {
@@ -47,8 +47,8 @@ export const episodes = [
     duration: "44 min",
     date: "2026-03-27",
     description:
-      "Donovan unpacks executive decision making, legal discipline, and how to align brand, fan experience, and revenue under one operating model.",
-    videoUrl: "https://www.youtube.com/embed/fJ9rUzIMcZQ",
+      "Donovan will unpack executive decision making, legal discipline, and how to align brand, fan experience, and revenue under one operating model.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "DR",
   },
   {
@@ -60,8 +60,8 @@ export const episodes = [
     duration: "58 min",
     date: "2026-04-03",
     description:
-      "Rob talks infrastructure, fan economics, and what it takes to execute at scale while protecting the long-term identity of a franchise.",
-    videoUrl: "https://www.youtube.com/embed/kJQP7kiw5Fk",
+      "Rob will talk infrastructure, fan economics, and what it will take to execute at scale while protecting the long-term identity of a franchise.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "RM",
   },
   {
@@ -73,8 +73,8 @@ export const episodes = [
     duration: "50 min",
     date: "2026-04-10",
     description:
-      "Dother explains stunt discipline, set leadership, and the habits that let him perform safely and creatively in high-risk environments.",
-    videoUrl: "https://www.youtube.com/embed/CevxZvSJLk8",
+      "Dother will explain stunt discipline, set leadership, and the habits that will let him perform safely and creatively in high-risk environments.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "DS",
   },
   {
@@ -86,8 +86,8 @@ export const episodes = [
     duration: "46 min",
     date: "2026-04-14",
     description:
-      "Sydney dives into team culture, leadership from the bench, and building an off-court brand without losing focus on performance.",
-    videoUrl: "https://www.youtube.com/embed/YQHsXMglC9A",
+      "Sydney will dive into team culture, leadership from the bench, and building an off-court brand without losing focus on performance.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "SC",
   },
   {
@@ -99,8 +99,8 @@ export const episodes = [
     duration: "54 min",
     date: "2026-04-16",
     description:
-      "Khalia discusses ownership responsibility, navigating rooms with legacy power, and the systems required to turn vision into repeatable outcomes.",
-    videoUrl: "https://www.youtube.com/embed/OPf0YbXqDm0",
+      "Khalia will discuss ownership responsibility, navigating rooms with legacy power, and the systems required to turn vision into repeatable outcomes.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "KC",
   },
   {
@@ -112,8 +112,8 @@ export const episodes = [
     duration: "49 min",
     date: "2026-04-18",
     description:
-      "Jim shares lessons from championship locker rooms, consistency at the highest level, and how leadership under pressure translates beyond football.",
-    videoUrl: "https://www.youtube.com/embed/KAyDcaRFU4Y",
+      "Jim will share lessons from championship locker rooms, consistency at the highest level, and how leadership under pressure will translate beyond football.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "JJ",
   },
   {
@@ -125,8 +125,8 @@ export const episodes = [
     duration: "47 min",
     date: "2026-04-22",
     description:
-      "Jason talks about preparation, navigating pressure in entertainment, and the mindset required to deliver when the spotlight is brightest.",
-    videoUrl: "https://www.youtube.com/embed/fJ9rUzIMcZQ",
+      "Jason will talk about preparation, navigating pressure in entertainment, and the mindset required to deliver when the spotlight is brightest.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "JM",
   },
   {
@@ -138,8 +138,8 @@ export const episodes = [
     duration: "53 min",
     date: "2026-04-25",
     description:
-      "Danielle explains how to position a brand for growth, align content with demand, and turn audience attention into real revenue.",
-    videoUrl: "https://www.youtube.com/embed/CevxZvSJLk8",
+      "Danielle will explain how to position a brand for growth, align content with demand, and turn audience attention into real revenue.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "DP",
   },
   {
@@ -151,8 +151,8 @@ export const episodes = [
     duration: "51 min",
     date: "2026-04-29",
     description:
-      "Jalen discusses scaling teams, capital allocation decisions, and how operators can transition into long-term investment thinking.",
-    videoUrl: "https://www.youtube.com/embed/kJQP7kiw5Fk",
+      "Jalen will discuss scaling teams, capital allocation decisions, and how operators can transition into long-term investment thinking.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "JF",
   },
   {
@@ -164,8 +164,8 @@ export const episodes = [
     duration: "50 min",
     date: "2026-05-02",
     description:
-      "Maya shares how to direct creative teams with clarity, keep standards high, and ship world-class work on tight timelines.",
-    videoUrl: "https://www.youtube.com/embed/YQHsXMglC9A",
+      "Maya will share how to direct creative teams with clarity, keep standards high, and ship world-class work on tight timelines.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "MC",
   },
   {
@@ -177,21 +177,21 @@ export const episodes = [
     duration: "45 min",
     date: "2026-05-06",
     description:
-      "Trevor breaks down operating cadence, decision frameworks, and the metrics leaders should watch when teams begin to scale quickly.",
-    videoUrl: "https://www.youtube.com/embed/3JZ_D3ELwOQ",
+      "Trevor will break down operating cadence, decision frameworks, and the metrics leaders should watch when teams begin to scale quickly.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
     thumbnail: "TM",
   },
   {
     id: 15,
-    title: "Nia Douglas: Building a Brand Through Wellness",
-    guest: "Nia Douglas",
-    role: "Athlete · Wellness Founder",
-    category: "Health",
+    title: "Mark Rockefeller: Building with Long-Term Vision",
+    guest: "Mark Rockefeller",
+    role: "Business Executive · Investor",
+    category: "Business",
     duration: "52 min",
     date: "2026-05-09",
     description:
-      "Nia discusses discipline, recovery, and how she turned athletic habits into a consumer brand with a loyal community.",
-    videoUrl: "https://www.youtube.com/embed/OPf0YbXqDm0",
-    thumbnail: "ND",
+      "Mark will share lessons on long-term leadership, strategic decision-making, and building organizations that can scale with discipline.",
+    videoUrl: "https://i.imgur.com/PwpFVv2.mp4",
+    thumbnail: "MR",
   },
 ];

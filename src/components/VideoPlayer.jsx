@@ -30,6 +30,10 @@ function toEmbedUrl(videoUrl) {
   return videoUrl;
 }
 
+function isDirectVideoUrl(videoUrl) {
+  return /\.(mp4|webm|ogg)(\?.*)?$/i.test(videoUrl);
+}
+
 export default function VideoPlayer({ videoUrl, title, embedded = true }) {
   if (!videoUrl) {
     return <p className={styles.empty}>No video available for this episode yet.</p>;
@@ -45,8 +49,21 @@ export default function VideoPlayer({ videoUrl, title, embedded = true }) {
     );
   }
 
+  if (isDirectVideoUrl(videoUrl)) {
+    return (
+      <div className={styles.frameWrap}>
+        <div className={styles.comingSoon}>Coming Soon</div>
+        <video className={styles.video} autoPlay loop muted playsInline controls preload="metadata">
+          <source src={videoUrl} />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.frameWrap}>
+      <div className={styles.comingSoon}>Coming Soon</div>
       <iframe
         src={embeddableUrl}
         title={title}

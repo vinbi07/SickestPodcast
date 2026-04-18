@@ -50,6 +50,22 @@
   max-width: 640px;
 }
 
+.bioLink {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.bioLink:hover {
+  color: #fff;
+}
+
 .section ul {
   margin: 20px 0 0;
   padding: 0;

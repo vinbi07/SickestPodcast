@@ -122,9 +122,9 @@ export const guests = [
   },
   {
     id: 15,
-    name: "Nia Douglas",
-    role: "Athlete and Wellness Founder",
-    category: "Health",
+    name: "Mark Rockefeller",
+    role: "Business Executive and Investor",
+    category: "Business",
     episode: 15,
     photo: arikeOgunbowalePhoto,
   },

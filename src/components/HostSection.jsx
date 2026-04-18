@@ -21,6 +21,13 @@ export default function HostSection({ host, onBook }) {
             <span>{host.lastName}</span>
           </motion.h2>
           <motion.p variants={staggerItemVariants}>{host.bio}</motion.p>
+          <motion.a
+            className={styles.bioLink}
+            href="https://padensickles.com"
+            variants={staggerItemVariants}
+          >
+            Learn more about paden
+          </motion.a>
 
           <motion.ul
             initial="hidden"
