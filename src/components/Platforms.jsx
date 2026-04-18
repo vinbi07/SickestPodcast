@@ -17,7 +17,7 @@ export default function Platforms({ items }) {
   return (
     <section className={styles.section}>
       <div className={`container ${styles.row}`}>
-        <h2>Listen everywhere</h2>
+        <h2>Listen everywhere (Coming Soon)</h2>
         <div>
           {items.map((item) => (
             <button key={item} className={styles.item} type="button" aria-label={item}>

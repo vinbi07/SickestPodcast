@@ -1,11 +1,18 @@
-import crystalHayslettPhoto from "../assets/guests/crystal-hayslett.svg";
-import nicoleLynnPhoto from "../assets/guests/nicole-lynn.svg";
-import arikeOgunbowalePhoto from "../assets/guests/arike-ogunbowale.svg";
-import donovanRetaPhoto from "../assets/guests/donovan-reta.svg";
-import robMatwickPhoto from "../assets/guests/rob-matwick.svg";
-import dotherSykesPhoto from "../assets/guests/dother-sykes.svg";
-import sydneyColsonPhoto from "../assets/guests/sydney-colson.svg";
-import khaliaCollierPhoto from "../assets/guests/khalia-collier.svg";
+import crystalHayslettPhoto from "../assets/guests/CrystalHayslett.jpg";
+import nicoleLynnPhoto from "../assets/guests/NicoleLynn.webp";
+import arikeOgunbowalePhoto from "../assets/guests/ArikeOgunbowale.webp";
+import donovanRetaPhoto from "../assets/guests/DonovanReta.jpeg";
+import robMatwickPhoto from "../assets/guests/RobMatwick.jpg";
+import dotherSykesPhoto from "../assets/guests/DotherSykes.jpg";
+import sydneyColsonPhoto from "../assets/guests/SydneyColson.avif";
+import khaliaCollierPhoto from "../assets/guests/KhaliaCollier.jpg";
+import jimJeffcoatPhoto from "../assets/guests/JimJeffcoat.webp";
+import jasonMitchellPhoto from "../assets/guests/JasonMitchell.webp";
+import markCubanPhoto from "../assets/guests/MarkCuban.png";
+import markRockefellerPhoto from "../assets/guests/markRocketFeller.png";
+import scottMurrayPhoto from "../assets/guests/ScottMurray.jpeg";
+import danaVaughnsPhoto from "../assets/guests/DanaVaughns.jpg";
+import dakPrescottPhoto from "../assets/guests/DakPrescott.png";
 
 export const guests = [
   {
@@ -19,7 +26,7 @@ export const guests = [
   {
     id: 2,
     name: "Nicole Lynn",
-    role: "President Football Ops, Klutch Sports",
+    role: "President of Football Operations at Klutch Sports",
     category: "Sports Business",
     episode: 2,
     photo: nicoleLynnPhoto,
@@ -27,7 +34,7 @@ export const guests = [
   {
     id: 3,
     name: "Arike Ogunbowale",
-    role: "Guard, Dallas Wings",
+    role: "Guard for the Dallas Wings",
     category: "WNBA",
     episode: 3,
     photo: arikeOgunbowalePhoto,
@@ -35,7 +42,7 @@ export const guests = [
   {
     id: 4,
     name: "Donovan Reta",
-    role: "SVP Business Ops, Dallas Wings",
+    role: "SVP of Business Operations for the Dallas Wings",
     category: "Executive",
     episode: 4,
     photo: donovanRetaPhoto,
@@ -43,7 +50,7 @@ export const guests = [
   {
     id: 5,
     name: "Rob Matwick",
-    role: "SVP, Texas Rangers",
+    role: "SVP for the Texas Rangers",
     category: "MLB",
     episode: 5,
     photo: robMatwickPhoto,
@@ -67,7 +74,7 @@ export const guests = [
   {
     id: 8,
     name: "Khalia Collier",
-    role: "VP Chief of Staff, Dallas Mavericks",
+    role: "VP Chief of Staff for the Dallas Mavericks",
     category: "NBA",
     episode: 8,
     photo: khaliaCollierPhoto,
@@ -75,10 +82,10 @@ export const guests = [
   {
     id: 9,
     name: "Jim Jeffcoat",
-    role: "Former NFL defensive end, Dallas Cowboys",
+    role: "Former NFL defensive end for the Dallas Cowboys",
     category: "NFL",
     episode: 9,
-    photo: crystalHayslettPhoto,
+    photo: jimJeffcoatPhoto,
   },
   {
     id: 10,
@@ -86,46 +93,46 @@ export const guests = [
     role: "Actor",
     category: "Entertainment",
     episode: 10,
-    photo: robMatwickPhoto,
+    photo: jasonMitchellPhoto,
   },
   {
     id: 11,
-    name: "Danielle Price",
-    role: "Brand Strategist and Operator",
-    category: "Marketing",
+    name: "Mark Cuban",
+    role: "Minority owner of the Dallas Mavericks and investor",
+    category: "Business",
     episode: 11,
-    photo: nicoleLynnPhoto,
+    photo: markCubanPhoto,
   },
   {
     id: 12,
-    name: "Jalen Foster",
-    role: "Tech Founder and Investor",
-    category: "Technology",
-    episode: 12,
-    photo: donovanRetaPhoto,
-  },
-  {
-    id: 13,
-    name: "Maya Carter",
-    role: "Creative Director and Producer",
-    category: "Creative",
-    episode: 13,
-    photo: sydneyColsonPhoto,
-  },
-  {
-    id: 14,
-    name: "Trevor Mills",
-    role: "COO, Growth Lab Ventures",
-    category: "Executive",
-    episode: 14,
-    photo: khaliaCollierPhoto,
-  },
-  {
-    id: 15,
     name: "Mark Rockefeller",
     role: "Business Executive and Investor",
     category: "Business",
+    episode: 12,
+    photo: markRockefellerPhoto,
+  },
+  {
+    id: 13,
+    name: "Scott Murray",
+    role: "Chairman/CEO of Murray Media and former Sports Director",
+    category: "Sports/Media",
+    episode: 13,
+    photo: scottMurrayPhoto,
+  },
+  {
+    id: 14,
+    name: "Dana Vaughns",
+    role: "Actor, singer, and entertainer",
+    category: "Entertainment",
+    episode: 14,
+    photo: danaVaughnsPhoto,
+  },
+  {
+    id: 15,
+    name: "Dak Prescott",
+    role: "Quarterback for the Dallas Cowboys",
+    category: "NFL",
     episode: 15,
-    photo: arikeOgunbowalePhoto,
+    photo: dakPrescottPhoto,
   },
 ];

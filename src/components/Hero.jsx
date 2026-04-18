@@ -21,10 +21,10 @@ import {
 } from '../motion/presets';
 
 const socialLinks = [
-  { label: 'Instagram', href: 'https://instagram.com', Icon: InstagramIcon },
-  { label: 'TikTok', href: 'https://tiktok.com', Icon: TikTokIcon },
-  { label: 'LinkedIn', href: 'https://linkedin.com', Icon: LinkedInIcon },
-  { label: 'YouTube', href: 'https://youtube.com', Icon: YoutubeIcon }
+  { label: 'Instagram', href: 'https://www.instagram.com/thesickestpod?utm_source=qr', Icon: InstagramIcon },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@sickfitofficial', Icon: TikTokIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/sickfit-/', Icon: LinkedInIcon },
+  { label: 'YouTube', href: 'https://www.youtube.com/@TheSickestPodcast', Icon: YoutubeIcon }
 ];
 
 const rightPlatforms = [
@@ -176,7 +176,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
             animate="visible"
             variants={staggerContainerVariants(0.08, TIMING.STANDARD * 1.5)}
           >
-            <div className={styles.platformsLabel}>Listen On</div>
+            <div className={styles.platformsLabel}>Listen On (Coming Soon)</div>
             <motion.div className={styles.platformsColumn}>
               {rightPlatforms.map((platform, idx) => {
                 const IconComponent = platform.icon;
