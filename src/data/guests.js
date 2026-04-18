@@ -116,7 +116,7 @@ export const guests = [
     id: 14,
     name: "Trevor Mills",
     role: "COO, Growth Lab Ventures",
-    category: "Operations",
+    category: "Executive",
     episode: 14,
     photo: khaliaCollierPhoto,
   },

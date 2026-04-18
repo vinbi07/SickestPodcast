@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import EpisodeCard from './EpisodeCard';
 import styles from './Episodes.module.css';
 import { staggerContainerVariants, hoverScaleVariants, TIMING } from '../motion/presets';
@@ -10,6 +10,8 @@ export default function Episodes({ episodes, onPlay }) {
   const [visibleCount, setVisibleCount] = useState(6);
   const [isMobile, setIsMobile] = useState(false);
   const [showAllMobile, setShowAllMobile] = useState(false);
+  const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
+  const categoryMenuRef = useRef(null);
 
   const filtered = useMemo(() => {
     return activeCategory === 'All' ? episodes : episodes.filter((ep) => ep.category === activeCategory);
@@ -30,6 +32,32 @@ export default function Episodes({ episodes, onPlay }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isCategoryMenuOpen) {
+      return undefined;
+    }
+
+    const handleOutsideClick = (event) => {
+      if (categoryMenuRef.current && !categoryMenuRef.current.contains(event.target)) {
+        setIsCategoryMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsCategoryMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isCategoryMenuOpen]);
+
   const shown = isMobile
     ? showAllMobile
       ? filtered
@@ -43,6 +71,68 @@ export default function Episodes({ episodes, onPlay }) {
       <div className="container">
         <div className={styles.head}>
           <h2>Recent Episodes</h2>
+          <div className={styles.mobileFilter} ref={categoryMenuRef}>
+            <motion.button
+              className={styles.mobileTrigger}
+              onClick={() => setIsCategoryMenuOpen((open) => !open)}
+              aria-haspopup="listbox"
+              aria-expanded={isCategoryMenuOpen}
+              whileTap={{ scale: 0.98 }}
+              whileHover={{ scale: 1.01 }}
+            >
+              <span>{activeCategory}</span>
+              <motion.span
+                className={styles.caret}
+                animate={{ rotate: isCategoryMenuOpen ? 180 : 0 }}
+                transition={{ duration: TIMING.FAST }}
+              >
+                v
+              </motion.span>
+            </motion.button>
+
+            <AnimatePresence>
+              {isCategoryMenuOpen ? (
+                <motion.ul
+                  className={styles.mobileMenu}
+                  initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                  transition={{ duration: TIMING.STANDARD }}
+                  role="listbox"
+                  aria-label="Episode categories"
+                >
+                  {categories.map((category, index) => (
+                    <motion.li
+                      key={category}
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.03, duration: TIMING.FAST }}
+                    >
+                      <button
+                        type="button"
+                        className={
+                          activeCategory === category
+                            ? `${styles.mobileOption} ${styles.mobileOptionActive}`
+                            : styles.mobileOption
+                        }
+                        onClick={() => {
+                          setActiveCategory(category);
+                          setVisibleCount(6);
+                          setShowAllMobile(false);
+                          setIsCategoryMenuOpen(false);
+                        }}
+                        role="option"
+                        aria-selected={activeCategory === category}
+                      >
+                        {category}
+                      </button>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              ) : null}
+            </AnimatePresence>
+          </div>
+
           <motion.div
             className={styles.filters}
             initial="hidden"
@@ -52,6 +142,7 @@ export default function Episodes({ episodes, onPlay }) {
             {categories.map((category) => (
               <motion.button
                 key={category}
+                type="button"
                 className={activeCategory === category ? styles.active : ''}
                 onClick={() => {
                   setActiveCategory(category);
@@ -98,6 +189,7 @@ export default function Episodes({ episodes, onPlay }) {
           >
             <motion.button
               className={styles.load}
+              type="button"
               onClick={() => {
                 if (isMobile) {
                   setShowAllMobile((value) => !value);

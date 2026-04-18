@@ -173,7 +173,7 @@ export const episodes = [
     title: "Trevor Mills: Operational Discipline at Scale",
     guest: "Trevor Mills",
     role: "COO · Growth Lab Ventures",
-    category: "Operations",
+    category: "Executive",
     duration: "45 min",
     date: "2026-05-06",
     description:
