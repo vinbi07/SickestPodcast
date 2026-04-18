@@ -31,14 +31,16 @@
 
 .name {
   margin: 8px 0 0;
-  font-family: 'Gilroy', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 1.35rem;
+  letter-spacing: 0.02em;
   line-height: 1.05;
 }
 
 .role {
   margin: 6px 0 0;
   font-size: 0.8rem;
+  letter-spacing: 0.02em;
   color: var(--ink3);
 }
 
@@ -64,3 +66,4 @@
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
   flex-shrink: 0;
 }
+

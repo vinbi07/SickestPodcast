@@ -1,0 +1,98 @@
+FILE: src/components/About.module.css
+  INITIAL:
+    L22:   font-family: 'Instrument Serif', serif;
+    L54:   font-family: 'Bebas Neue', sans-serif;
+  CURRENT:
+    L24:   font-family: 'Gilroy', sans-serif;
+    L56:   font-family: 'Gilroy', sans-serif;
+
+FILE: EpisodeCard.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L23:   font-family: 'Gilroy', sans-serif;
+
+FILE: Episodes.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L18:   font-family: 'Gilroy', sans-serif;
+
+FILE: FeaturedEpisode.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L16:   font-family: 'Gilroy', sans-serif;
+    L80:   font-family: 'Gilroy', sans-serif;
+    L93:   font-family: Poppins, sans-serif;
+    L98:   font-family: 'Poppins', serif;
+
+FILE: Footer.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L8:   font-family: 'Gilroy', sans-serif;
+    L21:   font-family: 'Poppins', serif;
+
+FILE: GuestCard.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L34:   font-family: 'Gilroy', sans-serif;
+
+FILE: Guests.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L18:   font-family: 'Gilroy', sans-serif;
+
+FILE: Hero.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L62:   font-family: 'Gilroy', sans-serif;
+    L77:   font-family: 'Poppins', serif;
+    L231:     font-family: 'Gilroy', sans-serif;
+    L254:     font-family: 'Gilroy', sans-serif;
+    L281:     font-family: "Gilroy", sans-serif;
+
+FILE: HeroStats.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L19:   font-family: 'Gilroy', sans-serif;
+
+FILE: HostSection.module.css
+  INITIAL:
+    (not present at initial commit)
+  CURRENT:
+    L26:   font-family: 'Gilroy', sans-serif;
+    L37:   font-family: 'Gilroy', sans-serif;
+    L99:   font-family: 'Poppins', sans-serif;
+    L107:   font-family: 'Poppins', sans-serif;
+    L143:   font-family: 'Bebas Neue', sans-serif;
+
+FILE: src/pages/BookingPage.module.css
+  INITIAL:
+    L26:   font-family: 'Bebas Neue', sans-serif;
+  CURRENT:
+    L26:   font-family: 'Gilroy', sans-serif;
+    L71:   font-family: inherit;
+
+FILE: src/pages/EpisodeDetailPage.module.css
+  INITIAL:
+    L20:   font-family: 'Bebas Neue', sans-serif;
+  CURRENT:
+    L20:   font-family: 'Gilroy', sans-serif;
+
+FILE: src/styles/globals.css
+  INITIAL:
+    L39:   font-family: 'DM Sans', sans-serif;
+  CURRENT:
+    L1: @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    L3: @font-face {
+    L4:   font-family: 'Gilroy';
+    L11: @font-face {
+    L12:   font-family: 'Gilroy';
+    L57:   font-family: 'Poppins', sans-serif;
+

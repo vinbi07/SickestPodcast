@@ -15,7 +15,7 @@
 
 .head h2 {
   margin: 0;
-  font-family: 'Gilroy', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.2rem, 6vw, 3.2rem);
 }
 
@@ -91,3 +91,4 @@
     border: none;
   }
 }
+

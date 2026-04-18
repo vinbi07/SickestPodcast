@@ -191,17 +191,18 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
                     custom={idx * 0.05}
                   >
                     <motion.div
+                      className={styles.platformIcon}
                       initial="rest"
                       whileHover="hover"
                       variants={hoverRotateVariants}
                     >
                       {platform.type === 'component' ? (
-                        <IconComponent size={16} color={platform.color} />
+                        <IconComponent size={22} color={platform.color} />
                       ) : (
                         <img src={platform.icon} alt="" aria-hidden="true" />
                       )}
                     </motion.div>
-                    <span>{platform.label}</span>
+                    <span className={styles.platformText}>{platform.label}</span>
                   </motion.div>
                 );
               })}
