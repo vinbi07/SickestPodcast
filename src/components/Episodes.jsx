@@ -67,7 +67,7 @@ export default function Episodes({ episodes, onPlay }) {
   const canLoadMore = isMobile ? filtered.length > 3 : visibleCount < filtered.length;
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="episodes">
       <div className="container">
         <div className={styles.head}>
           <h2>Future Episodes</h2>

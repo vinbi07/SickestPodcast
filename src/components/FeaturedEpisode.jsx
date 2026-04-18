@@ -17,7 +17,6 @@ export default function FeaturedEpisode({ episode, onPlay }) {
   return (
     <motion.section
       className={styles.featured}
-      id="episodes"
       initial="hidden"
       whileInView="visible"
       viewport={scrollTriggerConfig.viewport}
