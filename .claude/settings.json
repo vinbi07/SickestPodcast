@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(cp components/BookingPage.module.css app/booking/BookingPage.module.css)",
+      "Bash(rm components/BookingPage.module.css components/HomePage.module.css.bak)"
+    ]
+  }
+}

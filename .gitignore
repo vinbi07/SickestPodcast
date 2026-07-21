@@ -18,11 +18,15 @@ node_modules/
 # Build outputs
 dist/
 build/
+.next/
+out/
 
 # Cache and temp files
 .cache/
-.vite/
 *.tsbuildinfo
+
+# Next.js auto-generated (regenerated on `next dev`/`next build`)
+next-env.d.ts
 
 # Environment variables
 .env
