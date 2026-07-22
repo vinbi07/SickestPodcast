@@ -18,6 +18,8 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     duration: '52 min',
     description:
       'Crystal will open up about moving from behind the scenes to center stage, handling pressure in public, and building a career that will not depend on permission.',
+    cardSummary:
+      'From supporting roles to leading her own ventures: Crystal Hayslett on owning the pivot.',
     thumbnail: 'CH',
   },
   {

@@ -33,6 +33,7 @@ export interface Episode {
   date: string | null;
   status: EpisodeStatus;
   description: string;
+  cardSummary?: string;
   videoUrl: string | null;
   thumbnail: string;
   seo: EpisodeSeo;

@@ -8,10 +8,15 @@ import {
   BOOKING_TYPE_OPTIONS,
   DEFAULT_BOOKING_TYPE,
   isValidBookingType,
+  type BookingType,
 } from '../../content/booking';
 import styles from './BookingPage.module.css';
 
-function BookingFormInner() {
+interface BookingFormInnerProps {
+  initialType?: BookingType;
+}
+
+function BookingFormInner({ initialType: initialTypeProp }: BookingFormInnerProps) {
   const bookingEndpoint = process.env.NEXT_PUBLIC_BOOKING_ENDPOINT;
   const pathname = usePathname();
   const router = useRouter();
@@ -20,7 +25,8 @@ function BookingFormInner() {
   const mountedAtRef = useRef(Date.now());
 
   const serviceTypeFromQuery = searchParams.get('type');
-  const initialType = isValidBookingType(serviceTypeFromQuery) ? serviceTypeFromQuery : DEFAULT_BOOKING_TYPE;
+  const initialType =
+    initialTypeProp ?? (isValidBookingType(serviceTypeFromQuery) ? serviceTypeFromQuery : DEFAULT_BOOKING_TYPE);
 
   const [formValues, setFormValues] = useState({
     serviceType: initialType,
@@ -89,7 +95,7 @@ function BookingFormInner() {
     setErrors((prev) => ({ ...prev, [name]: '' }));
 
     if (name === 'serviceType') {
-      router.replace(`${pathname}?type=${encodeURIComponent(value)}`, { scroll: false });
+      router.replace(`/booking/${encodeURIComponent(value)}`, { scroll: false });
     }
   };
 
@@ -286,10 +292,10 @@ function BookingFormInner() {
   );
 }
 
-export default function BookingForm() {
+export default function BookingForm({ initialType }: BookingFormInnerProps = {}) {
   return (
     <Suspense fallback={null}>
-      <BookingFormInner />
+      <BookingFormInner initialType={initialType} />
     </Suspense>
   );
 }

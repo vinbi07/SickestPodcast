@@ -58,7 +58,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
           { label: 'Guests', href: '/#guests' },
           { label: 'About', href: '/#about' },
         ]}
-        bookHref="/booking?type=keynote"
+        bookHref="/booking/keynote"
         listenHref={primaryListenHref()}
       />
 
@@ -78,7 +78,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
           <p className={styles.role}>{episode.role}</p>
           <p className={styles.desc}>{episode.description}</p>
           <div className={styles.actions}>
-            <Link href="/booking?type=keynote">Book Paden</Link>
+            <Link href="/booking/keynote">Book Paden</Link>
             <Link href="/">Back to Home</Link>
           </div>
         </section>

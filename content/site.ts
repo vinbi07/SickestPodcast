@@ -11,4 +11,4 @@ export const PUBLISHER_NAME = 'SickFit';
 export const DEFAULT_OG_IMAGE = '/PodcastBanner.png';
 
 export const DEFAULT_DESCRIPTION =
-  'The Sickest Podcast features unfiltered conversations with athletes, actors, executives and builders who overcame the odds. Hosted by SickFit founder Paden Sickles.';
+  'The Sickest Podcast: unfiltered interviews with athletes, executives, and underdogs who overcame the odds. Hosted by SickFit founder Paden Sickles.';

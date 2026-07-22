@@ -92,6 +92,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
             {titleLines.map((line, index) => (
               <motion.span key={line} custom={index * 0.12} variants={textLineVariants}>
                 {line}
+                {index < titleLines.length - 1 ? ' ' : ''}
               </motion.span>
             ))}
           </motion.h1>

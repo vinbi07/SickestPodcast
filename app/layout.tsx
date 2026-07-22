@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: `${SITE_NAME} | Athlete, Executive & Underdog Interviews`,
   description: DEFAULT_DESCRIPTION,
-  icons: { icon: '/SickFitLogo.png' },
+  icons: { icon: '/SickFitLogo.png', apple: '/apple-touch-icon.png' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

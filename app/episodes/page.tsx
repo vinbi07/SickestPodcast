@@ -24,7 +24,7 @@ export default function EpisodesArchivePage() {
           { label: 'Guests', href: '/#guests' },
           { label: 'About', href: '/#about' },
         ]}
-        bookHref="/booking?type=keynote"
+        bookHref="/booking/keynote"
         listenHref={primaryListenHref()}
       />
       <main>

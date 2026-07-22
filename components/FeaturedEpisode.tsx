@@ -98,7 +98,7 @@ export default function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProp
           )}
           <motion.div variants={staggerItemVariants} whileHover={{ x: 4 }} transition={{ duration: TIMING.FAST }}>
             <Link className={styles.link} href={primaryEpisodeHref(episode)}>
-              View Details
+              View Details<span className="sr-only"> — {episode.guest}&apos;s episode</span>
             </Link>
           </motion.div>
         </motion.div>

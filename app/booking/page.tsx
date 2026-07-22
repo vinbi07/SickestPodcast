@@ -23,7 +23,7 @@ export default function BookingPage() {
           { label: 'Guests', href: '/#guests' },
           { label: 'About', href: '/#about' },
         ]}
-        bookHref="/booking?type=keynote"
+        bookHref="/booking/keynote"
         listenHref={primaryListenHref()}
       />
       <BookingForm />

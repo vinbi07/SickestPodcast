@@ -32,7 +32,7 @@ export default function EpisodeCard({ episode, onPlay }: EpisodeCardProps) {
       </motion.div>
       <h3 className={styles.title}>{episode.title}</h3>
       <div className={styles.guest}>{episode.role}</div>
-      <p className={styles.desc}>{episode.description}</p>
+      <p className={styles.desc}>{episode.cardSummary ?? episode.description}</p>
       <motion.div
         className={styles.actions}
         initial="hidden"
@@ -59,7 +59,7 @@ export default function EpisodeCard({ episode, onPlay }: EpisodeCardProps) {
         )}
         <motion.div whileHover={{ x: 4 }} transition={{ duration: TIMING.FAST }}>
           <Link className={styles.details} href={primaryEpisodeHref(episode)}>
-            Details
+            Details<span className="sr-only"> — {episode.guest}&apos;s episode</span>
           </Link>
         </motion.div>
       </motion.div>
