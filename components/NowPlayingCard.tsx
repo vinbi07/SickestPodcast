@@ -2,7 +2,7 @@
 
 import styles from './NowPlayingCard.module.css';
 import type { Episode } from '../content/types';
-import { ctaLabel, isPlayable, statusLabel } from '../lib/episode-status';
+import { ctaLabel, episodeNumberLabel, isPlayable, statusLabel } from '../lib/episode-status';
 
 interface NowPlayingCardProps {
   episode: Episode;
@@ -18,7 +18,7 @@ export default function NowPlayingCard({ episode, onPlay }: NowPlayingCardProps)
       <div className={styles.top}>
         <div className={styles.label}>{statusLabel(episode)}</div>
         <div className={styles.visual}>
-          <div className={styles.visualBg}>EP {String(episode.id).padStart(2, '0')}</div>
+          <div className={styles.visualBg}>EP {episodeNumberLabel(episode)}</div>
           <button
             className={styles.play}
             onClick={() => playable && onPlay(episode)}
@@ -32,7 +32,7 @@ export default function NowPlayingCard({ episode, onPlay }: NowPlayingCardProps)
         </div>
         <div className={styles.row}>
           <div>
-            <div className={styles.epNum}>Episode {String(episode.id).padStart(2, '0')}</div>
+            <div className={styles.epNum}>Episode {episodeNumberLabel(episode)}</div>
           </div>
           <div className={styles.duration}>{episode.duration ?? 'TBD'}</div>
         </div>

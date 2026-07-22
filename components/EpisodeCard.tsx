@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import styles from './EpisodeCard.module.css';
 import { staggerItemVariants, hoverCardScaleVariants, TIMING } from '../motion/presets';
 import type { Episode } from '../content/types';
-import { ctaLabel, isPlayable, primaryEpisodeHref } from '../lib/episode-status';
+import { ctaLabel, episodeNumberLabel, isPlayable, primaryEpisodeHref } from '../lib/episode-status';
 
 interface EpisodeCardProps {
   episode: Episode;
@@ -28,7 +28,7 @@ export default function EpisodeCard({ episode, onPlay }: EpisodeCardProps) {
         whileHover="hover"
         variants={hoverCardScaleVariants}
       >
-        Episode {String(episode.id).padStart(2, '0')} · {episode.duration ?? 'Duration TBD'}
+        Episode {episodeNumberLabel(episode)} · {episode.duration ?? 'Duration TBD'}
       </motion.div>
       <h3 className={styles.title}>{episode.title}</h3>
       <div className={styles.guest}>{episode.role}</div>

@@ -47,7 +47,14 @@ interface HomeViewProps {
 
 export default function HomeView({ episodes, guests }: HomeViewProps) {
   const [activeEpisode, setActiveEpisode] = useState<Episode | null>(null);
-  const featuredEpisode = episodes[0];
+  // Featured episode follows guest display order (first guest in `content/guests.ts`
+  // is Episode 1 / featured), not a fixed array position.
+  const featuredEpisode =
+    episodes.find((episode) => episode.slug === guests[0]?.episodeSlug) ?? episodes[0];
+  const gridEpisodes = useMemo(
+    () => episodes.filter((episode) => episode.id !== featuredEpisode.id),
+    [episodes, featuredEpisode.id],
+  );
 
   const heroStats = useMemo(
     () => [
@@ -103,7 +110,7 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
         <FeaturedEpisode episode={featuredEpisode} onPlay={setActiveEpisode} />
         <Platforms platformLinks={{}} />
         <Guests guests={guests} />
-        <Episodes episodes={episodes} onPlay={setActiveEpisode} />
+        <Episodes episodes={gridEpisodes} onPlay={setActiveEpisode} />
 
         <About
           quote="People who had to earn every room they walked into."

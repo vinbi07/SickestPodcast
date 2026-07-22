@@ -176,6 +176,28 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
       'Dak will share how elite quarterbacks will lead through adversity, build trust in the locker room, and execute when expectations are at their highest.',
     thumbnail: 'DP',
   },
+  {
+    id: 16,
+    title: 'J. Bolin: Styling for the Spotlight',
+    guest: 'J. Bolin',
+    role: 'Celeb Stylist · Creative Director',
+    category: 'Entertainment',
+    duration: '45 min',
+    description:
+      'J. Bolin will break down building a signature style, working under public scrutiny, and directing a creative vision that clients trust.',
+    thumbnail: 'JB',
+  },
+  {
+    id: 17,
+    title: 'Alani Taylor: Designing Identity',
+    guest: 'Alani Taylor',
+    role: 'Celebrity Stylist · Fashion Designer',
+    category: 'Entertainment',
+    duration: '45 min',
+    description:
+      'Alani will talk about translating personal identity into wearable design, staying original under public pressure, and building a name in fashion.',
+    thumbnail: 'AT',
+  },
 ];
 
 export const episodes: Episode[] = rawEpisodes.map((episode) => ({

@@ -1,5 +1,11 @@
 import { episodes } from '../content/episodes';
+import { getEpisodeNumberBySlug } from '../content/guests';
 import type { Episode } from '../content/types';
+
+export function episodeNumberLabel(episode: Episode): string {
+  const number = getEpisodeNumberBySlug(episode.slug) ?? episode.id;
+  return String(number).padStart(2, '0');
+}
 
 export function isPlayable(episode: Episode): boolean {
   return episode.status === 'released' && Boolean(episode.videoUrl);

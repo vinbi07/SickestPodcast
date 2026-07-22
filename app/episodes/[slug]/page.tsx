@@ -6,7 +6,7 @@ import Footer from '../../../components/Footer';
 import VideoPlayer from '../../../components/VideoPlayer';
 import { episodes, getEpisodeBySlug } from '../../../content/episodes';
 import { footerColumns, FOOTER_TAGLINE } from '../../../content/footer';
-import { primaryListenHref, statusLabel } from '../../../lib/episode-status';
+import { episodeNumberLabel, primaryListenHref, statusLabel } from '../../../lib/episode-status';
 import { buildMetadata } from '../../../lib/metadata';
 import { SITE_NAME } from '../../../content/site';
 import styles from './page.module.css';
@@ -71,7 +71,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
         <section className={`container ${styles.hero}`}>
           <div className={styles.meta}>
-            Episode {String(episode.id).padStart(2, '0')} · {episode.duration ?? 'Duration TBD'} ·{' '}
+            Episode {episodeNumberLabel(episode)} · {episode.duration ?? 'Duration TBD'} ·{' '}
             {statusLabel(episode)}
           </div>
           <h1>{episode.title}</h1>

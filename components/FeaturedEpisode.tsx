@@ -11,7 +11,7 @@ import {
   TIMING,
 } from '../motion/presets';
 import type { Episode } from '../content/types';
-import { ctaLabel, isPlayable, primaryEpisodeHref, statusLabel } from '../lib/episode-status';
+import { ctaLabel, episodeNumberLabel, isPlayable, primaryEpisodeHref, statusLabel } from '../lib/episode-status';
 
 interface FeaturedEpisodeProps {
   episode: Episode;
@@ -37,7 +37,7 @@ export default function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProp
           viewport={scrollTriggerConfig.viewport}
           transition={{ duration: TIMING.STANDARD }}
         >
-          EP {String(episode.id).padStart(2, '0')}
+          EP {episodeNumberLabel(episode)}
         </motion.div>
         <motion.div className={styles.badge} variants={bounceInVariants}>
           Featured
@@ -69,7 +69,7 @@ export default function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProp
           {statusLabel(episode)}
         </motion.div>
         <motion.div className={styles.ep} variants={staggerItemVariants}>
-          Episode {String(episode.id).padStart(2, '0')}
+          Episode {episodeNumberLabel(episode)}
         </motion.div>
         <motion.h2 className={styles.title} variants={staggerItemVariants}>
           {episode.title}
