@@ -21,7 +21,7 @@ import {
   TIMING,
 } from '../motion/presets';
 import type { Episode, PlatformLinks } from '../content/types';
-import { ctaLabel, isPlayable, primaryEpisodeHref } from '../lib/episode-status';
+import { ctaLabel, episodeNumberLabel, isPlayable, primaryEpisodeHref } from '../lib/episode-status';
 
 const socialLinks = [
   { label: 'Instagram', href: 'https://www.instagram.com/thesickestpod?utm_source=qr', Icon: InstagramIcon },
@@ -264,7 +264,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
           variants={staggerContainerVariants(0.1, TIMING.STANDARD * 2.5)}
         >
           <motion.div className={styles.rightEp} variants={staggerItemVariants}>
-            Episode {String(currentEpisode.id).padStart(2, '0')}
+            Episode {episodeNumberLabel(currentEpisode)}
           </motion.div>
           <motion.div className={styles.rightTitle} variants={staggerItemVariants}>
             {currentEpisode.guest}
