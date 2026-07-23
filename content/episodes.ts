@@ -10,41 +10,6 @@ import type { Episode } from './types';
  */
 const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformLinks' | 'chapters' | 'transcript' | 'takeaways' | 'relatedEpisodeSlugs' | 'status' | 'date' | 'videoUrl'>> = [
   {
-    id: 1,
-    title: 'Crystal Hayslett: Betting on Your Pivot',
-    guest: 'Crystal Hayslett',
-    role: 'Actress · Producer · Investor',
-    category: 'Entertainment',
-    duration: '52 min',
-    description:
-      'Crystal will open up about moving from behind the scenes to center stage, handling pressure in public, and building a career that will not depend on permission.',
-    cardSummary:
-      'From supporting roles to leading her own ventures: Crystal Hayslett on owning the pivot.',
-    thumbnail: 'CH',
-  },
-  {
-    id: 2,
-    title: 'Nicole Lynn: Negotiating at the Highest Level',
-    guest: 'Nicole Lynn',
-    role: 'President of Football Operations · Klutch Sports',
-    category: 'Sports Business',
-    duration: '48 min',
-    description:
-      'Nicole will break down high-stakes contract strategy, what top performers will expect from leadership, and why conviction will win when the room is skeptical.',
-    thumbnail: 'NL',
-  },
-  {
-    id: 3,
-    title: 'Arike Ogunbowale: Clutch Mindset',
-    guest: 'Arike Ogunbowale',
-    role: 'Guard · Dallas Wings',
-    category: 'WNBA',
-    duration: '55 min',
-    description:
-      'Arike will share how she prepares for pressure moments, turns criticism into fuel, and creates consistency across long seasons and short windows.',
-    thumbnail: 'AO',
-  },
-  {
     id: 4,
     title: 'Donovan Reta: Operating the Business of Sport',
     guest: 'Donovan Reta',
@@ -78,17 +43,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'DS',
   },
   {
-    id: 7,
-    title: 'Sydney Colson: Longevity and Leadership',
-    guest: 'Sydney Colson',
-    role: 'WNBA Champion · Athlete',
-    category: 'WNBA',
-    duration: '46 min',
-    description:
-      'Sydney will dive into team culture, leadership from the bench, and building an off-court brand without losing focus on performance.',
-    thumbnail: 'SC',
-  },
-  {
     id: 8,
     title: 'Khalia Collier: Ownership at 23',
     guest: 'Khalia Collier',
@@ -98,17 +52,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     description:
       'Khalia will discuss ownership responsibility, navigating rooms with legacy power, and the systems required to turn vision into repeatable outcomes.',
     thumbnail: 'KC',
-  },
-  {
-    id: 9,
-    title: 'Jim Jeffcoat: Championship Mindset',
-    guest: 'Jim Jeffcoat',
-    role: 'Former NFL Defensive End · Dallas Cowboys',
-    category: 'NFL',
-    duration: '49 min',
-    description:
-      'Jim will share lessons from championship locker rooms, consistency at the highest level, and how leadership under pressure will translate beyond football.',
-    thumbnail: 'JJ',
   },
   {
     id: 10,
@@ -144,39 +87,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'MR',
   },
   {
-    id: 13,
-    title: 'Scott Murray: Storytelling at the Speed of Sports',
-    guest: 'Scott Murray',
-    role: 'Chairman/CEO · Murray Media',
-    category: 'Sports/Media',
-    duration: '50 min',
-    description:
-      'Scott will explain how media leaders will shape narratives in real time, protect credibility, and deliver under constant deadline pressure.',
-    thumbnail: 'SM',
-  },
-  {
-    id: 14,
-    title: 'Dana Vaughns: Reinvention in Public',
-    guest: 'Dana Vaughns',
-    role: 'Actor · Singer · Entertainer',
-    category: 'Entertainment',
-    duration: '45 min',
-    description:
-      'Dana will discuss how artists will evolve across industries, protect creative identity, and stay consistent while audiences and platforms change.',
-    thumbnail: 'DV',
-  },
-  {
-    id: 15,
-    title: 'Dak Prescott: Leadership in the Spotlight',
-    guest: 'Dak Prescott',
-    role: 'Quarterback · Dallas Cowboys',
-    category: 'NFL',
-    duration: '52 min',
-    description:
-      'Dak will share how elite quarterbacks will lead through adversity, build trust in the locker room, and execute when expectations are at their highest.',
-    thumbnail: 'DP',
-  },
-  {
     id: 16,
     title: 'J. Bolin: Styling for the Spotlight',
     guest: 'J. Bolin',
@@ -197,6 +107,28 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     description:
       'Alani will talk about translating personal identity into wearable design, staying original under public pressure, and building a name in fashion.',
     thumbnail: 'AT',
+  },
+  {
+    id: 18,
+    title: 'Zarna Garg: Finding the Punchline',
+    guest: 'Zarna Garg',
+    role: 'Comedian · Screenwriter',
+    category: 'Entertainment',
+    duration: '45 min',
+    description:
+      'Zarna will share how she turned a mid-life career pivot into a comedy career, writing jokes that cross cultures, and building a voice that will not ask for permission.',
+    thumbnail: 'ZG',
+  },
+  {
+    id: 19,
+    title: 'Emmitt Smith: Discipline That Outlasts the Game',
+    guest: 'Emmitt Smith',
+    role: 'Former Running Back · Dallas Cowboys',
+    category: 'NFL',
+    duration: '45 min',
+    description:
+      'Emmitt will talk about the discipline behind an NFL rushing record, translating athletic drive into business and broadcasting, and leading after the spotlight fades.',
+    thumbnail: 'ES',
   },
 ];
 
