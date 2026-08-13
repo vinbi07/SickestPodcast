@@ -87,17 +87,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'MR',
   },
   {
-    id: 16,
-    title: 'J. Bolin: Styling for the Spotlight',
-    guest: 'J. Bolin',
-    role: 'Celeb Stylist · Creative Director',
-    category: 'Entertainment',
-    duration: '45 min',
-    description:
-      'J. Bolin will break down building a signature style, working under public scrutiny, and directing a creative vision that clients trust.',
-    thumbnail: 'JB',
-  },
-  {
     id: 17,
     title: 'Alani Taylor: Designing Identity',
     guest: 'Alani Taylor',
@@ -120,15 +109,26 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'ZG',
   },
   {
-    id: 19,
-    title: 'Emmitt Smith: Discipline That Outlasts the Game',
-    guest: 'Emmitt Smith',
-    role: 'Former Running Back · Dallas Cowboys',
-    category: 'NFL',
+    id: 20,
+    title: 'Dana Vaughns: Reinvention in Public',
+    guest: 'Dana Vaughns',
+    role: 'Singer · Dancer · Musician',
+    category: 'Entertainment',
     duration: '45 min',
     description:
-      'Emmitt will talk about the discipline behind an NFL rushing record, translating athletic drive into business and broadcasting, and leading after the spotlight fades.',
-    thumbnail: 'ES',
+      'Pittsburgh-born singer, dancer, and musician blending pop, soul, and R&B — he started performing before age 10 and moved to California to pursue entertainment.',
+    thumbnail: 'DV',
+  },
+  {
+    id: 21,
+    title: 'Vanita Krouch: Playing for Gold',
+    guest: 'Vanita Krouch',
+    role: 'Team USA iFlag QB',
+    category: 'Sports',
+    duration: '45 min',
+    description:
+      'One of the most decorated flag football players in the world and Team USA gold medal leader.',
+    thumbnail: 'VK',
   },
 ];
 
