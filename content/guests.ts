@@ -24,8 +24,8 @@ interface RawGuest {
 }
 
 const rawGuests: RawGuest[] = [
-  { id: 5, name: 'Rob Matwick', role: 'SVP for the Texas Rangers', category: 'MLB', episodeId: 5, photo: robMatwickPhoto },
   { id: 10, name: 'Jason Mitchell', role: 'Actor', category: 'Entertainment', episodeId: 10, photo: jasonMitchellPhoto },
+  { id: 5, name: 'Rob Matwick', role: 'SVP for the Texas Rangers', category: 'MLB', episodeId: 5, photo: robMatwickPhoto },
   { id: 6, name: 'Dother Sykes', role: 'Actor and stunt performer', category: 'Entertainment', episodeId: 6, photo: dotherSykesPhoto },
   { id: 17, name: 'Alani Taylor', role: 'Celebrity Stylist · Fashion Designer', category: 'Entertainment', episodeId: 17, photo: alaniTaylorPhoto },
   { id: 4, name: 'Donovan Reta', role: 'SVP of Business Operations for the Dallas Wings', category: 'Executive', episodeId: 4, photo: donovanRetaPhoto },
