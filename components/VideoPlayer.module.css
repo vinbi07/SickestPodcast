@@ -25,6 +25,10 @@
   backdrop-filter: blur(8px);
 }
 
+.thumbnailImg {
+  object-fit: cover;
+}
+
 .frameWrap iframe {
   position: absolute;
   inset: 0;

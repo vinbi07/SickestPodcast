@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './VideoPlayer.module.css';
 import type { Episode } from '../content/types';
 import { isPlayable, ctaLabel } from '../lib/episode-status';
@@ -45,8 +46,18 @@ export default function VideoPlayer({ episode, embedded = true }: VideoPlayerPro
   if (!isPlayable(episode) || !videoUrl) {
     return (
       <div className={styles.frameWrap}>
+        {episode.thumbnailImage ? (
+          <Image
+            src={episode.thumbnailImage}
+            alt={title}
+            fill
+            className={styles.thumbnailImg}
+          />
+        ) : null}
         <div className={styles.comingSoon}>{ctaLabel(episode)}</div>
-        <p className={styles.empty}>No video available for this episode yet.</p>
+        {!episode.thumbnailImage && (
+          <p className={styles.empty}>No video available for this episode yet.</p>
+        )}
       </div>
     );
   }

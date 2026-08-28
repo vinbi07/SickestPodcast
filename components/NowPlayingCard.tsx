@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './NowPlayingCard.module.css';
 import type { Episode } from '../content/types';
 import { ctaLabel, episodeNumberLabel, isPlayable, statusLabel } from '../lib/episode-status';
@@ -18,7 +19,16 @@ export default function NowPlayingCard({ episode, onPlay }: NowPlayingCardProps)
       <div className={styles.top}>
         <div className={styles.label}>{statusLabel(episode)}</div>
         <div className={styles.visual}>
-          <div className={styles.visualBg}>EP {episodeNumberLabel(episode)}</div>
+          {episode.thumbnailImage ? (
+            <Image
+              src={episode.thumbnailImage}
+              alt={episode.guest}
+              fill
+              className={styles.visualImg}
+            />
+          ) : (
+            <div className={styles.visualBg}>EP {episodeNumberLabel(episode)}</div>
+          )}
           <button
             className={styles.play}
             onClick={() => playable && onPlay(episode)}

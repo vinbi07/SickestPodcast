@@ -1,5 +1,21 @@
+import type { StaticImageData } from 'next/image';
 import { slugify } from '../lib/slugify';
 import type { Episode } from './types';
+import robMatwickThumb from '../assets/guests/Rob Matwick_7.jpg';
+import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
+
+// Episodes with a confirmed release date and an on-set photo to use as the
+// video thumbnail while the real video is not published yet. Keyed by
+// episode `id`. Everything else stays fully "upcoming" (no date, no image).
+const dateOverrides: Record<number, string> = {
+  5: 'Sept 8',
+  10: 'Sept 8',
+};
+
+const thumbnailOverrides: Record<number, StaticImageData> = {
+  5: robMatwickThumb,
+  10: jasonMitchellThumb,
+};
 
 /**
  * Raw episode content. Every episode currently shares the same placeholder
@@ -141,8 +157,9 @@ export const episodes: Episode[] = rawEpisodes.map((episode) => ({
   // honestly instead of presenting a fake "Play" state. See content-required
   // note above.
   status: 'upcoming',
-  date: null,
+  date: dateOverrides[episode.id] ?? null,
   videoUrl: null,
+  thumbnailImage: thumbnailOverrides[episode.id] ?? null,
   seo: {},
   platformLinks: {},
   chapters: null,

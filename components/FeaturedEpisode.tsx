@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './FeaturedEpisode.module.css';
 import {
@@ -30,15 +31,24 @@ export default function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProp
       variants={staggerContainerVariants(0.15, 0)}
     >
       <motion.div className={styles.visualWrap} variants={staggerItemVariants}>
-        <motion.div
-          className={styles.visualBg}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 0.3, scale: 1 }}
-          viewport={scrollTriggerConfig.viewport}
-          transition={{ duration: TIMING.STANDARD }}
-        >
-          EP {episodeNumberLabel(episode)}
-        </motion.div>
+        {episode.thumbnailImage ? (
+          <Image
+            src={episode.thumbnailImage}
+            alt={episode.guest}
+            fill
+            className={styles.visualImg}
+          />
+        ) : (
+          <motion.div
+            className={styles.visualBg}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 0.3, scale: 1 }}
+            viewport={scrollTriggerConfig.viewport}
+            transition={{ duration: TIMING.STANDARD }}
+          >
+            EP {episodeNumberLabel(episode)}
+          </motion.div>
+        )}
         <motion.div className={styles.badge} variants={bounceInVariants}>
           Featured
         </motion.div>

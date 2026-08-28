@@ -36,6 +36,7 @@ export interface Episode {
   cardSummary?: string;
   videoUrl: string | null;
   thumbnail: string;
+  thumbnailImage?: StaticImageData | null;
   seo: EpisodeSeo;
   platformLinks: PlatformLinks;
   chapters: EpisodeChapter[] | null;

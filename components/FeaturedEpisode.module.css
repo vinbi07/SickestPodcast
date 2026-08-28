@@ -10,12 +10,17 @@
   place-items: center;
   background: var(--p2);
   border-bottom: 1px solid var(--bd);
+  overflow: hidden;
 }
 
 .visualBg {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(6rem, 20vw, 10rem);
   color: rgba(19, 16, 9, 0.06);
+}
+
+.visualImg {
+  object-fit: cover;
 }
 
 .badge {
