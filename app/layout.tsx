@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from '../content/site';
+import AnnouncementBanner from '../components/AnnouncementBanner';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -20,7 +21,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <AnnouncementBanner />
+        {children}
+      </body>
     </html>
   );
 }

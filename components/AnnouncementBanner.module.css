@@ -1,0 +1,68 @@
+.banner {
+  overflow: hidden;
+  background: var(--red);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 36px;
+  padding: 8px 0;
+  position: relative;
+}
+
+.message {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.7rem;
+  font-family: Beba Neue, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  padding-right: 28px;
+}
+
+.countdown {
+  display: inline-flex;
+  gap: 8px;
+  margin-left: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  display: inline-flex;
+  gap: 2px;
+  font-weight: 600;
+}
+
+.unit strong {
+  font-weight: 700;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+@media (max-width: 767px) {
+  .message {
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+}
