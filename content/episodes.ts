@@ -26,15 +26,15 @@ const thumbnailOverrides: Record<number, StaticImageData> = {
  */
 const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformLinks' | 'chapters' | 'transcript' | 'takeaways' | 'relatedEpisodeSlugs' | 'status' | 'date' | 'videoUrl'>> = [
   {
-    id: 4,
-    title: 'Donovan Reta: Operating the Business of Sport',
-    guest: 'Donovan Reta',
-    role: 'SVP of Business Operations · Dallas Wings',
-    category: 'Executive',
-    duration: '44 min',
+    id: 10,
+    title: 'Jason Mitchell: From Straight Outta Compton to Starting Over',
+    guest: 'Jason Mitchell',
+    role: 'Actor',
+    category: 'Entertainment',
+    duration: '47 min',
     description:
-      'Donovan will unpack executive decision making, legal discipline, and how to align brand, fan experience, and revenue under one operating model.',
-    thumbnail: 'DR',
+      'Jason will talk about preparation, navigating pressure in entertainment, and the mindset required to deliver when the spotlight is brightest.',
+    thumbnail: 'JM',
   },
   {
     id: 5,
@@ -59,50 +59,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'DS',
   },
   {
-    id: 8,
-    title: 'Khalia Collier: Ownership at 23',
-    guest: 'Khalia Collier',
-    role: 'VP Chief of Staff · Dallas Mavericks',
-    category: 'NBA',
-    duration: '54 min',
-    description:
-      'Khalia will discuss ownership responsibility, navigating rooms with legacy power, and the systems required to turn vision into repeatable outcomes.',
-    thumbnail: 'KC',
-  },
-  {
-    id: 10,
-    title: 'Jason Mitchell: Owning Your Craft',
-    guest: 'Jason Mitchell',
-    role: 'Actor',
-    category: 'Entertainment',
-    duration: '47 min',
-    description:
-      'Jason will talk about preparation, navigating pressure in entertainment, and the mindset required to deliver when the spotlight is brightest.',
-    thumbnail: 'JM',
-  },
-  {
-    id: 11,
-    title: 'Mark Cuban: Building Influence Beyond Ownership',
-    guest: 'Mark Cuban',
-    role: 'Minority Owner · Dallas Mavericks',
-    category: 'Business',
-    duration: '53 min',
-    description:
-      'Mark will break down what minority ownership will teach about leverage, leadership, and making high-conviction investment decisions under pressure.',
-    thumbnail: 'MC',
-  },
-  {
-    id: 12,
-    title: 'Mark Rockefeller: Leading with Long-Term Vision',
-    guest: 'Mark Rockefeller',
-    role: 'Business Executive · Investor',
-    category: 'Business',
-    duration: '51 min',
-    description:
-      'Mark will share how executives will build resilient organizations, balance short-term execution with long-term strategy, and invest with discipline.',
-    thumbnail: 'MR',
-  },
-  {
     id: 17,
     title: 'Alani Taylor: Designing Identity',
     guest: 'Alani Taylor',
@@ -112,17 +68,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     description:
       'Alani will talk about translating personal identity into wearable design, staying original under public pressure, and building a name in fashion.',
     thumbnail: 'AT',
-  },
-  {
-    id: 18,
-    title: 'Zarna Garg: Finding the Punchline',
-    guest: 'Zarna Garg',
-    role: 'Comedian · Screenwriter',
-    category: 'Entertainment',
-    duration: '45 min',
-    description:
-      'Zarna will share how she turned a mid-life career pivot into a comedy career, writing jokes that cross cultures, and building a voice that will not ask for permission.',
-    thumbnail: 'ZG',
   },
   {
     id: 20,
@@ -136,8 +81,41 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'DV',
   },
   {
+    id: 22,
+    title: 'Dre in Dallas: What Happens When Being Yourself Goes Viral?',
+    guest: 'Keandre Dre Hopkins',
+    role: 'TikTok Food Creator',
+    category: 'Food & Luxury Lifestyle',
+    duration: '45 min',
+    description:
+      "TikTok star and food content creator with 1.6 million followers on @dreindallas, where he shares the foods he tries and glimpses of his life in Dallas, Texas. One of his videos, filmed during Crumbl's Olivia Rodrigo collab, has drawn over 20 million views.",
+    thumbnail: 'KH',
+  },
+  {
+    id: 23,
+    title: 'Briana Green: Trick Shots and Team Legacy',
+    guest: 'Briana Green',
+    role: 'Guard · Harlem Globetrotters',
+    category: 'Sports',
+    duration: '45 min',
+    description:
+      'Point guard known for her freestyle and trick-shot style, and the fifteenth woman to join the Harlem Globetrotters since 2017. A UTEP alum who also played professionally in the Czech Republic and Spain, she shares her game with over 700,000 Instagram followers.',
+    thumbnail: 'BG',
+  },
+  {
+    id: 24,
+    title: 'Daven Gates: One Stop Chop Wasn\'t the Plan',
+    guest: 'Daven Gates',
+    role: 'Chef · One Stop Chop',
+    category: 'Food',
+    duration: '45 min',
+    description:
+      'Self-taught home cook, veteran, and devoted dad from Queens, New York, known online as One Stop Chop. He learned to cook by shadowing his great-grandmother and now shares approachable comfort recipes on social media.',
+    thumbnail: 'DG',
+  },
+  {
     id: 21,
-    title: 'Vanita Krouch: Playing for Gold',
+    title: 'Vanita Krouch: Before the Olympics, There Was Us',
     guest: 'Vanita Krouch',
     role: 'Team USA iFlag QB',
     category: 'Sports',
@@ -145,6 +123,28 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     description:
       'One of the most decorated flag football players in the world and Team USA gold medal leader.',
     thumbnail: 'VK',
+  },
+  {
+    id: 4,
+    title: 'Donovan Reta: Operating the Business of Sport',
+    guest: 'Donovan Reta',
+    role: 'SVP of Business Operations · Dallas Wings',
+    category: 'Executive',
+    duration: '44 min',
+    description:
+      'Donovan will unpack executive decision making, legal discipline, and how to align brand, fan experience, and revenue under one operating model.',
+    thumbnail: 'DR',
+  },
+  {
+    id: 11,
+    title: 'Mark Cuban: Building Influence Beyond Ownership',
+    guest: 'Mark Cuban',
+    role: 'Minority Owner · Dallas Mavericks',
+    category: 'Business',
+    duration: '53 min',
+    description:
+      'Mark will break down what minority ownership will teach about leverage, leadership, and making high-conviction investment decisions under pressure.',
+    thumbnail: 'MC',
   },
 ];
 
