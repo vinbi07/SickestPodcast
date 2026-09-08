@@ -53,7 +53,7 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     guest: 'Jason Mitchell',
     role: 'Actor',
     category: 'Entertainment',
-    duration: '47 min',
+    duration: '62 min',
     description:
       'Jason will talk about preparation, navigating pressure in entertainment, and the mindset required to deliver when the spotlight is brightest.',
     thumbnail: 'JM',
