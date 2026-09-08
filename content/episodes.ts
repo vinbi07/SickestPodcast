@@ -1,6 +1,7 @@
 import type { StaticImageData } from 'next/image';
 import { slugify } from '../lib/slugify';
-import type { Episode } from './types';
+import type { Episode, EpisodeStatus, PlatformLinks } from './types';
+import { RSS_FEED_URL } from './links';
 import robMatwickThumb from '../assets/guests/Rob Matwick_7.jpg';
 import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
 
@@ -15,6 +16,27 @@ const dateOverrides: Record<number, string> = {
 const thumbnailOverrides: Record<number, StaticImageData> = {
   5: robMatwickThumb,
   10: jasonMitchellThumb,
+};
+
+// Episode 1 (Jason Mitchell) is live as of Sept 8 — real video and platform
+// links. Everything else stays "upcoming" with no fabricated links.
+const statusOverrides: Record<number, EpisodeStatus> = {
+  10: 'released',
+};
+
+const videoUrlOverrides: Record<number, string> = {
+  10: 'https://youtu.be/VVE1Qv7Ghss',
+};
+
+const platformLinksOverrides: Record<number, PlatformLinks> = {
+  10: {
+    spotify: 'https://open.spotify.com/episode/0f9qFIdUoMv0IutEAZv0bO',
+    applePodcasts:
+      'https://podcasts.apple.com/us/podcast/ep-1-jason-mitchell-from-straight-outta-compton-to/id6809694464?i=1000788411292',
+    youtube: 'https://youtu.be/VVE1Qv7Ghss',
+    amazonMusic: null,
+    rss: RSS_FEED_URL,
+  },
 };
 
 /**
@@ -156,12 +178,12 @@ export const episodes: Episode[] = rawEpisodes.map((episode) => ({
   // `videoUrl` in the old data was the same placeholder MP4. Represent that
   // honestly instead of presenting a fake "Play" state. See content-required
   // note above.
-  status: 'upcoming',
+  status: statusOverrides[episode.id] ?? 'upcoming',
   date: dateOverrides[episode.id] ?? null,
-  videoUrl: null,
+  videoUrl: videoUrlOverrides[episode.id] ?? null,
   thumbnailImage: thumbnailOverrides[episode.id] ?? null,
   seo: {},
-  platformLinks: {},
+  platformLinks: platformLinksOverrides[episode.id] ?? {},
   chapters: null,
   transcript: null,
   takeaways: null,

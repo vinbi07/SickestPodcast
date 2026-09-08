@@ -13,6 +13,7 @@ import {
 } from './icons/SocialIcons';
 import { staggerContainerVariants, staggerItemVariants, scrollTriggerConfig, hoverRotateVariants, TIMING } from '../motion/presets';
 import type { FooterColumn } from '../content/footer';
+import { BUZZSPROUT_SHARE_URL } from '../content/links';
 
 interface FooterLinkDef {
   href: string;
@@ -24,6 +25,7 @@ const footerLinks: Record<string, FooterLinkDef> = {
   'Season 1 Guests': { href: '/#guests' },
   'About the Show': { href: '/#about' },
   'Watch on YouTube': { href: 'https://www.youtube.com/@TheSickestPodcast', external: true },
+  'Listen on Buzzsprout': { href: BUZZSPROUT_SHARE_URL, external: true },
   'About Paden': { href: '/#about' },
   'Book a Keynote': { href: '/booking/keynote' },
   'VIP Advisory': { href: '/booking/advisory' },

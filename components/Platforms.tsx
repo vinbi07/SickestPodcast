@@ -41,15 +41,17 @@ const platformDefs: PlatformDef[] = [
 
 interface PlatformsProps {
   platformLinks: PlatformLinks;
+  morePlatformsHref?: string;
+  transparent?: boolean;
 }
 
-export default function Platforms({ platformLinks }: PlatformsProps) {
+export default function Platforms({ platformLinks, morePlatformsHref, transparent }: PlatformsProps) {
   const hasAnyLink = platformDefs.some((platform) =>
     Boolean(platformLinks[platform.key]),
   );
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${transparent ? styles.transparent : ""}`}>
       <div className={`container ${styles.row}`}>
         <h2>
           {hasAnyLink ? "Listen everywhere" : "Listen everywhere (Coming Soon)"}
@@ -94,6 +96,16 @@ export default function Platforms({ platformLinks }: PlatformsProps) {
               </span>
             );
           })}
+          {morePlatformsHref && (
+            <a
+              className={styles.more}
+              href={morePlatformsHref}
+              target="_blank"
+              rel="noreferrer"
+            >
+              More Platforms →
+            </a>
+          )}
         </div>
       </div>
     </section>

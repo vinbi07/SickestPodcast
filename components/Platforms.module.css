@@ -4,6 +4,11 @@
   padding: 42px 0;
 }
 
+.section.transparent {
+  background: transparent;
+  border-bottom: none;
+}
+
 .row {
   display: flex;
   flex-direction: column;
@@ -54,10 +59,28 @@
   cursor: not-allowed;
 }
 
+.more {
+  color: var(--ink2);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 4px;
+  transition: color 0.2s ease;
+}
+
+.more:hover {
+  color: var(--ink);
+}
+
 @media (min-width: 768px) {
   .row {
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 32px;
     flex-direction: row;
   }
 }

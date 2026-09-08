@@ -246,9 +246,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
                   aria-disabled="true"
                 >
                   <div className={styles.platformIcon}>{iconEl}</div>
-                  <span className={styles.platformText}>
-                    {platform.label} · {currentEpisode.date ?? 'Coming soon'}
-                  </span>
+                  <span className={styles.platformText}>{platform.label} · Coming Soon</span>
                 </motion.div>
               );
             })}

@@ -14,6 +14,7 @@ import Platforms from "./Platforms";
 import Footer from "./Footer";
 import VideoModal from "./VideoModal";
 import { footerColumns, FOOTER_TAGLINE } from "../content/footer";
+import { BUZZSPROUT_SHARE_URL, SHOW_PLATFORM_LINKS } from "../content/links";
 import { host } from "../content/host";
 import { primaryListenHref } from "../lib/episode-status";
 import type { Episode, Guest } from "../content/types";
@@ -108,7 +109,7 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
         />
 
         <FeaturedEpisode episode={featuredEpisode} onPlay={setActiveEpisode} />
-        <Platforms platformLinks={{}} />
+        <Platforms platformLinks={SHOW_PLATFORM_LINKS} morePlatformsHref={BUZZSPROUT_SHARE_URL} />
         <Guests guests={guests} />
         <Episodes episodes={gridEpisodes} onPlay={setActiveEpisode} />
 

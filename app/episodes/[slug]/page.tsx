@@ -4,8 +4,10 @@ import { notFound } from 'next/navigation';
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import VideoPlayer from '../../../components/VideoPlayer';
+import Platforms from '../../../components/Platforms';
 import { episodes, getEpisodeBySlug } from '../../../content/episodes';
 import { footerColumns, FOOTER_TAGLINE } from '../../../content/footer';
+import { BUZZSPROUT_SHARE_URL } from '../../../content/links';
 import { episodeNumberLabel, primaryListenHref, statusLabel } from '../../../lib/episode-status';
 import { buildMetadata } from '../../../lib/metadata';
 import { SITE_NAME } from '../../../content/site';
@@ -77,11 +79,13 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
           <h1>{episode.title}</h1>
           <p className={styles.role}>{episode.role}</p>
           <p className={styles.desc}>{episode.description}</p>
-          <div className={styles.actions}>
-            <Link href="/booking/keynote">Book Paden</Link>
-            <Link href="/">Back to Home</Link>
-          </div>
         </section>
+
+        <Platforms
+          platformLinks={episode.platformLinks}
+          morePlatformsHref={BUZZSPROUT_SHARE_URL}
+          transparent
+        />
 
         <section className={`container ${styles.player}`}>
           <VideoPlayer episode={episode} embedded />
