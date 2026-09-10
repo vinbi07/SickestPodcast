@@ -34,7 +34,8 @@ const platformLinksOverrides: Record<number, PlatformLinks> = {
     applePodcasts:
       'https://podcasts.apple.com/us/podcast/ep-1-jason-mitchell-from-straight-outta-compton-to/id6809694464?i=1000788411292',
     youtube: 'https://youtu.be/VVE1Qv7Ghss',
-    amazonMusic: null,
+    amazonMusic:
+      'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/8b00470a-6abc-4ff1-9d20-f5b817b8340b/the-sickest-podcast-ep-1-jason-mitchell-from-straight-outta-compton-to-starting-over',
     rss: RSS_FEED_URL,
   },
 };

@@ -7,6 +7,6 @@ export const SHOW_PLATFORM_LINKS: PlatformLinks = {
   spotify: 'https://open.spotify.com/show/5CtLA7yWCqsroCeqPoDsgu',
   applePodcasts: 'https://podcasts.apple.com/us/podcast/the-sickest-podcast/id6809694464',
   youtube: 'https://www.youtube.com/@TheSickestPodcast',
-  amazonMusic: null,
+  amazonMusic: 'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/the-sickest-podcast',
   rss: RSS_FEED_URL,
 };
