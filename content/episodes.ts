@@ -59,6 +59,17 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'JM',
   },
   {
+    id: 17,
+    title: 'Alani Taylor: Designing Identity',
+    guest: 'Alani Taylor',
+    role: 'Celebrity Stylist · Fashion Designer',
+    category: 'Entertainment',
+    duration: '45 min',
+    description:
+      'Alani will talk about translating personal identity into wearable design, staying original under public pressure, and building a name in fashion.',
+    thumbnail: 'AT',
+  },
+  {
     id: 5,
     title: 'Rob Matwick: Building a World-Class Venue',
     guest: 'Rob Matwick',
@@ -81,17 +92,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'DS',
   },
   {
-    id: 17,
-    title: 'Alani Taylor: Designing Identity',
-    guest: 'Alani Taylor',
-    role: 'Celebrity Stylist · Fashion Designer',
-    category: 'Entertainment',
-    duration: '45 min',
-    description:
-      'Alani will talk about translating personal identity into wearable design, staying original under public pressure, and building a name in fashion.',
-    thumbnail: 'AT',
-  },
-  {
     id: 20,
     title: 'Dana Vaughns: Reinvention in Public',
     guest: 'Dana Vaughns',
@@ -103,15 +103,15 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'DV',
   },
   {
-    id: 22,
-    title: 'Dre in Dallas: What Happens When Being Yourself Goes Viral?',
-    guest: 'Keandre Dre Hopkins',
-    role: 'TikTok Food Creator',
-    category: 'Food & Luxury Lifestyle',
+    id: 21,
+    title: 'Vanita Krouch: Before the Olympics, There Was Us',
+    guest: 'Vanita Krouch',
+    role: 'Team USA iFlag QB',
+    category: 'Sports',
     duration: '45 min',
     description:
-      "TikTok star and food content creator with 1.6 million followers on @dreindallas, where he shares the foods he tries and glimpses of his life in Dallas, Texas. One of his videos, filmed during Crumbl's Olivia Rodrigo collab, has drawn over 20 million views.",
-    thumbnail: 'KH',
+      'One of the most decorated flag football players in the world and Team USA gold medal leader.',
+    thumbnail: 'VK',
   },
   {
     id: 23,
@@ -125,6 +125,17 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     thumbnail: 'BG',
   },
   {
+    id: 22,
+    title: 'Dre in Dallas: What Happens When Being Yourself Goes Viral?',
+    guest: 'Keandre Dre Hopkins',
+    role: 'TikTok Food Creator',
+    category: 'Food & Luxury Lifestyle',
+    duration: '45 min',
+    description:
+      "TikTok star and food content creator with 1.6 million followers on @dreindallas, where he shares the foods he tries and glimpses of his life in Dallas, Texas. One of his videos, filmed during Crumbl's Olivia Rodrigo collab, has drawn over 20 million views.",
+    thumbnail: 'KH',
+  },
+  {
     id: 24,
     title: 'Daven Gates: One Stop Chop Wasn\'t the Plan',
     guest: 'Daven Gates',
@@ -134,17 +145,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     description:
       'Self-taught home cook, veteran, and devoted dad from Queens, New York, known online as One Stop Chop. He learned to cook by shadowing his great-grandmother and now shares approachable comfort recipes on social media.',
     thumbnail: 'DG',
-  },
-  {
-    id: 21,
-    title: 'Vanita Krouch: Before the Olympics, There Was Us',
-    guest: 'Vanita Krouch',
-    role: 'Team USA iFlag QB',
-    category: 'Sports',
-    duration: '45 min',
-    description:
-      'One of the most decorated flag football players in the world and Team USA gold medal leader.',
-    thumbnail: 'VK',
   },
 ];
 

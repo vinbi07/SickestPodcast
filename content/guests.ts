@@ -23,14 +23,14 @@ interface RawGuest {
 
 const rawGuests: RawGuest[] = [
   { id: 10, name: 'Jason Mitchell', role: 'Actor', category: 'Entertainment', episodeId: 10, photo: jasonMitchellPhoto },
+  { id: 17, name: 'Alani Taylor', role: 'Celebrity Stylist · Fashion Designer', category: 'Entertainment', episodeId: 17, photo: alaniTaylorPhoto },
   { id: 5, name: 'Rob Matwick', role: 'SVP for the Texas Rangers', category: 'MLB', episodeId: 5, photo: robMatwickPhoto },
   { id: 6, name: 'Dother Sykes', role: 'Actor and stunt performer', category: 'Entertainment', episodeId: 6, photo: dotherSykesPhoto },
-  { id: 17, name: 'Alani Taylor', role: 'Celebrity Stylist · Fashion Designer', category: 'Entertainment', episodeId: 17, photo: alaniTaylorPhoto },
   { id: 20, name: 'Dana Vaughns', role: 'Singer · Dancer · Musician', category: 'Entertainment', episodeId: 20, photo: danaVaughnsPhoto },
-  { id: 22, name: 'Keandre Dre Hopkins', role: 'TikTok Food Creator', category: 'Food & Luxury Lifestyle', episodeId: 22, photo: keandreDreHopkinsPhoto },
-  { id: 23, name: 'Briana Green', role: 'Guard · Harlem Globetrotters', category: 'Sports', episodeId: 23, photo: brianaGreenPhoto },
-  { id: 24, name: 'Daven Gates', role: 'Chef · One Stop Chop', category: 'Food', episodeId: 24, photo: davenGatesPhoto },
   { id: 21, name: 'Vanita Krouch', role: 'Team USA iFlag QB', category: 'Sports', episodeId: 21, photo: vanitaKrouchPhoto },
+  { id: 23, name: 'Briana Green', role: 'Guard · Harlem Globetrotters', category: 'Sports', episodeId: 23, photo: brianaGreenPhoto },
+  { id: 22, name: 'Keandre Dre Hopkins', role: 'TikTok Food Creator', category: 'Food & Luxury Lifestyle', episodeId: 22, photo: keandreDreHopkinsPhoto },
+  { id: 24, name: 'Daven Gates', role: 'Chef · One Stop Chop', category: 'Food', episodeId: 24, photo: davenGatesPhoto },
 ];
 
 export const guests: Guest[] = rawGuests.map((guest, index) => {
