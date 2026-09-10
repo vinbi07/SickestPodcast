@@ -146,28 +146,6 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
       'One of the most decorated flag football players in the world and Team USA gold medal leader.',
     thumbnail: 'VK',
   },
-  {
-    id: 4,
-    title: 'Donovan Reta: Operating the Business of Sport',
-    guest: 'Donovan Reta',
-    role: 'SVP of Business Operations · Dallas Wings',
-    category: 'Executive',
-    duration: '44 min',
-    description:
-      'Donovan will unpack executive decision making, legal discipline, and how to align brand, fan experience, and revenue under one operating model.',
-    thumbnail: 'DR',
-  },
-  {
-    id: 11,
-    title: 'Mark Cuban: Building Influence Beyond Ownership',
-    guest: 'Mark Cuban',
-    role: 'Minority Owner · Dallas Mavericks',
-    category: 'Business',
-    duration: '53 min',
-    description:
-      'Mark will break down what minority ownership will teach about leverage, leadership, and making high-conviction investment decisions under pressure.',
-    thumbnail: 'MC',
-  },
 ];
 
 export const episodes: Episode[] = rawEpisodes.map((episode) => ({

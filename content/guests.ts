@@ -1,8 +1,6 @@
-import donovanRetaPhoto from '../assets/guests/DonovanReta.jpeg';
 import robMatwickPhoto from '../assets/guests/RobMatwick.jpg';
 import dotherSykesPhoto from '../assets/guests/DotherSykes.jpg';
 import jasonMitchellPhoto from '../assets/guests/JasonMitchell.webp';
-import markCubanPhoto from '../assets/guests/MarkCuban.png';
 import alaniTaylorPhoto from '../assets/guests/AlaniTaylor.png';
 import danaVaughnsPhoto from '../assets/guests/DanaVaughns.jpg';
 import vanitaKrouchPhoto from '../assets/guests/VanitaKrouch.webp';
@@ -33,8 +31,6 @@ const rawGuests: RawGuest[] = [
   { id: 23, name: 'Briana Green', role: 'Guard · Harlem Globetrotters', category: 'Sports', episodeId: 23, photo: brianaGreenPhoto },
   { id: 24, name: 'Daven Gates', role: 'Chef · One Stop Chop', category: 'Food', episodeId: 24, photo: davenGatesPhoto },
   { id: 21, name: 'Vanita Krouch', role: 'Team USA iFlag QB', category: 'Sports', episodeId: 21, photo: vanitaKrouchPhoto },
-  { id: 4, name: 'Donovan Reta', role: 'SVP of Business Operations for the Dallas Wings', category: 'Executive', episodeId: 4, photo: donovanRetaPhoto },
-  { id: 11, name: 'Mark Cuban', role: 'Minority owner of the Dallas Mavericks and investor', category: 'Business', episodeId: 11, photo: markCubanPhoto },
 ];
 
 export const guests: Guest[] = rawGuests.map((guest, index) => {
