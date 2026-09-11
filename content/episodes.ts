@@ -61,7 +61,7 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
   },
   {
     id: 17,
-    title: 'Alani Taylor: Designing Identity',
+    title: 'Alani Taylor: From the Army to Beyoncé',
     guest: 'Alani Taylor',
     role: 'Celebrity Stylist · Fashion Designer',
     category: 'Entertainment',
