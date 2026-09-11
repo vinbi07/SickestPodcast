@@ -52,6 +52,10 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
   // is Episode 1 / featured), not a fixed array position.
   const featuredEpisode =
     episodes.find((episode) => episode.slug === guests[0]?.episodeSlug) ?? episodes[0];
+  // Hero spotlights Alani Taylor's episode specifically, independent of the
+  // featured episode shown in the FeaturedEpisode section below.
+  const heroEpisode =
+    episodes.find((episode) => episode.guestSlug === 'alani-taylor') ?? featuredEpisode;
   const gridEpisodes = useMemo(
     () => episodes.filter((episode) => episode.id !== featuredEpisode.id),
     [episodes, featuredEpisode.id],
@@ -84,7 +88,7 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
         <Hero
           titleLines={["THE", "SICKEST", "PODCAST"]}
           subtitle="Real interviews with the underdogs, athletes, and executives who were not supposed to win."
-          currentEpisode={featuredEpisode}
+          currentEpisode={heroEpisode}
           stats={heroStats}
           onPlay={setActiveEpisode}
         />

@@ -6,11 +6,11 @@ import styles from './AnnouncementBanner.module.css';
 import { TIMING, useMotionPreference } from '../motion/presets';
 
 // TODO(copy): replace with final announcement copy.
-const BANNER_MESSAGE = 'Episode 1 Drops In —';
+const BANNER_MESSAGE = 'Episode 2 Drops In —';
 
 // No timezone suffix: parsed as local browser time, per spec.
-const COUNTDOWN_TARGET_ISO = '2026-09-08T00:00:00';
-const DISMISS_KEY = 'sp_announcement_dismissed_v1';
+const COUNTDOWN_TARGET_ISO = '2026-09-15T00:00:00';
+const DISMISS_KEY = 'sp_announcement_dismissed_v2';
 const TICK_MS = 1000;
 
 interface TimeLeft {

@@ -13,9 +13,10 @@ const dateOverrides: Record<number, string> = {
   10: 'Sept 8',
 };
 
-const thumbnailOverrides: Record<number, StaticImageData> = {
+const thumbnailOverrides: Record<number, StaticImageData | string> = {
   5: robMatwickThumb,
   10: jasonMitchellThumb,
+  17: '/AlaniThumbnail.png',
 };
 
 // Episode 1 (Jason Mitchell) is live as of Sept 8 — real video and platform
@@ -65,7 +66,7 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     guest: 'Alani Taylor',
     role: 'Celebrity Stylist · Fashion Designer',
     category: 'Entertainment',
-    duration: '45 min',
+    duration: '54 min',
     description:
       'Alani will talk about translating personal identity into wearable design, staying original under public pressure, and building a name in fashion.',
     thumbnail: 'AT',
