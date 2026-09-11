@@ -51,6 +51,7 @@ export default function VideoPlayer({ episode, embedded = true }: VideoPlayerPro
             src={episode.thumbnailImage}
             alt={title}
             fill
+            sizes="100vw"
             className={styles.thumbnailImg}
           />
         ) : null}

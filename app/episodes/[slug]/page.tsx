@@ -10,6 +10,7 @@ import { footerColumns, FOOTER_TAGLINE } from '../../../content/footer';
 import { BUZZSPROUT_SHARE_URL } from '../../../content/links';
 import { episodeNumberLabel, primaryListenHref, statusLabel } from '../../../lib/episode-status';
 import { buildMetadata } from '../../../lib/metadata';
+import { buildBreadcrumbJsonLd, buildPodcastEpisodeJsonLd } from '../../../lib/structured-data';
 import { SITE_NAME } from '../../../content/site';
 import styles from './page.module.css';
 
@@ -51,8 +52,23 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
     notFound();
   }
 
+  const episodeJsonLd = buildPodcastEpisodeJsonLd(episode);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Episodes', path: '/episodes' },
+    { name: episode.title, path: `/episodes/${episode.slug}` },
+  ]);
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeJsonLd).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }}
+      />
       <Navbar
         brand={{ prefix: 'THE', highlight: 'SICKEST', suffix: 'PODCAST' }}
         links={[

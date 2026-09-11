@@ -1,0 +1,11 @@
+{
+  "name": "The Sickest Podcast",
+  "short_name": "Sickest Podcast",
+  "icons": [
+    { "src": "/SickFitLogo.png", "sizes": "any", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#e72027",
+  "background_color": "#0f0d0a",
+  "display": "standalone"
+}

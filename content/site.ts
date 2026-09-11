@@ -1,5 +1,5 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sickest-podcast.sickfitofficial.com';
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://thesickestpodcast.com';
 
 export const SITE_NAME = 'The Sickest Podcast';
 

@@ -36,6 +36,7 @@ export default function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProp
             src={episode.thumbnailImage}
             alt={episode.guest}
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className={styles.visualImg}
           />
         ) : (

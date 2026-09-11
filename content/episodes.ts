@@ -1,6 +1,6 @@
 import type { StaticImageData } from 'next/image';
 import { slugify } from '../lib/slugify';
-import type { Episode, EpisodeStatus, PlatformLinks } from './types';
+import type { Episode, EpisodeSeo, EpisodeStatus, PlatformLinks } from './types';
 import { RSS_FEED_URL } from './links';
 import robMatwickThumb from '../assets/guests/Rob Matwick_7.jpg';
 import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
@@ -27,6 +27,58 @@ const statusOverrides: Record<number, EpisodeStatus> = {
 
 const videoUrlOverrides: Record<number, string> = {
   10: 'https://youtu.be/VVE1Qv7Ghss',
+};
+
+// Search-snippet-friendly title/description per episode, derived from the
+// existing guest/role/description copy above (kept ≤60/≤160 chars). These
+// only affect <title>/meta description/OG tags via buildMetadata() — the
+// visible page copy (episode.title/description) is untouched.
+const seoOverrides: Record<number, EpisodeSeo> = {
+  10: {
+    title: 'Jason Mitchell on The Sickest Podcast | Actor Interview',
+    description:
+      'Actor Jason Mitchell joins The Sickest Podcast to talk pressure, preparation, and performing when the spotlight is brightest.',
+  },
+  17: {
+    title: 'Alani Taylor on The Sickest Podcast | Stylist Interview',
+    description:
+      'Celebrity stylist and fashion designer Alani Taylor talks identity, originality, and building a name in fashion on The Sickest Podcast.',
+  },
+  5: {
+    title: 'Rob Matwick on The Sickest Podcast | Texas Rangers SVP',
+    description:
+      'Texas Rangers SVP Rob Matwick joins The Sickest Podcast to discuss venue infrastructure, fan economics, and scaling a franchise.',
+  },
+  6: {
+    title: 'Dother Sykes on The Sickest Podcast | Stunt Performer',
+    description:
+      'Actor and stunt performer Dother Sykes talks discipline, set leadership, and performing safely under pressure on The Sickest Podcast.',
+  },
+  20: {
+    title: 'Dana Vaughns on The Sickest Podcast | Musician Interview',
+    description:
+      'Singer, dancer, and musician Dana Vaughns joins The Sickest Podcast to talk reinvention and building a career in entertainment.',
+  },
+  21: {
+    title: 'Vanita Krouch on The Sickest Podcast | Team USA QB',
+    description:
+      'Team USA flag football QB and gold medalist Vanita Krouch joins The Sickest Podcast to talk the road before the wins.',
+  },
+  23: {
+    title: 'Briana Green on The Sickest Podcast | Globetrotters',
+    description:
+      'Harlem Globetrotters guard Briana Green joins The Sickest Podcast to talk trick shots, team legacy, and her path to the pros.',
+  },
+  22: {
+    title: 'Dre in Dallas on The Sickest Podcast | Food Creator',
+    description:
+      'TikTok food creator Keandre "Dre" Hopkins joins The Sickest Podcast to talk going viral and building a following in Dallas.',
+  },
+  24: {
+    title: 'Daven Gates on The Sickest Podcast | Chef Interview',
+    description:
+      'Chef Daven Gates, known online as One Stop Chop, joins The Sickest Podcast to talk cooking, family, and building an audience.',
+  },
 };
 
 const platformLinksOverrides: Record<number, PlatformLinks> = {
@@ -162,7 +214,7 @@ export const episodes: Episode[] = rawEpisodes.map((episode) => ({
   date: dateOverrides[episode.id] ?? null,
   videoUrl: videoUrlOverrides[episode.id] ?? null,
   thumbnailImage: thumbnailOverrides[episode.id] ?? null,
-  seo: {},
+  seo: seoOverrides[episode.id] ?? {},
   platformLinks: platformLinksOverrides[episode.id] ?? {},
   chapters: null,
   transcript: null,

@@ -10,3 +10,12 @@ export const SHOW_PLATFORM_LINKS: PlatformLinks = {
   amazonMusic: 'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/the-sickest-podcast',
   rss: RSS_FEED_URL,
 };
+
+// Mirrors the social links rendered in components/Hero.tsx — kept here too so
+// structured data (Organization "sameAs") can reuse the same URLs.
+export const SOCIAL_LINKS = {
+  instagram: 'https://www.instagram.com/thesickestpod?utm_source=qr',
+  tiktok: 'https://www.tiktok.com/@thesickestpod',
+  linkedin: 'https://www.linkedin.com/in/paden-sickles/',
+  youtube: 'https://www.youtube.com/@TheSickestPodcast',
+};

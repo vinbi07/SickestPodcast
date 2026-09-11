@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'sickest-podcast.vercel.app' }],
-        destination: 'https://sickest-podcast.sickfitofficial.com/:path*',
+        destination: 'https://thesickestpodcast.com/:path*',
         permanent: true,
       },
     ];

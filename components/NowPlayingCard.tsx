@@ -24,6 +24,7 @@ export default function NowPlayingCard({ episode, onPlay }: NowPlayingCardProps)
               src={episode.thumbnailImage}
               alt={episode.guest}
               fill
+              sizes="(min-width: 1024px) 420px, 100vw"
               className={styles.visualImg}
             />
           ) : (
