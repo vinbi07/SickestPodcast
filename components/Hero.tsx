@@ -22,6 +22,7 @@ import {
 } from '../motion/presets';
 import type { Episode, PlatformLinks } from '../content/types';
 import { ctaLabel, episodeNumberLabel, isPlayable, primaryEpisodeHref } from '../lib/episode-status';
+import { SHOW_PLATFORM_LINKS } from '../content/links';
 
 const socialLinks = [
   { label: 'Instagram', href: 'https://www.instagram.com/thesickestpod?utm_source=qr', Icon: InstagramIcon },
@@ -206,7 +207,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
           <div className={styles.platformsLabel}>Listen On</div>
           <motion.div className={styles.platformsColumn}>
             {rightPlatforms.map((platform, idx) => {
-              const link = currentEpisode.platformLinks[platform.key];
+              const link = currentEpisode.platformLinks[platform.key] ?? SHOW_PLATFORM_LINKS[platform.key];
               const IconComponent = platform.type === 'component' ? (platform.icon as typeof YoutubeIcon) : null;
 
               const iconEl = IconComponent ? (
