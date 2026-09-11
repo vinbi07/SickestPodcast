@@ -65,8 +65,7 @@ export default function Platforms({ platformLinks, morePlatformsHref, transparen
               ) : (
                 <img
                   src={(platform.icon as StaticImageData).src}
-                  alt=""
-                  aria-hidden="true"
+                  alt={platform.label}
                 />
               );
 
@@ -80,7 +79,7 @@ export default function Platforms({ platformLinks, morePlatformsHref, transparen
                   rel="noreferrer"
                 >
                   {icon}
-                  <span>{platform.label}</span>
+                  <span aria-hidden="true">{platform.label}</span>
                 </a>
               );
             }

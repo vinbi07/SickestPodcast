@@ -213,7 +213,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
               const iconEl = IconComponent ? (
                 <IconComponent size={22} color={platform.color} />
               ) : (
-                <img src={(platform.icon as StaticImageData).src} alt="" aria-hidden="true" />
+                <img src={(platform.icon as StaticImageData).src} alt={platform.label} />
               );
 
               if (link) {
@@ -232,7 +232,7 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
                     <motion.div className={styles.platformIcon} initial="rest" whileHover="hover" variants={hoverRotateVariants}>
                       {iconEl}
                     </motion.div>
-                    <span className={styles.platformText}>{platform.label}</span>
+                    <span className={styles.platformText} aria-hidden="true">{platform.label}</span>
                   </motion.a>
                 );
               }
