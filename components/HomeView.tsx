@@ -15,6 +15,7 @@ import Footer from "./Footer";
 import VideoModal from "./VideoModal";
 import { footerColumns, FOOTER_TAGLINE } from "../content/footer";
 import { BUZZSPROUT_SHARE_URL, SHOW_PLATFORM_LINKS } from "../content/links";
+import { FEATURED_GUEST_SLUG } from "../content/episodes";
 import { host } from "../content/host";
 import { primaryListenHref } from "../lib/episode-status";
 import type { Episode, Guest } from "../content/types";
@@ -48,10 +49,10 @@ interface HomeViewProps {
 
 export default function HomeView({ episodes, guests }: HomeViewProps) {
   const [activeEpisode, setActiveEpisode] = useState<Episode | null>(null);
-  // Featured episode follows guest display order (first guest in `content/guests.ts`
-  // is Episode 1 / featured), not a fixed array position.
+  // Featured episode is an explicit flag (`FEATURED_GUEST_SLUG`), independent
+  // of episode order/number.
   const featuredEpisode =
-    episodes.find((episode) => episode.slug === guests[0]?.episodeSlug) ?? episodes[0];
+    episodes.find((episode) => episode.guestSlug === FEATURED_GUEST_SLUG) ?? episodes[0];
   // Hero spotlights Alani Taylor's episode specifically, independent of the
   // featured episode shown in the FeaturedEpisode section below.
   const heroEpisode =

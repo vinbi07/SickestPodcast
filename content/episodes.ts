@@ -5,12 +5,17 @@ import { RSS_FEED_URL } from './links';
 import robMatwickThumb from '../assets/guests/Rob Matwick_7.jpg';
 import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
 
+// Which guest's episode is shown as "Featured" on the homepage. This is an
+// explicit, independent flag — it does not follow episode order/number.
+export const FEATURED_GUEST_SLUG = 'alani-taylor';
+
 // Episodes with a confirmed release date and an on-set photo to use as the
 // video thumbnail while the real video is not published yet. Keyed by
 // episode `id`. Everything else stays fully "upcoming" (no date, no image).
 const dateOverrides: Record<number, string> = {
   5: 'Sept 8',
   10: 'Sept 8',
+  17: 'Sept 15',
 };
 
 const thumbnailOverrides: Record<number, StaticImageData | string> = {
@@ -19,14 +24,17 @@ const thumbnailOverrides: Record<number, StaticImageData | string> = {
   17: '/AlaniThumbnail.png',
 };
 
-// Episode 1 (Jason Mitchell) is live as of Sept 8 — real video and platform
-// links. Everything else stays "upcoming" with no fabricated links.
+// Jason Mitchell (Sept 8) and Alani Taylor (Sept 15) are live — real video
+// and platform links. Everything else stays "upcoming" with no fabricated
+// links.
 const statusOverrides: Record<number, EpisodeStatus> = {
   10: 'released',
+  17: 'released',
 };
 
 const videoUrlOverrides: Record<number, string> = {
   10: 'https://youtu.be/VVE1Qv7Ghss',
+  17: 'https://youtu.be/KXzoPDIlyc0?si=mg5bMEni8Cwd-vO3',
 };
 
 // Search-snippet-friendly title/description per episode, derived from the
@@ -89,6 +97,14 @@ const platformLinksOverrides: Record<number, PlatformLinks> = {
     youtube: 'https://youtu.be/VVE1Qv7Ghss',
     amazonMusic:
       'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/8b00470a-6abc-4ff1-9d20-f5b817b8340b/the-sickest-podcast-ep-1-jason-mitchell-from-straight-outta-compton-to-starting-over',
+    rss: RSS_FEED_URL,
+  },
+  17: {
+    spotify: 'https://open.spotify.com/episode/41vSkbEZkKbPJwYNzf5loV?si=258cfc40c1cd47c5',
+    applePodcasts:
+      'https://podcasts.apple.com/us/podcast/alani-taylor-from-the-army-to-beyonc%C3%A9/id6809694464?i=1000789708895',
+    youtube: 'https://youtu.be/KXzoPDIlyc0?si=mg5bMEni8Cwd-vO3',
+    amazonMusic: 'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/the-sickest-podcast',
     rss: RSS_FEED_URL,
   },
 };
