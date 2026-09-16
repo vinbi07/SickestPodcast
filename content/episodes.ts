@@ -185,7 +185,7 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
   },
   {
     id: 23,
-    title: 'Briana Green: Trick Shots and Team Legacy',
+    title: 'Briana Green: More Than a Globetrotter',
     guest: 'Briana Green',
     role: 'Guard · Harlem Globetrotters',
     category: 'Sports',

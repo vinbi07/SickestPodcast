@@ -57,11 +57,6 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
   // featured episode shown in the FeaturedEpisode section below.
   const heroEpisode =
     episodes.find((episode) => episode.guestSlug === 'alani-taylor') ?? featuredEpisode;
-  const gridEpisodes = useMemo(
-    () => episodes.filter((episode) => episode.id !== featuredEpisode.id),
-    [episodes, featuredEpisode.id],
-  );
-
   const heroStats = useMemo(
     () => [
       { value: guests.length, label: "Season 1 Guests" },
@@ -116,7 +111,7 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
         <FeaturedEpisode episode={featuredEpisode} onPlay={setActiveEpisode} />
         <Platforms platformLinks={SHOW_PLATFORM_LINKS} morePlatformsHref={BUZZSPROUT_SHARE_URL} />
         <Guests guests={guests} />
-        <Episodes episodes={gridEpisodes} onPlay={setActiveEpisode} />
+        <Episodes episodes={episodes} onPlay={setActiveEpisode} />
 
         <About
           quote="People who had to earn every room they walked into."
