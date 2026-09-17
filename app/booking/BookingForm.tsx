@@ -1,8 +1,8 @@
 'use client';
 
-import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   BOOKING_TYPE_LABELS,
   BOOKING_TYPE_OPTIONS,
@@ -20,13 +20,10 @@ function BookingFormInner({ initialType: initialTypeProp }: BookingFormInnerProp
   const bookingEndpoint = process.env.NEXT_PUBLIC_BOOKING_ENDPOINT;
   const pathname = usePathname();
   const router = useRouter();
-  const searchParams = useSearchParams();
   const formRef = useRef<HTMLFormElement>(null);
   const mountedAtRef = useRef(Date.now());
 
-  const serviceTypeFromQuery = searchParams.get('type');
-  const initialType =
-    initialTypeProp ?? (isValidBookingType(serviceTypeFromQuery) ? serviceTypeFromQuery : DEFAULT_BOOKING_TYPE);
+  const initialType = initialTypeProp ?? DEFAULT_BOOKING_TYPE;
 
   const [formValues, setFormValues] = useState({
     serviceType: initialType,
@@ -144,7 +141,7 @@ function BookingFormInner({ initialType: initialTypeProp }: BookingFormInnerProp
       payload.set('eventDate', formValues.eventDate.trim());
       payload.set('timeframe', formValues.timeframe.trim());
       payload.set('message', formValues.message.trim());
-      payload.set('sourcePath', `${pathname}?${searchParams.toString()}`);
+      payload.set('sourcePath', pathname);
 
       const response = await fetch(bookingEndpoint, {
         method: 'POST',
@@ -293,9 +290,5 @@ function BookingFormInner({ initialType: initialTypeProp }: BookingFormInnerProp
 }
 
 export default function BookingForm({ initialType }: BookingFormInnerProps = {}) {
-  return (
-    <Suspense fallback={null}>
-      <BookingFormInner initialType={initialType} />
-    </Suspense>
-  );
+  return <BookingFormInner initialType={initialType} />;
 }
