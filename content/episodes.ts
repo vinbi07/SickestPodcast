@@ -13,7 +13,7 @@ export const FEATURED_GUEST_SLUG = 'alani-taylor';
 // video thumbnail while the real video is not published yet. Keyed by
 // episode `id`. Everything else stays fully "upcoming" (no date, no image).
 const dateOverrides: Record<number, string> = {
-  5: 'Sept 8',
+  5: 'Sept 22',
   10: 'Sept 8',
   17: 'Sept 15',
 };
@@ -141,7 +141,7 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
   },
   {
     id: 5,
-    title: 'Rob Matwick: Building a World-Class Venue',
+    title: 'Rob Matwick: The Man Behind a $1.2 Billion Ballpark',
     guest: 'Rob Matwick',
     role: 'SVP · Texas Rangers',
     category: 'MLB',

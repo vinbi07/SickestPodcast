@@ -53,10 +53,10 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
   // of episode order/number.
   const featuredEpisode =
     episodes.find((episode) => episode.guestSlug === FEATURED_GUEST_SLUG) ?? episodes[0];
-  // Hero spotlights Alani Taylor's episode specifically, independent of the
-  // featured episode shown in the FeaturedEpisode section below.
+  // Hero spotlights Rob Matwick's episode (releasing Sept 22), independent of
+  // the featured episode shown in the FeaturedEpisode section below.
   const heroEpisode =
-    episodes.find((episode) => episode.guestSlug === 'alani-taylor') ?? featuredEpisode;
+    episodes.find((episode) => episode.guestSlug === 'rob-matwick') ?? featuredEpisode;
   const heroStats = useMemo(
     () => [
       { value: guests.length, label: "Season 1 Guests" },
