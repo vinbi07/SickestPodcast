@@ -135,6 +135,35 @@
   .filters {
     display: none;
   }
+
+  /* Mobile order: title, playlist embed, category filter, then the grid. */
+  .inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inner > * {
+    order: 3;
+  }
+
+  .head {
+    display: contents;
+  }
+
+  .head h2 {
+    order: 0;
+    margin-bottom: 16px;
+  }
+
+  .inner > .playlist {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .head .mobileFilter {
+    order: 2;
+    margin-bottom: 28px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -169,3 +198,7 @@
   }
 }
 
+
+.playlist {
+  margin-bottom: 40px;
+}

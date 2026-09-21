@@ -1,0 +1,24 @@
+.section {
+  background: var(--w);
+  border-bottom: 1px solid var(--bd);
+  padding: 42px 0;
+}
+
+.section.transparent {
+  background: transparent;
+  border-bottom: none;
+  padding: 0 0 42px;
+}
+
+.heading {
+  margin: 0 0 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.5rem;
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}

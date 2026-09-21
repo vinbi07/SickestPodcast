@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import EpisodeCard from './EpisodeCard';
+import TransistorEmbed from './TransistorEmbed';
 import styles from './Episodes.module.css';
 import { staggerContainerVariants, hoverScaleVariants, TIMING } from '../motion/presets';
 import type { Episode } from '../content/types';
@@ -77,6 +78,7 @@ export default function Episodes({ episodes, onPlay }: EpisodesProps) {
   return (
     <section className={styles.section} id="episodes">
       <div className="container">
+        <div className={styles.inner}>
         <div className={styles.head}>
           <h2>All Episodes</h2>
           <div className={styles.mobileFilter} ref={categoryMenuRef}>
@@ -176,6 +178,10 @@ export default function Episodes({ episodes, onPlay }: EpisodesProps) {
           </motion.div>
         </div>
 
+        <div className={styles.playlist}>
+          <TransistorEmbed variant="playlist" inline />
+        </div>
+
         <motion.div
           className={styles.grid}
           initial="hidden"
@@ -219,6 +225,7 @@ export default function Episodes({ episodes, onPlay }: EpisodesProps) {
             </motion.button>
           </motion.div>
         ) : null}
+        </div>
       </div>
     </section>
   );

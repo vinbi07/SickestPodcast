@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import EpisodeCard from './EpisodeCard';
 import VideoModal from './VideoModal';
+import TransistorEmbed from './TransistorEmbed';
 import styles from './EpisodeArchiveView.module.css';
 import type { Episode } from '../content/types';
 
@@ -74,6 +75,8 @@ export default function EpisodeArchiveView({ episodes }: EpisodeArchiveViewProps
           </p>
         )}
       </div>
+
+      <TransistorEmbed variant="playlist" heading="Listen to the playlist" transparent />
 
       <AnimatePresence>
         {activeEpisode && <VideoModal episode={activeEpisode} onClose={() => setActiveEpisode(null)} />}

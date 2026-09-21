@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './FeaturedEpisode.module.css';
+import TransistorEmbed from './TransistorEmbed';
 import {
   staggerContainerVariants,
   staggerItemVariants,
@@ -112,6 +113,12 @@ export default function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProp
               View Details<span className="sr-only"> — {episode.guest}&apos;s episode</span>
             </Link>
           </motion.div>
+        </motion.div>
+        <motion.div className={styles.embed} variants={staggerItemVariants}>
+          <div className={styles.embedLabel}>Latest episode</div>
+          <div className={styles.embedFrame}>
+            <TransistorEmbed variant="latest" inline />
+          </div>
         </motion.div>
       </motion.div>
     </motion.section>
