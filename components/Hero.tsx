@@ -21,8 +21,8 @@ import {
   TIMING,
 } from '../motion/presets';
 import type { Episode, PlatformLinks } from '../content/types';
-import { ctaLabel, episodeNumberLabel, isPlayable, primaryEpisodeHref } from '../lib/episode-status';
-import { SHOW_PLATFORM_LINKS } from '../content/links';
+import { episodeNumberLabel, isPlayable, primaryEpisodeHref } from '../lib/episode-status';
+import { LINKTREE_URL, SHOW_PLATFORM_LINKS } from '../content/links';
 
 const socialLinks = [
   { label: 'Instagram', href: 'https://www.instagram.com/thesickestpod?utm_source=qr', Icon: InstagramIcon },
@@ -137,9 +137,9 @@ export default function Hero({ titleLines, subtitle, currentEpisode, stats, onPl
               </motion.button>
             ) : (
               <motion.div variants={staggerItemVariants} initial="rest" animate="visible" custom={0}>
-                <Link href={primaryEpisodeHref(currentEpisode)} className={styles.play}>
-                  {ctaLabel(currentEpisode)}
-                </Link>
+                <a href={LINKTREE_URL} className={styles.play} target="_blank" rel="noreferrer">
+                  Listen Now
+                </a>
               </motion.div>
             )}
             <motion.a
