@@ -53,10 +53,9 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
   // of episode order/number.
   const featuredEpisode =
     episodes.find((episode) => episode.guestSlug === FEATURED_GUEST_SLUG) ?? episodes[0];
-  // Hero spotlights Rob Matwick's episode (releasing Sept 22), independent of
-  // the featured episode shown in the FeaturedEpisode section below.
-  const heroEpisode =
-    episodes.find((episode) => episode.guestSlug === 'rob-matwick') ?? featuredEpisode;
+  // Hero and Featured Episode both spotlight the current featured episode
+  // (FEATURED_GUEST_SLUG).
+  const heroEpisode = featuredEpisode;
   const heroStats = useMemo(
     () => [
       { value: guests.length, label: "Season 1 Guests" },

@@ -7,7 +7,7 @@ import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
 
 // Which guest's episode is shown as "Featured" on the homepage. This is an
 // explicit, independent flag — it does not follow episode order/number.
-export const FEATURED_GUEST_SLUG = 'alani-taylor';
+export const FEATURED_GUEST_SLUG = 'rob-matwick';
 
 // Episodes with a confirmed release date and an on-set photo to use as the
 // video thumbnail while the real video is not published yet. Keyed by
@@ -24,15 +24,17 @@ const thumbnailOverrides: Record<number, StaticImageData | string> = {
   17: '/AlaniThumbnail.png',
 };
 
-// Jason Mitchell (Sept 8) and Alani Taylor (Sept 15) are live — real video
-// and platform links. Everything else stays "upcoming" with no fabricated
-// links.
+// Jason Mitchell (Sept 8), Alani Taylor (Sept 15), and Rob Matwick (Sept 22)
+// are live — real video and platform links. Everything else stays "upcoming"
+// with no fabricated links.
 const statusOverrides: Record<number, EpisodeStatus> = {
+  5: 'released',
   10: 'released',
   17: 'released',
 };
 
 const videoUrlOverrides: Record<number, string> = {
+  5: 'https://www.youtube.com/watch?v=MU9shBypJqs',
   10: 'https://youtu.be/VVE1Qv7Ghss',
   17: 'https://youtu.be/KXzoPDIlyc0?si=mg5bMEni8Cwd-vO3',
 };
@@ -105,6 +107,15 @@ const platformLinksOverrides: Record<number, PlatformLinks> = {
       'https://podcasts.apple.com/us/podcast/alani-taylor-from-the-army-to-beyonc%C3%A9/id6809694464?i=1000789708895',
     youtube: 'https://youtu.be/KXzoPDIlyc0?si=mg5bMEni8Cwd-vO3',
     amazonMusic: 'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/the-sickest-podcast',
+    rss: RSS_FEED_URL,
+  },
+  5: {
+    spotify: 'https://open.spotify.com/episode/2KtrR4YbHRDoEKHHJBHOgM',
+    applePodcasts:
+      'https://podcasts.apple.com/us/podcast/rob-matwick-the-man-behind-a-%241-2-billion-ballpark/id6809694464?i=1000791041909',
+    youtube: 'https://www.youtube.com/watch?v=MU9shBypJqs',
+    amazonMusic:
+      'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/f7eae00d-2e9c-4708-9c68-5b219d9a2f4c/the-sickest-podcast-rob-matwick-the-man-behind-a-1-2-billion-ballpark',
     rss: RSS_FEED_URL,
   },
 };
