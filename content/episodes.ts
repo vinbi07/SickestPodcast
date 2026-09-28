@@ -163,7 +163,7 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
   },
   {
     id: 6,
-    title: 'Dother Sykes: Precision Under Pressure',
+    title: 'Dother Sykes: From Shreveport to Stunts & Sinners',
     guest: 'Dother Sykes',
     role: 'Actor · Stunt Performer',
     category: 'Entertainment',
