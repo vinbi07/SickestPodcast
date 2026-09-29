@@ -7,6 +7,7 @@ import vanitaKrouchPhoto from '../assets/guests/VanitaKrouch.webp';
 import keandreDreHopkinsPhoto from '../assets/guests/KeandreDreHopkins.png';
 import brianaGreenPhoto from '../assets/guests/BrianaGreen.png';
 import davenGatesPhoto from '../assets/guests/DavenGates.png';
+import charlieLeeAdamsJrPhoto from '../public/charlieLeeJrImage.png';
 import type { StaticImageData } from 'next/image';
 import { slugify } from '../lib/slugify';
 import { episodes } from './episodes';
@@ -31,6 +32,7 @@ const rawGuests: RawGuest[] = [
   { id: 23, name: 'Briana Green', role: 'Guard · Harlem Globetrotters', category: 'Sports', episodeId: 23, photo: brianaGreenPhoto },
   { id: 22, name: 'Keandre Dre Hopkins', role: 'TikTok Food Creator', category: 'Food & Luxury Lifestyle', episodeId: 22, photo: keandreDreHopkinsPhoto },
   { id: 24, name: 'Daven Gates', role: 'Chef · One Stop Chop', category: 'Food', episodeId: 24, photo: davenGatesPhoto },
+  { id: 25, name: 'Charlie Lee Adams Jr.', role: 'Comedian', category: 'Entertainment', episodeId: 25, photo: charlieLeeAdamsJrPhoto },
 ];
 
 export const guests: Guest[] = rawGuests.map((guest, index) => {

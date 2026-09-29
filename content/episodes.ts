@@ -93,6 +93,11 @@ const seoOverrides: Record<number, EpisodeSeo> = {
     description:
       'Chef Daven Gates, known online as One Stop Chop, joins The Sickest Podcast to talk cooking, family, and building an audience.',
   },
+  25: {
+    title: 'Charlie Lee Adams Jr. on The Sickest Podcast | Comedian',
+    description:
+      'Comedian and Navy veteran Charlie Lee Adams Jr. joins The Sickest Podcast to talk turning military life and beyond into comedy.',
+  },
 };
 
 const platformLinksOverrides: Record<number, PlatformLinks> = {
@@ -239,6 +244,17 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     description:
       'Self-taught home cook, veteran, and devoted dad from Queens, New York, known online as One Stop Chop. He learned to cook by shadowing his great-grandmother and now shares approachable comfort recipes on social media.',
     thumbnail: 'DG',
+  },
+  {
+    id: 25,
+    title: 'Charlie Lee Adams Jr.: Finding the Funny After the Navy',
+    guest: 'Charlie Lee Adams Jr.',
+    role: 'Comedian',
+    category: 'Entertainment',
+    duration: '45 min',
+    description:
+      'Comedian and U.S. Navy veteran Charlie Lee Adams Jr. brings humor, real-life experiences, and his unique perspective to the stage, turning stories from military life and beyond into comedy.',
+    thumbnail: 'CA',
   },
 ];
 
