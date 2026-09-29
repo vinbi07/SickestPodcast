@@ -10,6 +10,7 @@ import Guests from "./Guests";
 import Episodes from "./Episodes";
 import About from "./About";
 import HostSection from "./HostSection";
+import PartyCta from "./PartyCta";
 import Platforms from "./Platforms";
 import Footer from "./Footer";
 import VideoModal from "./VideoModal";
@@ -73,6 +74,7 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
           { label: "Episodes", href: "/episodes" },
           { label: "Guests", href: "#guests" },
           { label: "About", href: "#about" },
+          { label: "Party", href: "/end-of-season-party" },
           { label: "Watch", href: "/episodes" },
         ]}
         bookHref="/booking/keynote"
@@ -119,6 +121,8 @@ export default function HomeView({ episodes, guests }: HomeViewProps) {
           pillars={pillars}
           bookHref="/booking/speaking"
         />
+
+        <PartyCta />
 
         <HostSection
           host={host}

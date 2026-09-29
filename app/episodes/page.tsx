@@ -23,6 +23,7 @@ export default function EpisodesArchivePage() {
           { label: 'Episodes', href: '/episodes' },
           { label: 'Guests', href: '/#guests' },
           { label: 'About', href: '/#about' },
+          { label: 'Party', href: '/end-of-season-party' },
         ]}
         bookHref="/booking/keynote"
         listenHref={primaryListenHref()}

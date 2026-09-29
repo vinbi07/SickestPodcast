@@ -1,0 +1,241 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #090909;
+  border-bottom: 1px solid var(--bd);
+  color: #fff;
+}
+
+.videoBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.videoBg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(192, 16, 42, 0.34), transparent 46%),
+    radial-gradient(circle at 88% 92%, rgba(192, 16, 42, 0.18), transparent 40%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.78) 60%, rgba(9, 9, 9, 0.96) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  padding: 48px 0 52px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  font-size: 0.62rem;
+}
+
+.tag span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 4px rgba(231, 32, 39, 0.18);
+}
+
+.title {
+  margin: 18px 0 0;
+  display: grid;
+  gap: 6px;
+  font-weight: 400;
+}
+
+.kicker {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.25rem, 4.4vw, 1.9rem);
+  letter-spacing: 0.24em;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.6rem, 15vw, 9rem);
+  line-height: 0.86;
+  letter-spacing: 0.03em;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+.headline em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.subtitle {
+  margin: 18px 0 0;
+  max-width: 520px;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 3.6vw, 1.5rem);
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.ticket {
+  margin: 30px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(6px);
+  max-width: 880px;
+}
+
+.stub {
+  padding: 16px 18px;
+  min-width: 0;
+}
+
+.stub + .stub {
+  border-left: 1px dashed rgba(255, 255, 255, 0.18);
+}
+
+.stubWide {
+  grid-column: 1 / -1;
+  border-left: 0 !important;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+}
+
+.stub dt {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--red);
+}
+
+.stub dd {
+  margin: 6px 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.stub address {
+  font-style: normal;
+  display: grid;
+}
+
+.actions {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px 22px;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 34px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  box-shadow: 0 10px 28px rgba(192, 16, 42, 0.36);
+  transition: background 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--red2);
+  box-shadow: 0 14px 32px rgba(192, 16, 42, 0.46);
+  filter: brightness(1.03) saturate(1.06);
+}
+
+.cta:focus-visible,
+.link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link:hover {
+  color: var(--red);
+  box-shadow: inset 0 -2px 0 var(--red);
+}
+
+@media (max-width: 479px) {
+  .cta {
+    width: 100%;
+  }
+
+  .link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stub {
+    padding: 14px 14px;
+  }
+
+  .stub dd {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .inner {
+    padding: 96px 0 104px;
+  }
+
+  .ticket {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.8fr) minmax(0, 1.5fr);
+  }
+
+  .stubWide {
+    grid-column: auto;
+    border-top: 0;
+    border-left: 1px dashed rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .stub {
+    padding: 20px 24px;
+  }
+
+  .stub dd {
+    font-size: 1.45rem;
+  }
+}

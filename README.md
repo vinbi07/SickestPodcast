@@ -35,3 +35,9 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+## End of Season Party RSVP
+
+- Page: `/end-of-season-party`
+- API: `POST /api/party-rsvp` appends one row per RSVP to a Google Sheet (server-side only)
+- Setup: see [docs/end-of-season-party-setup.md](docs/end-of-season-party-setup.md) for the Google Cloud, Sheet, and Vercel configuration

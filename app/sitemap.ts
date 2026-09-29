@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { episodes } from '../content/episodes';
 import { SITE_URL } from '../content/site';
 import { BOOKING_TYPE_OPTIONS } from '../content/booking';
+import { PARTY } from '../content/party';
 
 /**
  * Episode `date` is a display string like "Sept 8" with no confirmed year —
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/episodes',
     '/booking',
+    PARTY.path,
     ...BOOKING_TYPE_OPTIONS.map((option) => `/booking/${option.value}`),
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
