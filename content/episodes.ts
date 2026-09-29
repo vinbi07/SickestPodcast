@@ -7,34 +7,38 @@ import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
 
 // Which guest's episode is shown as "Featured" on the homepage. This is an
 // explicit, independent flag — it does not follow episode order/number.
-export const FEATURED_GUEST_SLUG = 'rob-matwick';
+export const FEATURED_GUEST_SLUG = 'dother-sykes';
 
 // Episodes with a confirmed release date and an on-set photo to use as the
 // video thumbnail while the real video is not published yet. Keyed by
 // episode `id`. Everything else stays fully "upcoming" (no date, no image).
 const dateOverrides: Record<number, string> = {
   5: 'Sept 22',
+  6: 'Sept 29',
   10: 'Sept 8',
   17: 'Sept 15',
 };
 
 const thumbnailOverrides: Record<number, StaticImageData | string> = {
   5: robMatwickThumb,
+  6: '/DotherSykesThumbnail.png',
   10: jasonMitchellThumb,
   17: '/AlaniThumbnail.png',
 };
 
-// Jason Mitchell (Sept 8), Alani Taylor (Sept 15), and Rob Matwick (Sept 22)
-// are live — real video and platform links. Everything else stays "upcoming"
-// with no fabricated links.
+// Jason Mitchell (Sept 8), Alani Taylor (Sept 15), Rob Matwick (Sept 22), and
+// Dother Sykes (Sept 29) are live — real video and platform links. Everything
+// else stays "upcoming" with no fabricated links.
 const statusOverrides: Record<number, EpisodeStatus> = {
   5: 'released',
+  6: 'released',
   10: 'released',
   17: 'released',
 };
 
 const videoUrlOverrides: Record<number, string> = {
   5: 'https://www.youtube.com/watch?v=MU9shBypJqs',
+  6: 'https://youtu.be/USI8Rg_ACJ0?si=7Xsi4lgWX2Ms0724',
   10: 'https://youtu.be/VVE1Qv7Ghss',
   17: 'https://youtu.be/KXzoPDIlyc0?si=mg5bMEni8Cwd-vO3',
 };
@@ -118,6 +122,15 @@ const platformLinksOverrides: Record<number, PlatformLinks> = {
       'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/f7eae00d-2e9c-4708-9c68-5b219d9a2f4c/the-sickest-podcast-rob-matwick-the-man-behind-a-1-2-billion-ballpark',
     rss: RSS_FEED_URL,
   },
+  6: {
+    spotify: 'https://open.spotify.com/episode/5DqZRlFdGd7gx6RNjumPqI?si=vwrcOPyKR2qYnWaWL9Ilmw',
+    applePodcasts:
+      'https://podcasts.apple.com/us/podcast/dother-sykes-from-shreveport-to-stunts-sinners/id6809694464?i=1000792129121',
+    youtube: 'https://youtu.be/USI8Rg_ACJ0?si=7Xsi4lgWX2Ms0724',
+    amazonMusic:
+      'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/3468936d-48fa-4914-a3c6-0b3ec7790f6e/the-sickest-podcast-dother-sykes-from-shreveport-to-stunts-sinners',
+    rss: 'https://share.transistor.fm/s/8d24d7cd',
+  },
 };
 
 /**
@@ -167,9 +180,9 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
     guest: 'Dother Sykes',
     role: 'Actor · Stunt Performer',
     category: 'Entertainment',
-    duration: '50 min',
+    duration: '54 min',
     description:
-      'Dother will explain stunt discipline, set leadership, and the habits that will let him perform safely and creatively in high-risk environments.',
+      'Dother Sykes takes us behind the scenes of Hollywood stunt work, sharing his journey from a Jordan commercial to working on Sinners, the risks and injuries behind the action, and the lessons he’s learned along the way.',
     thumbnail: 'DS',
   },
   {
