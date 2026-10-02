@@ -82,8 +82,10 @@ export async function POST(request: NextRequest) {
     lastName: payload.lastName,
     email: payload.email,
     phone: payload.phone,
+    organization: payload.organization,
     rsvpStatus: payload.rsvpStatus,
     guestCount: payload.guestCount,
+    guestName: payload.guestName,
     dietaryRestrictions: payload.dietaryRestrictions,
     notes: payload.notes,
     showOnGuestList: payload.showOnGuestList,
@@ -114,6 +116,8 @@ export async function POST(request: NextRequest) {
       SOURCE,
       rsvp.showOnGuestList ? 'Yes' : 'No',
       rsvp.dietaryRestrictions,
+      rsvp.guestName,
+      rsvp.organization,
     ]);
     invalidateGuestList();
 

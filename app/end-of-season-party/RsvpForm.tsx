@@ -8,6 +8,8 @@ import {
   EMAIL_MAX,
   NOTES_MAX,
   DIETARY_MAX,
+  GUEST_NAME_MAX,
+  ORGANIZATION_MAX,
   PHONE_MAX,
   validateRsvp,
   type RsvpData,
@@ -30,8 +32,10 @@ const INITIAL_VALUES: FormValues = {
   lastName: '',
   email: '',
   phone: '',
+  organization: '',
   rsvpStatus: '',
   guestCount: '1',
+  guestName: '',
   dietaryRestrictions: '',
   notes: '',
   showOnGuestList: true,
@@ -39,7 +43,18 @@ const INITIAL_VALUES: FormValues = {
 };
 
 // Order used to move focus to the first invalid field.
-const FIELD_ORDER: RsvpField[] = ['rsvpStatus', 'guestCount', 'firstName', 'lastName', 'email', 'phone', 'dietaryRestrictions', 'notes'];
+const FIELD_ORDER: RsvpField[] = [
+  'rsvpStatus',
+  'guestCount',
+  'guestName',
+  'firstName',
+  'lastName',
+  'email',
+  'phone',
+  'organization',
+  'dietaryRestrictions',
+  'notes',
+];
 
 const GENERIC_ERROR = "We couldn't complete your registration right now. Please try again.";
 
@@ -216,6 +231,23 @@ export default function RsvpForm({ onComplete }: RsvpFormProps) {
               Total in your party, including you. Limit one guest per registration.
             </p>
             {fieldError('guestCount')}
+            {values.guestCount === '2' ? (
+              <div className={`${styles.field} ${styles.guestNameField}`}>
+                <label htmlFor="guestName">Guest&apos;s Full Name</label>
+                <input
+                  id="guestName"
+                  name="guestName"
+                  value={values.guestName}
+                  onChange={handleChange}
+                  autoComplete="off"
+                  maxLength={GUEST_NAME_MAX}
+                  required
+                  aria-invalid={Boolean(errors.guestName)}
+                  aria-describedby={describedBy('guestName')}
+                />
+                {fieldError('guestName')}
+              </div>
+            ) : null}
             <label className={styles.checkbox}>
               <input
                 type="checkbox"
@@ -302,6 +334,23 @@ export default function RsvpForm({ onComplete }: RsvpFormProps) {
           />
           {fieldError('phone')}
         </div>
+      </div>
+
+      <div className={styles.field}>
+        <label htmlFor="organization">
+          Organization <span className={styles.optional}>Optional</span>
+        </label>
+        <input
+          id="organization"
+          name="organization"
+          value={values.organization}
+          onChange={handleChange}
+          autoComplete="organization"
+          maxLength={ORGANIZATION_MAX}
+          aria-invalid={Boolean(errors.organization)}
+          aria-describedby={describedBy('organization')}
+        />
+        {fieldError('organization')}
       </div>
 
       {attending ? (

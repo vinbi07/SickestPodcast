@@ -44,15 +44,17 @@ You need three values: `GOOGLE_SHEET_ID`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`, and `G
    ```
 
    To use a different tab name, set `GOOGLE_SHEET_TAB` to that name.
-3. Paste this header row into **row 1**, starting at cell **A1**. It is tab-separated, so it fills A1 through K1 automatically:
+3. Paste this header row into **row 1**, starting at cell **A1**. It is tab-separated, so it fills A1 through M1 automatically:
 
    ```
-   Timestamp	First Name	Last Name	Email	Phone	RSVP Status	Guest Count	Notes	Source	Show on Guest List	Dietary Restrictions
+   Timestamp	First Name	Last Name	Email	Phone	RSVP Status	Guest Count	Notes	Source	Show on Guest List	Dietary Restrictions	Guest Name	Organization
    ```
 
-   | A | B | C | D | E | F | G | H | I | J | K |
-   |---|---|---|---|---|---|---|---|---|---|---|
-   | Timestamp | First Name | Last Name | Email | Phone | RSVP Status | Guest Count | Notes | Source | Show on Guest List | Dietary Restrictions |
+   | A | B | C | D | E | F | G | H | I | J | K | L | M |
+   |---|---|---|---|---|---|---|---|---|---|---|---|---|
+   | Timestamp | First Name | Last Name | Email | Phone | RSVP Status | Guest Count | Notes | Source | Show on Guest List | Dietary Restrictions | Guest Name | Organization |
+
+   **Already have the sheet set up?** Type `Guest Name` in **L1** and `Organization` in **M1**. No other columns move.
 
    The app treats row 1 as headers. It never writes to row 1 and only appends below it. The duplicate check reads column **D** from row 2 down, so keep emails in column D.
 4. Optional: select row 1 and choose **View → Freeze → 1 row**.
@@ -112,10 +114,10 @@ Consider pointing Preview at a separate test sheet so test RSVPs don't mix with 
 
 You should see one new row per successful submission, for example:
 
-| Timestamp | First Name | Last Name | Email | Phone | RSVP Status | Guest Count | Notes | Source | Show on Guest List | Dietary Restrictions |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 2026-10-01 2:05:12 PM CDT | Jordan | Lee | jordan@example.com | (214) 555-0100 | Attending | 2 | Excited! | Sickest Podcast Website | Yes | Vegetarian; guest has a nut allergy |
-| 2026-10-01 2:07:40 PM CDT | Sam | Rivera | sam@example.com | 214-555-0199 | Unable to Attend | 0 | | Sickest Podcast Website | No | |
+| Timestamp | First Name | Last Name | Email | Phone | RSVP Status | Guest Count | Notes | Source | Show on Guest List | Dietary Restrictions | Guest Name | Organization |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-01 2:05:12 PM CDT | Jordan | Lee | jordan@example.com | (214) 555-0100 | Attending | 2 | Excited! | Sickest Podcast Website | Yes | Vegetarian; guest has a nut allergy | Alex Kim | SickFit |
+| 2026-10-01 2:07:40 PM CDT | Sam | Rivera | sam@example.com | 214-555-0199 | Unable to Attend | 0 | | Sickest Podcast Website | No | | | Acme Co |
 
 - **Timestamp** is generated on the server in Dallas time (America/Chicago).
 - **Email** is stored trimmed and lowercased.
@@ -123,6 +125,8 @@ You should see one new row per successful submission, for example:
 - **Source** is always `Sickest Podcast Website` and is set by the server.
 - **Show on Guest List** is `Yes` only when an attendee left the opt-in checkbox checked. Declines are always `No`.
 - **Dietary Restrictions** is optional, attendees only (up to 200 characters), and covers the registrant and their +1. It is never shown publicly.
+- **Guest Name** is the +1's full name. It is required when an attendee picks Me + 1 and empty otherwise. It is never shown publicly; the guest list only shows "+1".
+- **Organization** is optional for everyone, including declines (up to 100 characters). It is never shown publicly.
 - Values are written with `RAW` input, so text like `=SUM(...)` is stored as plain text and never runs as a formula.
 
 ---

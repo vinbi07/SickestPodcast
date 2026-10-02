@@ -161,7 +161,7 @@ export async function readRows(): Promise<string[][]> {
 
 export async function appendRow(values: (string | number)[]): Promise<void> {
   const config = getSheetsConfig();
-  const range = encodeURIComponent(quotedRange(config.tab, 'A:K'));
+  const range = encodeURIComponent(quotedRange(config.tab, 'A:M'));
   // RAW: values are stored exactly as sent (no formula evaluation).
   // INSERT_ROWS: always adds a new row after the table, never overwrites the header.
   await sheetsRequest(config, `/values/${range}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {

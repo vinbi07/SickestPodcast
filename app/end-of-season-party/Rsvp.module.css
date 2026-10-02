@@ -97,6 +97,13 @@
 
 .guestFieldset {
   overflow: hidden;
+  /* Room for input focus rings, which overflow: hidden would otherwise clip. */
+  padding: 4px;
+  margin: -4px;
+}
+
+.guestNameField {
+  margin-top: 6px;
 }
 
 .legend,

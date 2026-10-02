@@ -18,14 +18,18 @@ export const EMAIL_MAX = 254;
 export const PHONE_MAX = 25;
 export const NOTES_MAX = 500;
 export const DIETARY_MAX = 200;
+export const GUEST_NAME_MAX = 120;
+export const ORGANIZATION_MAX = 100;
 
 export interface RsvpInput {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
+  organization: string;
   rsvpStatus: RsvpStatus | '';
   guestCount: number | string;
+  guestName: string;
   dietaryRestrictions: string;
   notes: string;
   showOnGuestList: boolean;
@@ -36,8 +40,12 @@ export interface RsvpData {
   lastName: string;
   email: string;
   phone: string;
+  /** Optional, any RSVP status. */
+  organization: string;
   rsvpStatus: RsvpStatus;
   guestCount: number;
+  /** Full name of the +1; set only when attending with guestCount 2. */
+  guestName: string;
   /** Attendees only; covers the registrant and their +1. */
   dietaryRestrictions: string;
   notes: string;
@@ -82,6 +90,8 @@ export function validateRsvp(input: Partial<Record<RsvpField, unknown>>): RsvpVa
   const phone = cleanLine(input.phone);
   const notes = cleanMultiline(input.notes);
   const dietaryRestrictions = cleanLine(input.dietaryRestrictions);
+  const guestName = cleanLine(input.guestName);
+  const organization = cleanLine(input.organization);
   const rsvpStatus = input.rsvpStatus;
 
   if (!firstName) errors.firstName = 'First name is required.';
@@ -118,6 +128,17 @@ export function validateRsvp(input: Partial<Record<RsvpField, unknown>>): RsvpVa
     }
   }
 
+  if (organization.length > ORGANIZATION_MAX) {
+    errors.organization = `Organization must be ${ORGANIZATION_MAX} characters or fewer.`;
+  }
+
+  // Bringing a +1 means we need their name; any other case ignores the field.
+  const hasPlusOne = status === 'attending' && guestCount === 2;
+  if (hasPlusOne && !guestName) errors.guestName = "Please enter your guest's name.";
+  else if (hasPlusOne && guestName.length > GUEST_NAME_MAX) {
+    errors.guestName = `Guest name must be ${GUEST_NAME_MAX} characters or fewer.`;
+  }
+
   if (status === 'attending' && dietaryRestrictions.length > DIETARY_MAX) {
     errors.dietaryRestrictions = `Dietary restrictions must be ${DIETARY_MAX} characters or fewer.`;
   }
@@ -135,8 +156,10 @@ export function validateRsvp(input: Partial<Record<RsvpField, unknown>>): RsvpVa
       lastName,
       email,
       phone,
+      organization,
       rsvpStatus: status,
       guestCount,
+      guestName: hasPlusOne ? guestName : '',
       dietaryRestrictions: status === 'attending' ? dietaryRestrictions : '',
       notes,
       // Explicit opt-in only; never shown for declines.
