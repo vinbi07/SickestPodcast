@@ -1,0 +1,151 @@
+.section {
+  padding: 48px 0 56px;
+  background: var(--w);
+  border-bottom: 1px solid var(--bd);
+}
+
+.inner {
+  display: grid;
+  gap: 36px;
+}
+
+.group {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+  min-width: 0;
+}
+
+.partners {
+  padding-top: 36px;
+  border-top: 1px solid var(--bd);
+}
+
+.overline {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--red);
+  text-align: center;
+}
+
+.logos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 28px 40px;
+}
+
+.logos li {
+  display: flex;
+  min-width: 0;
+}
+
+/* ---------- Logo slots: fixed height, width follows the artwork ---------- */
+
+.logo {
+  display: block;
+  height: var(--logo-h);
+  max-width: 100%;
+}
+
+.logo img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.sponsors {
+  --wordmark-h: 44px;
+  --mark-h: 72px;
+}
+
+.partners {
+  --wordmark-h: 34px;
+  --mark-h: 56px;
+}
+
+.wordmark {
+  --logo-h: var(--wordmark-h);
+}
+
+.mark {
+  --logo-h: var(--mark-h);
+}
+
+/* Wordmark centred on a square canvas: crop the empty space above and below it. */
+.padded {
+  --logo-h: var(--wordmark-h);
+  aspect-ratio: 3.2 / 1;
+  overflow: hidden;
+}
+
+.padded img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.link {
+  display: flex;
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.72;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 6px;
+}
+
+@media (min-width: 960px) {
+  .section {
+    padding: 72px 0 80px;
+  }
+
+  /* Both groups share one row, split by a vertical divider. */
+  .inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .group {
+    grid-template-rows: auto 1fr;
+    gap: 32px;
+    padding: 8px 48px;
+  }
+
+  .partners {
+    border-top: 0;
+    border-left: 1px solid var(--bd);
+  }
+
+  .overline {
+    font-size: 1rem;
+  }
+
+  .logos {
+    align-self: center;
+    gap: 56px 72px;
+  }
+
+  .sponsors {
+    --wordmark-h: 64px;
+    --mark-h: 104px;
+  }
+
+  .partners {
+    --wordmark-h: 46px;
+    --mark-h: 72px;
+  }
+}

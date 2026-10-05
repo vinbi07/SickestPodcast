@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import PartyHero from './PartyHero';
 import RsvpSection from './RsvpSection';
+import PartySponsors from './PartySponsors';
 import { footerColumns, FOOTER_TAGLINE } from '../../content/footer';
 import { PARTY } from '../../content/party';
 import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from '../../content/site';
@@ -62,6 +63,7 @@ export default function EndOfSeasonPartyPage() {
       <main>
         <PartyHero />
         <RsvpSection />
+        <PartySponsors />
       </main>
       <Footer columns={footerColumns} tagline={FOOTER_TAGLINE} />
     </div>
