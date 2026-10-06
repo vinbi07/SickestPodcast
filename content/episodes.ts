@@ -4,10 +4,11 @@ import type { Episode, EpisodeSeo, EpisodeStatus, PlatformLinks } from './types'
 import { RSS_FEED_URL } from './links';
 import robMatwickThumb from '../assets/guests/Rob Matwick_7.jpg';
 import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
+import danaVaughnsThumb from '../assets/guests/DanaVaughnThumbnail.png';
 
 // Which guest's episode is shown as "Featured" on the homepage. This is an
 // explicit, independent flag — it does not follow episode order/number.
-export const FEATURED_GUEST_SLUG = 'dother-sykes';
+export const FEATURED_GUEST_SLUG = 'dana-vaughns';
 
 // Episodes with a confirmed release date and an on-set photo to use as the
 // video thumbnail while the real video is not published yet. Keyed by
@@ -17,6 +18,7 @@ const dateOverrides: Record<number, string> = {
   6: 'Sept 29',
   10: 'Sept 8',
   17: 'Sept 15',
+  20: 'Oct 6',
 };
 
 const thumbnailOverrides: Record<number, StaticImageData | string> = {
@@ -24,16 +26,18 @@ const thumbnailOverrides: Record<number, StaticImageData | string> = {
   6: '/DotherSykesThumbnail.png',
   10: jasonMitchellThumb,
   17: '/AlaniThumbnail.png',
+  20: danaVaughnsThumb,
 };
 
-// Jason Mitchell (Sept 8), Alani Taylor (Sept 15), Rob Matwick (Sept 22), and
-// Dother Sykes (Sept 29) are live — real video and platform links. Everything
+// Jason Mitchell (Sept 8), Alani Taylor (Sept 15), Rob Matwick (Sept 22),
+// Dother Sykes (Sept 29), and Dana Vaughns (Oct 6) are live — real video and platform links. Everything
 // else stays "upcoming" with no fabricated links.
 const statusOverrides: Record<number, EpisodeStatus> = {
   5: 'released',
   6: 'released',
   10: 'released',
   17: 'released',
+  20: 'released',
 };
 
 const videoUrlOverrides: Record<number, string> = {
@@ -41,6 +45,7 @@ const videoUrlOverrides: Record<number, string> = {
   6: 'https://youtu.be/USI8Rg_ACJ0?si=7Xsi4lgWX2Ms0724',
   10: 'https://youtu.be/VVE1Qv7Ghss',
   17: 'https://youtu.be/KXzoPDIlyc0?si=mg5bMEni8Cwd-vO3',
+  20: 'https://www.youtube.com/watch?v=cNxJWcfQhSs',
 };
 
 // Search-snippet-friendly title/description per episode, derived from the
@@ -136,6 +141,15 @@ const platformLinksOverrides: Record<number, PlatformLinks> = {
       'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/3468936d-48fa-4914-a3c6-0b3ec7790f6e/the-sickest-podcast-dother-sykes-from-shreveport-to-stunts-sinners',
     rss: 'https://share.transistor.fm/s/8d24d7cd',
   },
+  20: {
+    spotify: 'https://open.spotify.com/episode/1IcpwNOToV0IydbK3xhWac',
+    applePodcasts:
+      'https://podcasts.apple.com/us/podcast/dana-vaughns-from-hannah-montana-to-michael-jackson/id6809694464?i=1000793365976',
+    youtube: 'https://www.youtube.com/watch?v=cNxJWcfQhSs',
+    amazonMusic:
+      'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/b6e7bf9b-1c28-4ec3-8e3e-8bf84fd10e9a/the-sickest-podcast-dana-vaughns-from-hannah-montana-to-michael-jackson',
+    rss: RSS_FEED_URL,
+  },
 };
 
 /**
@@ -192,11 +206,11 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
   },
   {
     id: 20,
-    title: 'Dana Vaughns: Reinvention in Public',
+    title: 'Dana Vaughns: From Hannah Montana to Michael Jackson',
     guest: 'Dana Vaughns',
     role: 'Singer · Dancer · Musician',
     category: 'Entertainment',
-    duration: '45 min',
+    duration: '65 min',
     description:
       'Pittsburgh-born singer, dancer, and musician blending pop, soul, and R&B — he started performing before age 10 and moved to California to pursue entertainment.',
     thumbnail: 'DV',
