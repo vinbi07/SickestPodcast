@@ -3,6 +3,7 @@ import sickFitLogo from '../assets/logos/SickFitSponsor.png';
 import fiservLogo from '../assets/logos/FiservSponsor.png';
 import okraLogo from '../assets/logos/OkraPartner.png';
 import medaseLogo from '../assets/logos/medasePartner.png';
+import fundraiserBlanketsLogo from '../assets/logos/fundraiserBlanketsPartner.png'; 
 
 export interface PartyLogo {
   name: string;
@@ -20,5 +21,6 @@ export const PARTY_SPONSORS: PartyLogo[] = [
 
 export const PARTY_SEASON_PARTNERS: PartyLogo[] = [
   { name: "Drink O'kra", logo: okraLogo, shape: 'padded' },
+  { name: "Fundraiser Blankets", logo: fundraiserBlanketsLogo, shape: 'padded' },
   { name: 'Medase', logo: medaseLogo, shape: 'wordmark' },
 ];
