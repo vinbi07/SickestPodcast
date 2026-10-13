@@ -5,10 +5,11 @@ import { RSS_FEED_URL } from './links';
 import robMatwickThumb from '../assets/guests/Rob Matwick_7.jpg';
 import jasonMitchellThumb from '../assets/guests/jason Mitchell_44.jpg';
 import danaVaughnsThumb from '../assets/guests/DanaVaughnThumbnail.png';
+import vanitaKrouchThumb from '../assets/guests/VanitaKrouchThumbnail.png';
 
 // Which guest's episode is shown as "Featured" on the homepage. This is an
 // explicit, independent flag — it does not follow episode order/number.
-export const FEATURED_GUEST_SLUG = 'dana-vaughns';
+export const FEATURED_GUEST_SLUG = 'vanita-krouch';
 
 // Episodes with a confirmed release date and an on-set photo to use as the
 // video thumbnail while the real video is not published yet. Keyed by
@@ -19,6 +20,7 @@ const dateOverrides: Record<number, string> = {
   10: 'Sept 8',
   17: 'Sept 15',
   20: 'Oct 6',
+  21: 'Oct 13',
 };
 
 const thumbnailOverrides: Record<number, StaticImageData | string> = {
@@ -27,10 +29,11 @@ const thumbnailOverrides: Record<number, StaticImageData | string> = {
   10: jasonMitchellThumb,
   17: '/AlaniThumbnail.png',
   20: danaVaughnsThumb,
+  21: vanitaKrouchThumb,
 };
 
 // Jason Mitchell (Sept 8), Alani Taylor (Sept 15), Rob Matwick (Sept 22),
-// Dother Sykes (Sept 29), and Dana Vaughns (Oct 6) are live — real video and platform links. Everything
+// Dother Sykes (Sept 29), Dana Vaughns (Oct 6), and Vanita Krouch (Oct 13) are live — real video and platform links. Everything
 // else stays "upcoming" with no fabricated links.
 const statusOverrides: Record<number, EpisodeStatus> = {
   5: 'released',
@@ -38,6 +41,7 @@ const statusOverrides: Record<number, EpisodeStatus> = {
   10: 'released',
   17: 'released',
   20: 'released',
+  21: 'released',
 };
 
 const videoUrlOverrides: Record<number, string> = {
@@ -46,6 +50,7 @@ const videoUrlOverrides: Record<number, string> = {
   10: 'https://youtu.be/VVE1Qv7Ghss',
   17: 'https://youtu.be/KXzoPDIlyc0?si=mg5bMEni8Cwd-vO3',
   20: 'https://www.youtube.com/watch?v=cNxJWcfQhSs',
+  21: 'https://youtu.be/nOPKeTIY8WA?si=7BQjXobeoyohcT2P',
 };
 
 // Search-snippet-friendly title/description per episode, derived from the
@@ -150,6 +155,14 @@ const platformLinksOverrides: Record<number, PlatformLinks> = {
       'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/episodes/b6e7bf9b-1c28-4ec3-8e3e-8bf84fd10e9a/the-sickest-podcast-dana-vaughns-from-hannah-montana-to-michael-jackson',
     rss: RSS_FEED_URL,
   },
+  21: {
+    spotify: 'https://open.spotify.com/episode/1XKIL464KEDvuBczaG8OZu?si=4305cca555d0417a',
+    applePodcasts:
+      'https://podcasts.apple.com/us/podcast/vanita-krouch-before-the-olympics-there-was-us/id6809694464?i=1000796070982',
+    youtube: 'https://youtu.be/nOPKeTIY8WA?si=7BQjXobeoyohcT2P',
+    amazonMusic: 'https://music.amazon.com/podcasts/63c3f352-dd86-4dc9-bee2-72b37e16b07e/the-sickest-podcast',
+    rss: RSS_FEED_URL,
+  },
 };
 
 /**
@@ -217,11 +230,11 @@ const rawEpisodes: Array<Omit<Episode, 'slug' | 'guestSlug' | 'seo' | 'platformL
   },
   {
     id: 21,
-    title: 'Vanita Krouch: Before the Olympics, There Was Us',
+    title: 'Vanita Krouch: She Won Gold for Team USA. Then She Got Cut.',
     guest: 'Vanita Krouch',
     role: 'Team USA iFlag QB',
     category: 'Sports',
-    duration: '45 min',
+    duration: '54 min',
     description:
       'One of the most decorated flag football players in the world and Team USA gold medal leader.',
     thumbnail: 'VK',
